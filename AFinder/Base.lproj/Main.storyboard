@@ -42,7 +42,7 @@
                                             <action selector="didPressTab:" destination="EsU-ir-X65" eventType="touchUpInside" id="pWw-EI-KnB"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_red.png" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-9X-Z8K">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_red" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-9X-Z8K">
                                         <rect key="frame" x="25" y="56" width="117" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="117" id="PMi-8e-8Wd"/>
@@ -59,7 +59,7 @@
                                             <action selector="didPressTab:" destination="EsU-ir-X65" eventType="touchUpInside" id="CAg-Qy-9a4"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-rK-rpA">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_black" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-rK-rpA">
                                         <rect key="frame" x="273" y="56" width="117" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="GTy-QY-Gi6"/>
@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder - Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-f7-si9">
-                                <rect key="frame" x="44.666666666666657" y="343" width="325" height="51"/>
+                                <rect key="frame" x="58.333333333333343" y="344" width="298" height="49"/>
                                 <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder - Find" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ii-0A-H9j">
-                                <rect key="frame" x="63" y="343" width="288" height="51"/>
+                                <rect key="frame" x="73.666666666666686" y="344" width="267" height="49"/>
                                 <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
     </scenes>
     <resources>
         <image name="CNN_International_logo_2014.png" width="960" height="960"/>
-        <image name="divider_red.png" width="128" height="128"/>
-        <image name="divider_white.png" width="128" height="128"/>
+        <image name="divider_black" width="128" height="128"/>
+        <image name="divider_red" width="128" height="128"/>
     </resources>
 </document>
