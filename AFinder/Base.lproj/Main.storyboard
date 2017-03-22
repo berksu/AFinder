@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -128,7 +128,7 @@
         <!--HomeViewController-->
         <scene sceneID="MbB-1c-mQR">
             <objects>
-                <viewController restorationIdentifier="HomeView" storyboardIdentifier="HomeView" title="HomeViewController" id="eSL-lR-bHv" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeView" storyboardIdentifier="HomeView" title="HomeViewController" id="eSL-lR-bHv" customClass="HomeViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Q7-43-Tib"/>
                         <viewControllerLayoutGuide type="bottom" id="LkS-8n-QuW"/>
@@ -151,6 +151,9 @@
                             <constraint firstItem="i2t-dV-7sZ" firstAttribute="centerX" secondItem="n49-Ll-TBj" secondAttribute="centerX" id="tgV-3f-W1t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="i2t-dV-7sZ" id="33b-fp-7K2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHv-Jp-pJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
