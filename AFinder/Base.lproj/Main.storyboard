@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -105,6 +105,7 @@
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="CPk-3X-sIO"/>
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="8" id="Daa-WP-Vip"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="GR3-24-CK3"/>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="trailing" constant="-414" id="Iwm-F2-Ei4"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="MQS-In-4ua"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="zs9-2s-n9p" secondAttribute="bottom" id="OQ0-Jn-7RY"/>
@@ -136,12 +137,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i2t-dV-7sZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i2t-dV-7sZ">
+                                <rect key="frame" x="0.0" y="34.666666666666686" width="414" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="2Td-qo-Zyn"/>
+                                    <constraint firstAttribute="height" constant="667" id="7JN-fD-Jfa"/>
+                                </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="centerY" secondItem="n49-Ll-TBj" secondAttribute="centerY" id="6n5-0Y-0dm"/>
+                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="centerX" secondItem="n49-Ll-TBj" secondAttribute="centerX" id="tgV-3f-W1t"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHv-Jp-pJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
