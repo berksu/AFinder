@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         viewControllers = [homeViewController,findViewController]
         
         let image : UIImage = UIImage(named:"divider_red")!
-        let image_white : UIImage = UIImage(named:"divider_white")!
+        let image_white : UIImage = UIImage(named:"divider_black")!
         
         buttonDivierImages = [image,image_white]
         buttonDividers[0].image = buttonDivierImages[0]
