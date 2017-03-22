@@ -1,26 +1,195 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Corbert-Regular.otf">
+            <string>Corbert-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="m13-mK-tgu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EsU-ir-X65" customClass="ViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="5lb-wn-POW"/>
+                        <viewControllerLayoutGuide type="bottom" id="l5U-zP-RyH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="QwT-jl-Keg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zs9-2s-n9p">
+                                <rect key="frame" x="0.0" y="655" width="414" height="81"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CNN_International_logo_2014.png" translatesAutoresizingMaskIntoConstraints="NO" id="eUx-QM-GDa">
+                                        <rect key="frame" x="160" y="0.0" width="95" height="81"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOQ-1l-gp8" customClass="TabButtonController" customModule="AFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="81"/>
+                                        <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="22"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="EsU-ir-X65" eventType="touchUpInside" id="pWw-EI-KnB"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_red.png" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-9X-Z8K">
+                                        <rect key="frame" x="25" y="56" width="117" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="PMi-8e-8Wd"/>
+                                            <constraint firstAttribute="height" constant="25" id="ybE-Wl-3jJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-fD-K9c">
+                                        <rect key="frame" x="248" y="0.0" width="166" height="81"/>
+                                        <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="22"/>
+                                        <state key="normal" title="Find">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="EsU-ir-X65" eventType="touchUpInside" id="CAg-Qy-9a4"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-rK-rpA">
+                                        <rect key="frame" x="273" y="56" width="117" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="GTy-QY-Gi6"/>
+                                            <constraint firstAttribute="width" constant="117" id="TZi-TV-qcd"/>
+                                            <constraint firstAttribute="height" constant="25" id="dfU-Sw-pPK"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="vBv-3b-AdS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="pbX-fD-K9c" firstAttribute="centerY" secondItem="zs9-2s-n9p" secondAttribute="centerY" id="1Th-B6-3Jc"/>
+                                    <constraint firstAttribute="trailing" secondItem="eUx-QM-GDa" secondAttribute="trailing" constant="159" id="3hy-yD-3Iu"/>
+                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="leading" secondItem="jEx-9X-Z8K" secondAttribute="trailing" constant="18" id="4LZ-lh-6Ts"/>
+                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="leading" secondItem="bOQ-1l-gp8" secondAttribute="trailing" constant="-6" id="5hX-XJ-iGI"/>
+                                    <constraint firstItem="bOQ-1l-gp8" firstAttribute="centerY" secondItem="zs9-2s-n9p" secondAttribute="centerY" id="9GI-E8-tfr"/>
+                                    <constraint firstAttribute="bottom" secondItem="bOQ-1l-gp8" secondAttribute="bottom" id="FrZ-hl-3eV"/>
+                                    <constraint firstItem="Gfr-rK-rpA" firstAttribute="leading" secondItem="eUx-QM-GDa" secondAttribute="trailing" constant="18" id="Gxg-Kl-amF"/>
+                                    <constraint firstAttribute="trailing" secondItem="pbX-fD-K9c" secondAttribute="trailing" id="K7O-HO-by4"/>
+                                    <constraint firstAttribute="bottom" secondItem="eUx-QM-GDa" secondAttribute="bottom" id="OpC-rL-s3Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gfr-rK-rpA" secondAttribute="trailing" constant="24" id="ZVV-rR-fTn"/>
+                                    <constraint firstItem="jEx-9X-Z8K" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" constant="25" id="aHg-nz-D6U"/>
+                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" constant="160" id="fdz-u0-UeA"/>
+                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="centerY" secondItem="zs9-2s-n9p" secondAttribute="centerY" id="k99-dz-4O9"/>
+                                    <constraint firstItem="pbX-fD-K9c" firstAttribute="leading" secondItem="eUx-QM-GDa" secondAttribute="trailing" constant="-7" id="kni-AM-WjS"/>
+                                    <constraint firstAttribute="bottom" secondItem="pbX-fD-K9c" secondAttribute="bottom" id="mHp-te-Sy8"/>
+                                    <constraint firstItem="bOQ-1l-gp8" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" id="wlE-06-zxF"/>
+                                    <constraint firstAttribute="height" constant="81" id="yKK-E1-wYY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyT-up-BPc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="647" id="BFO-F3-XxP"/>
+                                    <constraint firstAttribute="width" constant="414" id="CmC-gs-28W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="C4v-Qg-m1f"/>
+                            <constraint firstItem="zs9-2s-n9p" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="CPk-3X-sIO"/>
+                            <constraint firstItem="zs9-2s-n9p" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="8" id="Daa-WP-Vip"/>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="GR3-24-CK3"/>
+                            <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
+                            <constraint firstItem="zs9-2s-n9p" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="MQS-In-4ua"/>
+                            <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="zs9-2s-n9p" secondAttribute="bottom" id="OQ0-Jn-7RY"/>
+                            <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="jEx-9X-Z8K" secondAttribute="bottom" id="nmv-gq-Q5n"/>
+                            <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="Gfr-rK-rpA" secondAttribute="bottom" id="t3A-4Q-Mll"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="oyT-up-BPc" id="bfT-mu-JoQ"/>
+                        <outletCollection property="buttons" destination="bOQ-1l-gp8" collectionClass="NSMutableArray" id="nWs-gX-aBg"/>
+                        <outletCollection property="buttons" destination="pbX-fD-K9c" collectionClass="NSMutableArray" id="TeA-J6-8HN"/>
+                        <outletCollection property="buttonDividers" destination="jEx-9X-Z8K" collectionClass="NSMutableArray" id="hhj-So-o2d"/>
+                        <outletCollection property="buttonDividers" destination="Gfr-rK-rpA" collectionClass="NSMutableArray" id="g7D-8Z-aBL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vK7-g2-rEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155.07246376811597" y="136.14130434782609"/>
+        </scene>
+        <!--HomeViewController-->
+        <scene sceneID="MbB-1c-mQR">
+            <objects>
+                <viewController restorationIdentifier="HomeView" storyboardIdentifier="HomeView" title="HomeViewController" id="eSL-lR-bHv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Q7-43-Tib"/>
+                        <viewControllerLayoutGuide type="bottom" id="LkS-8n-QuW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n49-Ll-TBj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder - Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-f7-si9">
+                                <rect key="frame" x="44.666666666666657" y="343" width="325" height="51"/>
+                                <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IzS-f7-si9" firstAttribute="centerY" secondItem="n49-Ll-TBj" secondAttribute="centerY" id="YU8-36-IBv"/>
+                            <constraint firstItem="IzS-f7-si9" firstAttribute="centerY" secondItem="n49-Ll-TBj" secondAttribute="centerY" id="nG7-4d-GK8"/>
+                            <constraint firstItem="IzS-f7-si9" firstAttribute="centerX" secondItem="n49-Ll-TBj" secondAttribute="centerX" id="t3l-iK-gEq"/>
+                            <constraint firstItem="IzS-f7-si9" firstAttribute="centerX" secondItem="n49-Ll-TBj" secondAttribute="centerX" id="yXa-2P-spJ"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHv-Jp-pJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="839" y="136"/>
+        </scene>
+        <!--FindViewController-->
+        <scene sceneID="ABA-Jo-29x">
+            <objects>
+                <viewController restorationIdentifier="FindView" storyboardIdentifier="FindView" title="FindViewController" id="Lz7-Sy-DRb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z6k-KV-mLG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ewb-Qh-PQg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S01-vy-gSb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder - Find" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ii-0A-H9j">
+                                <rect key="frame" x="63" y="343" width="288" height="51"/>
+                                <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Ii-0A-H9j" firstAttribute="centerY" secondItem="S01-vy-gSb" secondAttribute="centerY" id="Ped-a9-1xV"/>
+                            <constraint firstItem="3Ii-0A-H9j" firstAttribute="centerX" secondItem="S01-vy-gSb" secondAttribute="centerX" id="p0t-EH-YND"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Oj-GPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="788"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CNN_International_logo_2014.png" width="960" height="960"/>
+        <image name="divider_red.png" width="128" height="128"/>
+        <image name="divider_white.png" width="128" height="128"/>
+    </resources>
 </document>
