@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var buttonDivierImages : [UIImage]!
     var selectedIndex : Int = 0
     
+    //berksu
     override func viewDidLoad() {
         super.viewDidLoad()
         
