@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var buttonDivierImages : [UIImage]!
     var selectedIndex : Int = 0
     
-    //berksu
+    //berksu and kutan
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +76,5 @@ class ViewController: UIViewController {
         
         vc.didMove(toParentViewController: self)
     }
-    
     
 }
