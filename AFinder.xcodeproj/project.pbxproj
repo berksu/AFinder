@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14018D8F1E82AA29009FCE8E /* divider_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 14018D8D1E82AA29009FCE8E /* divider_red.png */; };
-		14018D901E82AA29009FCE8E /* divider_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14018D8E1E82AA29009FCE8E /* divider_white.png */; };
 		14018D921E82AA32009FCE8E /* CNN_International_logo_2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 14018D911E82AA32009FCE8E /* CNN_International_logo_2014.png */; };
+		14018D971E82AB26009FCE8E /* divider_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 14018D951E82AB26009FCE8E /* divider_red.png */; };
+		14018D981E82AB26009FCE8E /* divider_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14018D961E82AB26009FCE8E /* divider_white.png */; };
 		C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC81491E81E1D30072672A /* AppDelegate.swift */; };
 		C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC814B1E81E1D30072672A /* ViewController.swift */; };
 		C9EC814F1E81E1D30072672A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9EC814D1E81E1D30072672A /* Main.storyboard */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14018D8D1E82AA29009FCE8E /* divider_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_red.png; path = ../../../Desktop/divider_red.png; sourceTree = "<group>"; };
-		14018D8E1E82AA29009FCE8E /* divider_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_white.png; path = ../../../Desktop/divider_white.png; sourceTree = "<group>"; };
 		14018D911E82AA32009FCE8E /* CNN_International_logo_2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CNN_International_logo_2014.png; path = ../../../Downloads/CNN_International_logo_2014.png; sourceTree = "<group>"; };
+		14018D951E82AB26009FCE8E /* divider_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_red.png; path = ../../../Desktop/divider_red.png; sourceTree = "<group>"; };
+		14018D961E82AB26009FCE8E /* divider_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_white.png; path = ../../../Desktop/divider_white.png; sourceTree = "<group>"; };
 		C9EC81461E81E1D30072672A /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EC81491E81E1D30072672A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9EC814B1E81E1D30072672A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,9 +44,6 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				14018D911E82AA32009FCE8E /* CNN_International_logo_2014.png */,
-				14018D8D1E82AA29009FCE8E /* divider_red.png */,
-				14018D8E1E82AA29009FCE8E /* divider_white.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -75,6 +72,9 @@
 				C9EC814B1E81E1D30072672A /* ViewController.swift */,
 				C9EC814D1E81E1D30072672A /* Main.storyboard */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
+				14018D951E82AB26009FCE8E /* divider_red.png */,
+				14018D961E82AB26009FCE8E /* divider_white.png */,
+				14018D911E82AA32009FCE8E /* CNN_International_logo_2014.png */,
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
 				C9EC81551E81E1D30072672A /* Info.plist */,
 			);
@@ -142,11 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,
+				14018D981E82AB26009FCE8E /* divider_white.png in Resources */,
+				14018D971E82AB26009FCE8E /* divider_red.png in Resources */,
 				C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */,
 				14018D921E82AA32009FCE8E /* CNN_International_logo_2014.png in Resources */,
-				14018D901E82AA29009FCE8E /* divider_white.png in Resources */,
 				C9EC814F1E81E1D30072672A /* Main.storyboard in Resources */,
-				14018D8F1E82AA29009FCE8E /* divider_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
