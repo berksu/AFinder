@@ -14,7 +14,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     @IBOutlet weak var mapView: MKMapView!
     private var locationManager = CLLocationManager()
-    private let regionRadius: CLLocationDistance = 1000
+    private let regionRadius: CLLocationDistance = 1500
+    var annotationsArray:Array<MKPointAnnotation>= []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
         //zoom the starting point
         centerMapOnLocation(location: locationManager.location!)
+        
     }
     
 
@@ -88,6 +91,21 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+
+    
+    //add all lost items on the map
+    func addAnnotationFromDatabase(location: CLLocation){
+        
+        //add pin
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        annotation.title = "Car Position"
+        annotation.subtitle = "Your car is in here"
+        
+        annotationsArray.append(annotation)
+        mapView.addAnnotations(annotationsArray)
+        
     }
 
     /*
