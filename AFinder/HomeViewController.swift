@@ -57,11 +57,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
 
     //close to the map
-    private func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
+    //private func centerMapOnLocation(location: CLLocation) {
+    //    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+    //                                                              regionRadius * 2.0, regionRadius * 2.0)
+    //    mapView.setRegion(coordinateRegion, animated: true)
+    //}
     
 
     func mapView(_: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
