@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -169,7 +169,7 @@
         <!--FindViewController-->
         <scene sceneID="ABA-Jo-29x">
             <objects>
-                <viewController restorationIdentifier="FindView" storyboardIdentifier="FindView" title="FindViewController" id="Lz7-Sy-DRb" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FindView" storyboardIdentifier="FindView" title="FindViewController" id="Lz7-Sy-DRb" customClass="ImageViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z6k-KV-mLG"/>
                         <viewControllerLayoutGuide type="bottom" id="ewb-Qh-PQg"/>
@@ -178,23 +178,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder - Find" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ii-0A-H9j">
-                                <rect key="frame" x="73.666666666666686" y="344" width="267" height="49"/>
-                                <fontDescription key="fontDescription" name="Corbert-Regular" family="Corbert" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-NW-nd7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-TE-auU">
+                                <rect key="frame" x="161" y="470" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="openPhotoLibrary:" destination="Lz7-Sy-DRb" eventType="touchUpInside" id="ATF-fR-Wzt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lY-Zv-iD8">
+                                <rect key="frame" x="180" y="405" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="Lz7-Sy-DRb" eventType="touchUpInside" id="CMK-CI-YKv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3Ii-0A-H9j" firstAttribute="centerY" secondItem="S01-vy-gSb" secondAttribute="centerY" id="Ped-a9-1xV"/>
-                            <constraint firstItem="3Ii-0A-H9j" firstAttribute="centerX" secondItem="S01-vy-gSb" secondAttribute="centerX" id="p0t-EH-YND"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickedImage" destination="DYu-NW-nd7" id="VDB-bg-eLs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Oj-GPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="788"/>
+            <point key="canvasLocation" x="838" y="843"/>
         </scene>
     </scenes>
     <resources>

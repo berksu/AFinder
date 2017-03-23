@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
 		C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99637081E82B5D80023A9F7 /* HomeViewController.swift */; };
 		C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC81491E81E1D30072672A /* AppDelegate.swift */; };
 		C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC814B1E81E1D30072672A /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94FDE011E84217C00252C21 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C99637081E82B5D80023A9F7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9EC81461E81E1D30072672A /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EC81491E81E1D30072672A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
 				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
+				C94FDE011E84217C00252C21 /* ImageViewController.swift */,
 				C9EC814B1E81E1D30072672A /* ViewController.swift */,
 				C9EC814D1E81E1D30072672A /* Main.storyboard */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			files = (
 				C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */,
 				C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */,
+				C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */,
 				C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
