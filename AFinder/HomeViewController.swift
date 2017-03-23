@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     
         //zoom the starting point
-        centerMapOnLocation(location: locationManager.location!)
+        //centerMapOnLocation(location: locationManager.location!)
         
     }
     
