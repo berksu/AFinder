@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="655" width="414" height="81"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CNN_International_logo_2014.png" translatesAutoresizingMaskIntoConstraints="NO" id="eUx-QM-GDa">
-                                        <rect key="frame" x="160" y="0.0" width="95" height="81"/>
+                                        <rect key="frame" x="160" y="-10" width="95" height="98"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOQ-1l-gp8" customClass="TabButtonController" customModule="AFinder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="81"/>
@@ -79,11 +79,11 @@
                                     <constraint firstAttribute="bottom" secondItem="bOQ-1l-gp8" secondAttribute="bottom" id="FrZ-hl-3eV"/>
                                     <constraint firstItem="Gfr-rK-rpA" firstAttribute="leading" secondItem="eUx-QM-GDa" secondAttribute="trailing" constant="18" id="Gxg-Kl-amF"/>
                                     <constraint firstAttribute="trailing" secondItem="pbX-fD-K9c" secondAttribute="trailing" id="K7O-HO-by4"/>
-                                    <constraint firstAttribute="bottom" secondItem="eUx-QM-GDa" secondAttribute="bottom" id="OpC-rL-s3Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="eUx-QM-GDa" secondAttribute="bottom" constant="-7" id="OpC-rL-s3Z"/>
                                     <constraint firstAttribute="trailing" secondItem="Gfr-rK-rpA" secondAttribute="trailing" constant="24" id="ZVV-rR-fTn"/>
                                     <constraint firstItem="jEx-9X-Z8K" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" constant="25" id="aHg-nz-D6U"/>
                                     <constraint firstItem="eUx-QM-GDa" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" constant="160" id="fdz-u0-UeA"/>
-                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="centerY" secondItem="zs9-2s-n9p" secondAttribute="centerY" id="k99-dz-4O9"/>
+                                    <constraint firstItem="eUx-QM-GDa" firstAttribute="centerY" secondItem="zs9-2s-n9p" secondAttribute="centerY" constant="-1.5" id="k99-dz-4O9"/>
                                     <constraint firstItem="pbX-fD-K9c" firstAttribute="leading" secondItem="eUx-QM-GDa" secondAttribute="trailing" constant="-7" id="kni-AM-WjS"/>
                                     <constraint firstAttribute="bottom" secondItem="pbX-fD-K9c" secondAttribute="bottom" id="mHp-te-Sy8"/>
                                     <constraint firstItem="bOQ-1l-gp8" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="leading" id="wlE-06-zxF"/>
@@ -91,28 +91,34 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyT-up-BPc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                <rect key="frame" x="0.0" y="67" width="414" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="647" id="BFO-F3-XxP"/>
-                                    <constraint firstAttribute="width" constant="414" id="CmC-gs-28W"/>
-                                </constraints>
                             </view>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search place" translatesAutoresizingMaskIntoConstraints="NO" id="k7M-Sm-TBJ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="oyT-up-BPc" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="C4v-Qg-m1f"/>
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="CPk-3X-sIO"/>
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="8" id="Daa-WP-Vip"/>
-                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="GR3-24-CK3"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="zs9-2s-n9p" secondAttribute="trailing" constant="-414" id="Iwm-F2-Ei4"/>
+                            <constraint firstAttribute="trailing" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" id="JTQ-7M-smW"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
                             <constraint firstItem="zs9-2s-n9p" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="MQS-In-4ua"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="zs9-2s-n9p" secondAttribute="bottom" id="OQ0-Jn-7RY"/>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" constant="3" id="Qkj-nm-crb"/>
+                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="ZGA-1P-Qac"/>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="-414" id="gcu-7J-4K5"/>
+                            <constraint firstItem="zs9-2s-n9p" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="8" id="mjH-I5-coO"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="jEx-9X-Z8K" secondAttribute="bottom" id="nmv-gq-Q5n"/>
+                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" id="ssN-8O-ePA"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="Gfr-rK-rpA" secondAttribute="bottom" id="t3A-4Q-Mll"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="contentView" destination="oyT-up-BPc" id="bfT-mu-JoQ"/>
                         <outletCollection property="buttons" destination="bOQ-1l-gp8" collectionClass="NSMutableArray" id="nWs-gX-aBg"/>
@@ -138,17 +144,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i2t-dV-7sZ">
-                                <rect key="frame" x="0.0" y="34.666666666666686" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="2Td-qo-Zyn"/>
-                                    <constraint firstAttribute="height" constant="667" id="7JN-fD-Jfa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="2vE-xQ-yei"/>
+                                    <constraint firstAttribute="width" constant="414" id="Hfz-qa-byh"/>
                                 </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="centerY" secondItem="n49-Ll-TBj" secondAttribute="centerY" id="6n5-0Y-0dm"/>
-                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="centerX" secondItem="n49-Ll-TBj" secondAttribute="centerX" id="tgV-3f-W1t"/>
+                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="top" secondItem="n49-Ll-TBj" secondAttribute="top" id="Amq-fa-66r"/>
+                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="leading" secondItem="n49-Ll-TBj" secondAttribute="leading" id="VGj-Ux-cVt"/>
+                            <constraint firstItem="i2t-dV-7sZ" firstAttribute="bottom" secondItem="LkS-8n-QuW" secondAttribute="top" id="nN1-8E-lhR"/>
                         </constraints>
                     </view>
                     <connections>
