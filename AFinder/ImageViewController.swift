@@ -10,7 +10,7 @@ import UIKit
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var pickedImage: UIImageView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +51,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
-    @IBAction func saveImage(_ sender: UIButton) {
-        let originalImage = UIImageJPEGRepresentation(pickedImage.image!, 0.6)
-        let compressed = UIImage(data : originalImage!)
-        UIImageWriteToSavedPhotosAlbum(compressed!, nil, nil, nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo : [NSObject : AnyObject]!) {
-        pickedImage.image = image
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+      
     
     //Save image
     /*func saveImage(){
