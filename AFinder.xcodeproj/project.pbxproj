@@ -169,7 +169,7 @@
 				TargetAttributes = {
 					C9EC81451E81E1D20072672A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = VUH3GM8HPJ;
+						DevelopmentTeam = PT2V6T6JDZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -337,14 +337,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VUH3GM8HPJ;
+				DEVELOPMENT_TEAM = PT2V6T6JDZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BerksuKismet.AFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redrose.kutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -354,14 +354,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VUH3GM8HPJ;
+				DEVELOPMENT_TEAM = PT2V6T6JDZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BerksuKismet.AFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redrose.kutan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
