@@ -10,6 +10,7 @@
 		1497D1071E9300630065C698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1061E9300630065C698 /* Main.storyboard */; };
 		1497D1091E9300A00065C698 /* ic_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1081E9300A00065C698 /* ic_camera.png */; };
 		1497D10B1E9302800065C698 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1497D10A1E93018D0065C698 /* Quicksand-Light.otf */; };
+		1497D10D1E930DD60065C698 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */; };
 		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
 		C95427BF1E92D2700076A578 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427BD1E92D2700076A578 /* Bolts.framework */; };
@@ -35,6 +36,7 @@
 		1497D1061E9300630065C698 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1497D1081E9300A00065C698 /* ic_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_camera.png; path = ../../../Downloads/ic_camera.png; sourceTree = "<group>"; };
 		1497D10A1E93018D0065C698 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.otf"; path = "../../../Downloads/quicksand/Quicksand-Light.otf"; sourceTree = "<group>"; };
+		1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.otf"; path = "../../../Downloads/quicksand/Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
 		C94FDE011E84217C00252C21 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C95427BD1E92D2700076A578 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1497D10A1E93018D0065C698 /* Quicksand-Light.otf */,
+				1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */,
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
 				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1497D10D1E930DD60065C698 /* Quicksand-Bold.otf in Resources */,
 				1497D1091E9300A00065C698 /* ic_camera.png in Resources */,
 				1497D1071E9300630065C698 /* Main.storyboard in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,

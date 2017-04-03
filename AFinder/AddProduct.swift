@@ -22,6 +22,7 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         
         initializeLocationManager()
         
+        
         //addProduct(productName: "book", sender: "kutan", information: "Güvenliğe teslim edildi")
     }
 

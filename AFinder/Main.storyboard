@@ -13,6 +13,9 @@
         <array key="Corbert-Regular.otf">
             <string>Corbert-Regular</string>
         </array>
+        <array key="Quicksand-Bold.otf">
+            <string>Quicksand-Bold</string>
+        </array>
         <array key="Quicksand-Light.otf">
             <string>Quicksand-Light</string>
         </array>
@@ -234,24 +237,30 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-h5-ziO">
                                 <rect key="frame" x="138" y="302" width="124" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="RxN-me-DES"/>
                                     <constraint firstAttribute="height" constant="30" id="hSU-yM-ToZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="28"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="SEND">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-CZ-0zB">
                                 <rect key="frame" x="72" y="363" width="257" height="51"/>
+                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="C4D-8u-Wop"/>
                                     <constraint firstAttribute="width" constant="257" id="zBv-Vp-u2c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="33"/>
-                                <state key="normal" title="Or Use Camera">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="33"/>
+                                <state key="normal" title="USE CAMERA">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
