@@ -56,6 +56,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+    
 
 
     //close to the map
