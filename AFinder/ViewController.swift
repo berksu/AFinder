@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     //berksu and kutan and berksu
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
         

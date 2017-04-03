@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var mapView: MKMapView!
     private var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 1500
-    var annotationsArray:Array<MKPointAnnotation>= []
+    var annotationsArray:Array<MKPointAnnotation> = []
 
     
     override func viewDidLoad() {
