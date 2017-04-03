@@ -103,7 +103,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             if error == nil {
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String)
+                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
                     print(object["Product"])
                 }
             }
@@ -115,14 +115,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     //add all lost items on the map
-    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String){
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
         
         //add pin
         let annotation = MKPointAnnotation()
         //annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         annotation.coordinate = location
         annotation.title = title
-        annotation.subtitle = "Your car is in here"
+        annotation.subtitle = subtitle
         
         annotationsArray.append(annotation)
         mapView.addAnnotations(annotationsArray)
