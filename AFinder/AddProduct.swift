@@ -22,7 +22,7 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         
         initializeLocationManager()
         
-        //addProduct(productName: "book")
+        //addProduct(productName: "book", sender: "kutan", information: "Güvenliğe teslim edildi")
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +52,7 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
     }
     
 
-    func addProduct(productName : String, sender: String){
+    func addProduct(productName : String, sender: String, information: String){
         let product = PFObject(className: "Product")
         product["Product"] = productName
         product["sender"] = sender
@@ -62,6 +62,7 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         }else{
             product["location"] = getlocation()
         }
+        product["information"] = information
         product.saveInBackground()
     }
     

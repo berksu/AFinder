@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
 
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         // Do any additional setup after loading the view.
         //setup mapView
         locationFinderInitialization()
+        getProductsFromDatabase()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,14 +96,33 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     
+    func getProductsFromDatabase(){
+        let query = PFQuery(className: "Product")
+        
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
+                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
+                    print(object["Product"])
+                }
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+    
+    }
+    
     //add all lost items on the map
-    func addAnnotationFromDatabase(location: CLLocation){
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
         
         //add pin
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        annotation.title = "Car Position"
-        annotation.subtitle = "Your car is in here"
+        //annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        annotation.coordinate = location
+        annotation.title = title
+        annotation.subtitle = subtitle
         
         annotationsArray.append(annotation)
         mapView.addAnnotations(annotationsArray)
