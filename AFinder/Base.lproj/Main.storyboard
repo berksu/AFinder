@@ -197,13 +197,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-NW-nd7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-TE-auU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-TE-auU">
                                 <rect key="frame" x="161" y="470" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo Library"/>
                                 <connections>
                                     <action selector="openPhotoLibrary:" destination="Lz7-Sy-DRb" eventType="touchUpInside" id="ATF-fR-Wzt"/>
@@ -225,8 +220,22 @@
                                     <action selector="saveImage:" destination="Lz7-Sy-DRb" eventType="touchUpInside" id="kI7-dy-egq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-NW-nd7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="YZ7-y7-ag7"/>
+                                    <constraint firstAttribute="width" constant="414" id="YjG-Th-fS6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DYu-NW-nd7" firstAttribute="top" secondItem="S01-vy-gSb" secondAttribute="top" id="3C3-sj-3UK"/>
+                            <constraint firstAttribute="trailing" secondItem="DYu-NW-nd7" secondAttribute="trailing" id="J9k-7v-aRL"/>
+                            <constraint firstItem="CV2-TE-auU" firstAttribute="top" secondItem="DYu-NW-nd7" secondAttribute="bottom" constant="50" id="b4N-X3-ONt"/>
+                            <constraint firstItem="DYu-NW-nd7" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leading" id="nAb-N9-rKV"/>
+                            <constraint firstItem="DYu-NW-nd7" firstAttribute="centerX" secondItem="S01-vy-gSb" secondAttribute="centerX" id="pWL-QD-Ip0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pickedImage" destination="DYu-NW-nd7" id="VDB-bg-eLs"/>
@@ -234,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Oj-GPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="843"/>
+            <point key="canvasLocation" x="837.68115942028987" y="842.93478260869574"/>
         </scene>
     </scenes>
     <resources>
