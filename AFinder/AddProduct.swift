@@ -22,6 +22,8 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         
         initializeLocationManager()
         
+        //let arr=separateHashtags(tags: "berksu")
+        //print(arr)
         
         //addProduct(productName: "book", sender: "kutan", information: "Güvenlige teslim edildi")
     }
@@ -65,6 +67,11 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         }
         product["information"] = information
         product.saveInBackground()
+    }
+    
+    func separateHashtags(tags: String)->Array<String>{
+        let tags = tags.components(separatedBy: ",")
+        return tags
     }
     
     
