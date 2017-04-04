@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var searchBarController: UISearchBar!
     @IBOutlet var buttons : [UIButton]!
     
     var homeViewController : UIViewController!
@@ -81,6 +82,8 @@ class ViewController: UIViewController {
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
         
+        searchBarController.isHidden = true
+        
         vc.didMove(toParentViewController: self)
         
 
@@ -109,6 +112,8 @@ class ViewController: UIViewController {
         
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
+        
+        searchBarController.isHidden = true
         
         vc.didMove(toParentViewController: self)
     }
