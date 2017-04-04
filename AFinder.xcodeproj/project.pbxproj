@@ -35,6 +35,8 @@
 		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
 		C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
+		C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
 		C94FDE011E84217C00252C21 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C95427BD1E92D2700076A578 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C95427BE1E92D2700076A578 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -130,6 +132,8 @@
 		C9EC81481E81E1D30072672A /* AFinder */ = {
 			isa = PBXGroup;
 			children = (
+				C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */,
+				C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */,
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
 				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
