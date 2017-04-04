@@ -23,7 +23,7 @@ class AddProduct: UIViewController, CLLocationManagerDelegate {
         initializeLocationManager()
         
         
-        //addProduct(productName: "book", sender: "kutan", information: "Güvenliğe teslim edildi")
+        //addProduct(productName: "book", sender: "kutan", information: "Güvenlige teslim edildi")
     }
 
     override func didReceiveMemoryWarning() {
