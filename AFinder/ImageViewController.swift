@@ -8,13 +8,20 @@
 
 import UIKit
 import SwiftyJSON
+import Parse
+import CoreLocation
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tagInputField: UITextField!
     
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
+    
+    var locationManager = CLLocationManager()
+    var latestLocation : CLLocation? = nil
+    var hashtags : Array<String> = []
    
     @IBOutlet weak var tempLabel: UILabel!
     
@@ -29,7 +36,13 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initializeLocationManager()
+
         imagePicker.delegate = self
+        tagInputField.addTarget(self, action: #selector(ImageViewController.textFieldDidChange(_:)),
+                                for: UIControlEvents.editingChanged)
+        
+        //addProduct(productName: "key", sender: "berksu", information: "kutan dayıda", hashtags: ["ev","anahtarlık","insan evi"])
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,8 +85,55 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
       
+    func textFieldDidChange(_ textField: UITextField) {
+        hashtags = separateHashtags(tags: textField.text!)
+        // bu hastagleri kutan kutu kutu ayıracak
+        //print(arr)
+    }
     
     
+    func separateHashtags(tags: String)->Array<String>{
+        let tags = tags.components(separatedBy: ",")
+        return tags
+    }
+    
+    
+    
+    func initializeLocationManager(){
+        //setup CL location manager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        latestLocation = locations.last!
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    func getlocation()->PFGeoPoint{
+        return PFGeoPoint(latitude: (locationManager.location?.coordinate.latitude)!, longitude:(locationManager.location?.coordinate.longitude)!)
+    }
+    
+    
+    func addProduct(productName : String, sender: String, information: String, hashtags: Array<String>){
+        let product = PFObject(className: "Product")
+        product["Product"] = productName
+        product["sender"] = sender
+        product["date"] = Date()
+        if(latestLocation != nil){
+            product["location"] = PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!)
+        }else{
+            product["location"] = getlocation()
+        }
+        product["information"] = information
+        product["hashtags"] = hashtags.joined(separator:",")
+        product.saveInBackground()
+    }
 
     //Save image
     /*func saveImage(){
