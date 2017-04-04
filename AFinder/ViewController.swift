@@ -13,12 +13,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var searchBarController: UISearchBar!
     @IBOutlet var buttons : [UIButton]!
     
     var homeViewController : UIViewController!
     var findViewController : UIViewController!
     var addProductController : UIViewController!
+    
+    var pageTitles : [String]!
     
     var viewControllers : [UIViewController]!
     @IBOutlet var buttonDividers : [UIImageView]!
@@ -46,15 +49,19 @@ class ViewController: UIViewController {
         
         viewControllers = [homeViewController,findViewController,addProductController]
         
+        pageTitles = ["Map,Add Product","Find Pages"]
+        
         let image : UIImage = UIImage(named:"divider_red")!
         let image_white : UIImage = UIImage(named:"divider_black")!
         
         buttonDivierImages = [image,image_white]
         buttonDividers[0].image = buttonDivierImages[0]
         
-        
         buttons[selectedIndex].isSelected = true
         didPressTab(buttons[selectedIndex])
+        // Hide the page title as default
+        searchBarController.isHidden = false
+        pageTitleLabel.isHidden = true;
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +89,8 @@ class ViewController: UIViewController {
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
         
+        pageTitleLabel.isHidden = false;
+        pageTitleLabel.text = "Finds"
         searchBarController.isHidden = true
         
         vc.didMove(toParentViewController: self)
@@ -113,8 +122,16 @@ class ViewController: UIViewController {
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
         
-        searchBarController.isHidden = true
         
+        if selectedIndex == 0{
+            pageTitleLabel.isHidden = true;
+            searchBarController.isHidden = false
+        }
+        else{
+            pageTitleLabel.isHidden = false;
+            searchBarController.isHidden = true
+        }
+        pageTitleLabel.text = pageTitles[selectedIndex]
         vc.didMove(toParentViewController: self)
     }
     

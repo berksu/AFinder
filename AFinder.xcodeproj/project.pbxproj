@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1497D1071E9300630065C698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1061E9300630065C698 /* Main.storyboard */; };
+		1497D10E1E93FD650065C698 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */; };
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
@@ -222,6 +223,7 @@
 			files = (
 				1497D1071E9300630065C698 /* Main.storyboard in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,
+				1497D10E1E93FD650065C698 /* Quicksand-Bold.otf in Resources */,
 				C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
