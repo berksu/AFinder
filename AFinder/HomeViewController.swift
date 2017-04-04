@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
                     self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
-                    print(object["Product"])
+                    //print(object["Product"])
                 }
             }
             else {

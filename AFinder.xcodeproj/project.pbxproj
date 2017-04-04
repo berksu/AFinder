@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1497D1071E9300630065C698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1061E9300630065C698 /* Main.storyboard */; };
-		1497D1091E9300A00065C698 /* ic_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1081E9300A00065C698 /* ic_camera.png */; };
-		1497D10B1E9302800065C698 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1497D10A1E93018D0065C698 /* Quicksand-Light.otf */; };
-		1497D10D1E930DD60065C698 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */; };
+		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
 		C95427BF1E92D2700076A578 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427BD1E92D2700076A578 /* Bolts.framework */; };
@@ -34,10 +32,11 @@
 
 /* Begin PBXFileReference section */
 		1497D1061E9300630065C698 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		1497D1081E9300A00065C698 /* ic_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_camera.png; path = ../../../Downloads/ic_camera.png; sourceTree = "<group>"; };
-		1497D10A1E93018D0065C698 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.otf"; path = "../../../Downloads/quicksand/Quicksand-Light.otf"; sourceTree = "<group>"; };
-		1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.otf"; path = "../../../Downloads/quicksand/Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
 		C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
+		C93B2A981E9321C600924F3F /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.otf"; path = "../../../../.Trash/Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		C93B2A991E9321C600924F3F /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.otf"; path = "../../../../.Trash/Quicksand-Light.otf"; sourceTree = "<group>"; };
 		C94FDE011E84217C00252C21 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C95427BD1E92D2700076A578 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C95427BE1E92D2700076A578 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		C9EC81501E81E1D30072672A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9EC81531E81E1D30072672A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9EC81551E81E1D30072672A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +77,7 @@
 				C95427D51E92D3B60076A578 /* SystemConfiguration.framework in Frameworks */,
 				C95427C01E92D2700076A578 /* Parse.framework in Frameworks */,
 				C95427BF1E92D2700076A578 /* Bolts.framework in Frameworks */,
+				4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +87,6 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1497D1081E9300A00065C698 /* ic_camera.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -106,6 +106,7 @@
 				C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */,
 				C95427BD1E92D2700076A578 /* Bolts.framework */,
 				C95427BE1E92D2700076A578 /* Parse.framework */,
+				FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +117,7 @@
 				C9EC81481E81E1D30072672A /* AFinder */,
 				C9EC81471E81E1D30072672A /* Products */,
 				C95427C11E92D2920076A578 /* Frameworks */,
+				F5028CB8C36685AB0F3FD605 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,8 +132,8 @@
 		C9EC81481E81E1D30072672A /* AFinder */ = {
 			isa = PBXGroup;
 			children = (
-				1497D10A1E93018D0065C698 /* Quicksand-Light.otf */,
-				1497D10C1E930DD60065C698 /* Quicksand-Bold.otf */,
+				C93B2A981E9321C600924F3F /* Quicksand-Bold.otf */,
+				C93B2A991E9321C600924F3F /* Quicksand-Light.otf */,
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
 				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
@@ -146,6 +148,15 @@
 			path = AFinder;
 			sourceTree = "<group>";
 		};
+		F5028CB8C36685AB0F3FD605 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */,
+				48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9EC81581E81E1D30072672A /* Build configuration list for PBXNativeTarget "AFinder" */;
 			buildPhases = (
+				11376431D73A008ED1338032 /* [CP] Check Pods Manifest.lock */,
 				C9EC81421E81E1D20072672A /* Sources */,
 				C9EC81431E81E1D20072672A /* Frameworks */,
 				C9EC81441E81E1D20072672A /* Resources */,
+				4F5A4CD3399A63ED497542E3 /* [CP] Embed Pods Frameworks */,
+				D7D6876D9CCA87EE9C1A1F69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,16 +220,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1497D10D1E930DD60065C698 /* Quicksand-Bold.otf in Resources */,
-				1497D1091E9300A00065C698 /* ic_camera.png in Resources */,
 				1497D1071E9300630065C698 /* Main.storyboard in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,
 				C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */,
-				1497D10B1E9302800065C698 /* Quicksand-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11376431D73A008ED1338032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F5A4CD3399A63ED497542E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFinder/Pods-AFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7D6876D9CCA87EE9C1A1F69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFinder/Pods-AFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9EC81421E81E1D20072672A /* Sources */ = {
@@ -339,6 +398,7 @@
 		};
 		C9EC81591E81E1D30072672A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PT2V6T6JDZ;
@@ -356,6 +416,7 @@
 		};
 		C9EC815A1E81E1D30072672A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PT2V6T6JDZ;
