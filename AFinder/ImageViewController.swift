@@ -220,7 +220,8 @@ extension ImageViewController {
                 let numLabels: Int = labelAnnotations.count
                 var labels: Array<String> = []
                 if numLabels > 0 {
-                    var labelResultsText:String = "Labels found: "
+                    //var labelResultsText:String = "Labels found: "
+                    var labelResultsText:String = ""
                     for index in 0..<numLabels {
                         let label = labelAnnotations[index]["description"].stringValue
                         labels.append(label)
@@ -235,6 +236,7 @@ extension ImageViewController {
                     }
                     self.tempLabel.text = labelResultsText
                     print(labelResultsText)
+                    self.tagInputField.text = labelResultsText
                 } else {
                     print("No labels found")
                 }
