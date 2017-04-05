@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14917E471E943879007EA01F /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */; };
+		14917E491E9454F6007EA01F /* dotted-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E481E9454F6007EA01F /* dotted-bar.png */; };
+		14917E4B1E945719007EA01F /* ic_details.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E4A1E945719007EA01F /* ic_details.png */; };
 		1497D1071E9300630065C698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1061E9300630065C698 /* Main.storyboard */; };
 		1497D10E1E93FD650065C698 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */; };
+		1497D1101E94168C0065C698 /* geometria-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1497D10F1E94168C0065C698 /* geometria-light.otf */; };
+		1497D1121E9432080065C698 /* ic_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1111E9432080065C698 /* ic_item.png */; };
+		1497D1141E9433650065C698 /* ic_cam.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1131E9433650065C698 /* ic_cam.png */; };
+		1497D1161E94358E0065C698 /* ic_cam_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1151E94358E0065C698 /* ic_cam_red.png */; };
+		1497D11A1E9436D50065C698 /* ic_rounded_rect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D1191E9436D50065C698 /* ic_rounded_rect.png */; };
+		1497D11C1E9437600065C698 /* ic_gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497D11B1E9437600065C698 /* ic_gallery.png */; };
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
@@ -32,7 +41,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14917E481E9454F6007EA01F /* dotted-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dotted-bar.png"; path = "../../../Downloads/dotted-bar.png"; sourceTree = "<group>"; };
+		14917E4A1E945719007EA01F /* ic_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_details.png; path = ../../../Downloads/ic_details.png; sourceTree = "<group>"; };
 		1497D1061E9300630065C698 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1497D10F1E94168C0065C698 /* geometria-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "geometria-light.otf"; path = "../../../Downloads/Geometria Light-Desktop/Fonts/geometria-light.otf"; sourceTree = "<group>"; };
+		1497D1111E9432080065C698 /* ic_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_item.png; path = ../../../Downloads/ic_item.png; sourceTree = "<group>"; };
+		1497D1131E9433650065C698 /* ic_cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cam.png; path = ../../../Downloads/ic_cam.png; sourceTree = "<group>"; };
+		1497D1151E94358E0065C698 /* ic_cam_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cam_red.png; path = ../../../Downloads/ic_cam_red.png; sourceTree = "<group>"; };
+		1497D1191E9436D50065C698 /* ic_rounded_rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_rounded_rect.png; path = ../../../Downloads/ic_rounded_rect.png; sourceTree = "<group>"; };
+		1497D11B1E9437600065C698 /* ic_gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_gallery.png; path = ../../../Downloads/ic_gallery.png; sourceTree = "<group>"; };
 		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
 		C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
@@ -88,6 +105,13 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				14917E4A1E945719007EA01F /* ic_details.png */,
+				14917E481E9454F6007EA01F /* dotted-bar.png */,
+				1497D11B1E9437600065C698 /* ic_gallery.png */,
+				1497D1191E9436D50065C698 /* ic_rounded_rect.png */,
+				1497D1151E94358E0065C698 /* ic_cam_red.png */,
+				1497D1131E9433650065C698 /* ic_cam.png */,
+				1497D1111E9432080065C698 /* ic_item.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -133,6 +157,7 @@
 		C9EC81481E81E1D30072672A /* AFinder */ = {
 			isa = PBXGroup;
 			children = (
+				1497D10F1E94168C0065C698 /* geometria-light.otf */,
 				C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */,
 				C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */,
 				14018D8C1E82A89B009FCE8E /* Images */,
@@ -221,10 +246,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1497D1121E9432080065C698 /* ic_item.png in Resources */,
 				1497D1071E9300630065C698 /* Main.storyboard in Resources */,
+				1497D1141E9433650065C698 /* ic_cam.png in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,
+				14917E4B1E945719007EA01F /* ic_details.png in Resources */,
 				1497D10E1E93FD650065C698 /* Quicksand-Bold.otf in Resources */,
+				14917E471E943879007EA01F /* Quicksand-Light.otf in Resources */,
+				1497D1101E94168C0065C698 /* geometria-light.otf in Resources */,
 				C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */,
+				1497D11C1E9437600065C698 /* ic_gallery.png in Resources */,
+				1497D11A1E9436D50065C698 /* ic_rounded_rect.png in Resources */,
+				1497D1161E94358E0065C698 /* ic_cam_red.png in Resources */,
+				14917E491E9454F6007EA01F /* dotted-bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

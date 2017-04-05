@@ -24,8 +24,7 @@ class ViewController: UIViewController {
     var pageTitles : [String]!
     
     var viewControllers : [UIViewController]!
-    @IBOutlet var buttonDividers : [UIImageView]!
-    var buttonDivierImages : [UIImage]!
+    
     var selectedIndex : Int = 0
     
     @IBOutlet weak var newAdImageView: UIImageView!
@@ -51,11 +50,11 @@ class ViewController: UIViewController {
         
         pageTitles = ["Map,Add Product","Find Pages"]
         
-        let image : UIImage = UIImage(named:"divider_red")!
-        let image_white : UIImage = UIImage(named:"divider_black")!
+        //let image : UIImage = UIImage(named:"divider_red")!
+        //let image_white : UIImage = UIImage(named:"divider_black")!
         
-        buttonDivierImages = [image,image_white]
-        buttonDividers[0].image = buttonDivierImages[0]
+        //buttonDivierImages = [image,image_white]
+        //buttonDividers[0].image = buttonDivierImages[0]
         
         buttons[selectedIndex].isSelected = true
         didPressTab(buttons[selectedIndex])
