@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Quicksand-Bold.otf">
             <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Light.otf">
-            <string>Quicksand-Light</string>
         </array>
         <array key="geometria-light.otf">
             <string>Geometria-Light</string>
@@ -215,121 +212,6 @@
             </objects>
             <point key="canvasLocation" x="153.62318840579712" y="813.58695652173924"/>
         </scene>
-        <!--FindViewController-->
-        <scene sceneID="ABA-Jo-29x">
-            <objects>
-                <viewController restorationIdentifier="ProductView2" storyboardIdentifier="ProductView2" title="FindViewController" id="Lz7-Sy-DRb" customClass="ImageViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Z6k-KV-mLG"/>
-                        <viewControllerLayoutGuide type="bottom" id="ewb-Qh-PQg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S01-vy-gSb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripe the item with tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuG-vJ-TFf">
-                                <rect key="frame" x="43" y="120" width="314" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="Ex3-bz-1jO"/>
-                                    <constraint firstAttribute="height" constant="27" id="qF2-wy-2eV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="23"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Separate tags with comma &quot;,&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PV-MP-p9p">
-                                <rect key="frame" x="37" y="162" width="340" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="340" id="iyh-5r-4vd"/>
-                                    <constraint firstAttribute="height" constant="27" id="x6h-GV-pgO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="23"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your tags" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaR-gO-BzU">
-                                <rect key="frame" x="37" y="231" width="327" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="327" id="ZSS-9f-qpb"/>
-                                    <constraint firstAttribute="height" constant="30" id="yaQ-mx-Vk0"/>
-                                </constraints>
-                                <color key="textColor" red="0.024510200780000001" green="0.024510200780000001" blue="0.024510200780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-h5-ziO">
-                                <rect key="frame" x="138" y="302" width="124" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="RxN-me-DES"/>
-                                    <constraint firstAttribute="height" constant="30" id="hSU-yM-ToZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="28"/>
-                                <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="SEND">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-CZ-0zB">
-                                <rect key="frame" x="72" y="363" width="257" height="51"/>
-                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="C4D-8u-Wop"/>
-                                    <constraint firstAttribute="width" constant="257" id="zBv-Vp-u2c"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="33"/>
-                                <state key="normal" title="USE CAMERA">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loadImage:" destination="Lz7-Sy-DRb" eventType="touchUpInside" id="gzd-Pa-rBA"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-ZX-4d7">
-                                <rect key="frame" x="80" y="608" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iY3-O6-Amr">
-                                <rect key="frame" x="40" y="486" width="334" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.024510200780000001" green="0.024510200780000001" blue="0.024510200780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="SaR-gO-BzU" secondAttribute="trailing" constant="30" id="ICS-tn-MP8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GuG-vJ-TFf" secondAttribute="trailing" constant="37" id="Lrw-Fe-ODD"/>
-                            <constraint firstItem="SaR-gO-BzU" firstAttribute="top" secondItem="3PV-MP-p9p" secondAttribute="bottom" constant="42" id="M6n-No-CE7"/>
-                            <constraint firstItem="SaR-gO-BzU" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leadingMargin" constant="17" id="Mth-9V-Pwq"/>
-                            <constraint firstItem="GuG-vJ-TFf" firstAttribute="top" secondItem="Z6k-KV-mLG" secondAttribute="bottom" constant="100" id="W9A-BR-4f5"/>
-                            <constraint firstItem="3PV-MP-p9p" firstAttribute="top" secondItem="GuG-vJ-TFf" secondAttribute="bottom" constant="15" id="XJw-kq-k0p"/>
-                            <constraint firstItem="wnt-h5-ziO" firstAttribute="top" secondItem="SaR-gO-BzU" secondAttribute="bottom" constant="41" id="Z9A-lm-W0x"/>
-                            <constraint firstItem="wnt-h5-ziO" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leadingMargin" constant="118" id="Zdm-na-vRI"/>
-                            <constraint firstItem="ZEg-CZ-0zB" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leadingMargin" constant="52" id="atN-L4-TaI"/>
-                            <constraint firstItem="3PV-MP-p9p" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leadingMargin" constant="17" id="cFq-ll-elZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wnt-h5-ziO" secondAttribute="trailing" constant="132" id="fdz-ND-xRd"/>
-                            <constraint firstItem="ZEg-CZ-0zB" firstAttribute="top" secondItem="wnt-h5-ziO" secondAttribute="bottom" constant="31" id="hVy-Ie-Ftv"/>
-                            <constraint firstItem="GuG-vJ-TFf" firstAttribute="leading" secondItem="S01-vy-gSb" secondAttribute="leadingMargin" constant="23" id="qDP-sq-S0t"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3PV-MP-p9p" secondAttribute="trailing" constant="17" id="v1c-kn-cuF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZEg-CZ-0zB" secondAttribute="trailing" constant="65" id="v7n-eB-a3i"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="dmh-ZX-4d7" id="UBe-lt-OZp"/>
-                        <outlet property="tagInputField" destination="SaR-gO-BzU" id="6AF-jM-KlF"/>
-                        <outlet property="tempLabel" destination="iY3-O6-Amr" id="d7g-Na-8y5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Oj-GPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="837.68115942028987" y="842.93478260869574"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="TNE-N0-ePw">
             <objects>
@@ -466,7 +348,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-oE-oKE">
-                                <rect key="frame" x="20" y="371" width="246.33333333333331" height="20"/>
+                                <rect key="frame" x="20" y="371" width="248" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #book  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-4f-BaO">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="20"/>
@@ -476,21 +358,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-d9-2cj">
-                                        <rect key="frame" x="59.000000000000007" y="0.0" width="41.666666666666679" height="20"/>
+                                        <rect key="frame" x="59" y="0.0" width="42" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-hQ-00R">
-                                        <rect key="frame" x="102.66666666666669" y="0.0" width="54.333333333333314" height="20"/>
+                                        <rect key="frame" x="103" y="0.0" width="55" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-cX-ZAC">
-                                        <rect key="frame" x="159" y="0.0" width="87.333333333333314" height="20"/>
+                                        <rect key="frame" x="160" y="0.0" width="88" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -574,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dt-wY-U2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1482.608695652174" y="842.93478260869574"/>
+            <point key="canvasLocation" x="838" y="814"/>
         </scene>
     </scenes>
     <resources>

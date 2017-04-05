@@ -35,6 +35,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
         newAdImageView.isUserInteractionEnabled = true
         recognizer.addTarget(self, action: #selector(ViewController.profileImageHasBeenTapped))
         
@@ -61,11 +69,18 @@ class ViewController: UIViewController {
         // Hide the page title as default
         searchBarController.isHidden = false
         pageTitleLabel.isHidden = true;
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func profileImageHasBeenTapped(){
