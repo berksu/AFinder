@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="837.68115942028987" y="135.32608695652175"/>
         </scene>
-        <!--Add Product-->
+        <!--Log In View Controller-->
         <scene sceneID="Dso-Wh-XsQ">
             <objects>
-                <viewController restorationIdentifier="FindView" storyboardIdentifier="FindView" id="N9i-1g-gQh" customClass="AddProduct" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FindView" storyboardIdentifier="FindView" id="N9i-1g-gQh" customClass="LogInViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HJj-Rj-QsC"/>
                         <viewControllerLayoutGuide type="bottom" id="afO-U6-MA3"/>
@@ -405,6 +405,9 @@
                                 <state key="normal" title="SEND">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButton:" destination="8il-FR-as4" eventType="touchUpInside" id="ecw-YA-kK4"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-Au-ufE">
                                 <rect key="frame" x="157" y="600" width="240" height="128"/>

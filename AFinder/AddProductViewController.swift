@@ -40,6 +40,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initializeLocationManager()
+        initializeParseAnonymous()
         
         imagePicker.delegate = self
         tagInputField.addTarget(self, action: #selector(AddProductViewController.textFieldDidChange(_:)),
@@ -51,8 +52,6 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         cameraOpenImg.addGestureRecognizer(recognizer)
         
-        
-        addProduct(productName: "key", information: "kutan dayıda", hashtags: ["ev","anahtarlık","insan evi"])
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,6 +59,10 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         // Dispose of any resources that can be recreated.a
     }
     
+    func initializeParseAnonymous(){
+        PFUser.enableAutomaticUser()
+        PFUser.current()?.saveInBackground()
+    }
     
     @IBAction func loadImage(_ sender: UIButton) {
         imagePicker.allowsEditing = false
@@ -67,6 +70,13 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    
+    
+    @IBAction func sendButton(_ sender: UIButton) {
+        addProduct(productName: "key3", information: "kutan dayıda", hashtags: ["ev","anahtarlık","insan evi"])
+    }
+    
     
     @IBAction func openCamera(_ sender: UIButton) {
         
@@ -152,6 +162,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
         product["information"] = information
         product["hashtags"] = hashtags.joined(separator:",")
+        product["user"] = PFUser.current()
         product.saveInBackground()
     }
     

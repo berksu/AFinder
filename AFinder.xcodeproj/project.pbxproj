@@ -20,6 +20,7 @@
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E8B291E957D4B00F67286 /* AddProductViewController.swift */; };
+		C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94C12C91E96C7B4004194DB /* LogInViewController.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
 		C95427BF1E92D2700076A578 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427BD1E92D2700076A578 /* Bolts.framework */; };
 		C95427C01E92D2700076A578 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427BE1E92D2700076A578 /* Parse.framework */; };
@@ -56,6 +57,7 @@
 		C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
 		C91E8B291E957D4B00F67286 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		C94C12C91E96C7B4004194DB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C94FDE011E84217C00252C21 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C95427BD1E92D2700076A578 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C95427BE1E92D2700076A578 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */,
 				1497D1061E9300630065C698 /* Main.storyboard */,
 				C9EC814B1E81E1D30072672A /* ViewController.swift */,
+				C94C12C91E96C7B4004194DB /* LogInViewController.swift */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
 				C9EC81551E81E1D30072672A /* Info.plist */,
@@ -321,6 +324,7 @@
 				C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */,
 				C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */,
 				C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */,
+				C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */,
 				C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */,
 				C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */,
 				C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */,
