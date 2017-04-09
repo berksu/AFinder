@@ -11,6 +11,9 @@ import Parse
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,33 +29,10 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    //sign up
-    func signUp(userName: String, password: String, email:String) {
-        let user = PFUser()
-        user.username = userName
-        user.password = password
-        user.email = email.lowercased()
-        
-        // other fields can be set just like with PFObject
-        //user["phone"] = "415-392-0202"
-        
-        
-        user.signUpInBackground { (succeed, error) in
-            if succeed{
-                print("You are successfully signed up")
-            }else{
-                print("Sign up problems :(")
-                print(error!)
-            }
-        }
-        
-    }
-    
     
     //log in
-    func logIn(userName: String, password: String){
-        PFUser.logInWithUsername(inBackground: userName, password: password) { (user, error) in
+    @IBAction func logInButton(_ sender: UIButton) {
+        PFUser.logInWithUsername(inBackground: username.text! , password: password.text!) { (user, error) in
             if(user != nil){
                 print("You are successfully logged in :)")
             }else{
@@ -61,6 +41,8 @@ class LogInViewController: UIViewController {
             }
         }
     }
+
+    
     
     //reset password with email
     func resetPasswordViaEmail(email: String){

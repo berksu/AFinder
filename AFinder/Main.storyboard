@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7E-ld-hwQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehg-Ha-oQb">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -473,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="838" y="814"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="gvg-YT-NJz">
             <objects>
-                <viewController id="ehg-Ha-oQb" sceneMemberID="viewController">
+                <viewController id="ehg-Ha-oQb" customClass="LogInViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9o6-1n-hcM"/>
                         <viewControllerLayoutGuide type="bottom" id="Bre-lT-Wva"/>
@@ -564,6 +564,9 @@
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInButton:" destination="ehg-Ha-oQb" eventType="touchUpInside" id="I77-r7-eXI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-E0-Bxb">
                                 <rect key="frame" x="109" y="293" width="177" height="30"/>
@@ -573,6 +576,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
                                 <state key="normal" title="Create an Account"/>
+                                <connections>
+                                    <segue destination="D7E-ld-hwQ" kind="show" id="vyY-mb-cM2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -605,15 +611,19 @@
                             <constraint firstItem="fgQ-sq-efV" firstAttribute="top" secondItem="9o6-1n-hcM" secondAttribute="bottom" constant="87" id="yUe-tu-0FD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="CXb-T0-Sia" id="llD-3U-7w0"/>
+                        <outlet property="username" destination="Jd3-gx-6b0" id="FWt-R0-H5K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klV-ct-Yn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1486.9565217391305" y="813.58695652173924"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="GCX-cr-DuY">
             <objects>
-                <viewController id="D7E-ld-hwQ" sceneMemberID="viewController">
+                <viewController id="D7E-ld-hwQ" customClass="SignUpViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Cw-oY-qxL"/>
                         <viewControllerLayoutGuide type="bottom" id="fyO-ys-nsR"/>
@@ -801,6 +811,7 @@
                                     <constraint firstAttribute="height" constant="30" id="quM-vU-35p"/>
                                 </constraints>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_acc.png" translatesAutoresizingMaskIntoConstraints="NO" id="bOl-nS-C60">
@@ -831,6 +842,9 @@
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="D7E-ld-hwQ" eventType="touchUpInside" id="kQL-sH-JjT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -896,6 +910,12 @@
                             <constraint firstItem="YX3-1w-9Vg" firstAttribute="leading" secondItem="ABy-Bo-YLg" secondAttribute="leadingMargin" constant="42" id="zyy-0V-SAH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="PyN-Dg-FU2" id="PCb-Rc-gca"/>
+                        <outlet property="password" destination="hUl-wK-O71" id="gNh-XW-e9d"/>
+                        <outlet property="surname" destination="3Tw-5k-cJx" id="oMt-gc-JrB"/>
+                        <outlet property="username" destination="N8e-P3-mwF" id="a4d-KS-SdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiG-VW-vzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

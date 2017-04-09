@@ -161,7 +161,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
             product["location"] = getlocation()
         }
         product["information"] = information
-        product["hashtags"] = hashtags.joined(separator:",")
+        product["hashtags"] = hashtags
         product["user"] = PFUser.current()
         product.saveInBackground()
     }
