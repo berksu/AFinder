@@ -372,11 +372,7 @@ extension AddProductViewController {
                 "features": [
                     [
                         "type": "LABEL_DETECTION",
-                        "maxResults": 10
-                    ],
-                    [
-                        "type": "FACE_DETECTION",
-                        "maxResults": 10
+                        "maxResults": 5
                     ]
                 ]
             ]
