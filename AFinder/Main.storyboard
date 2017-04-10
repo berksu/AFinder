@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <searchBar contentMode="redraw" barStyle="black" placeholder="Search place" translatesAutoresizingMaskIntoConstraints="NO" id="k7M-Sm-TBJ">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="360" height="44"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -102,25 +102,40 @@
                                     <constraint firstAttribute="height" constant="59" id="Hmp-7Z-3fP"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJK-Ew-MOz">
+                                <rect key="frame" x="381" y="28" width="28" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="43w-Ws-Hd6"/>
+                                    <constraint firstAttribute="width" constant="28" id="VqJ-F5-SrO"/>
+                                </constraints>
+                                <state key="normal" image="ic_logout.png"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="EsU-ir-X65" eventType="touchUpInside" id="tng-j6-UUV"/>
+                                    <segue destination="ehg-Ha-oQb" kind="show" identifier="segueLogOut" id="3fV-Lj-IXk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YJK-Ew-MOz" secondAttribute="trailing" constant="5" id="6LP-xZ-wDA"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="36" id="7rv-Zi-5rJ"/>
                             <constraint firstItem="TrF-YW-26A" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="140" id="A4p-1X-oZh"/>
                             <constraint firstItem="TrF-YW-26A" firstAttribute="leading" secondItem="gVy-XP-eo7" secondAttribute="trailing" constant="-254" id="Dg2-fe-9AF"/>
                             <constraint firstItem="TrF-YW-26A" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" constant="613" id="JLm-zi-FlP"/>
-                            <constraint firstAttribute="trailing" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" id="JTQ-7M-smW"/>
+                            <constraint firstAttribute="trailing" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="54" id="JTQ-7M-smW"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" constant="3" id="Qkj-nm-crb"/>
                             <constraint firstItem="2Js-GN-i4e" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" constant="8" id="Tsf-sZ-9I0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TrF-YW-26A" secondAttribute="trailing" constant="131" id="YuF-nG-t1i"/>
                             <constraint firstItem="k7M-Sm-TBJ" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="ZGA-1P-Qac"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="gVy-XP-eo7" secondAttribute="bottom" id="a5S-Bn-EgF"/>
-                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="-414" id="gcu-7J-4K5"/>
+                            <constraint firstItem="YJK-Ew-MOz" firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="21" id="gKE-IQ-z7t"/>
+                            <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="-360" id="gcu-7J-4K5"/>
                             <constraint firstItem="2Js-GN-i4e" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="59" id="mw4-hN-5xy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="59" id="sbi-Y9-8IF"/>
                             <constraint firstItem="gVy-XP-eo7" firstAttribute="leading" secondItem="oyT-up-BPc" secondAttribute="trailing" constant="-414" id="sd6-5h-KCm"/>
                             <constraint firstItem="k7M-Sm-TBJ" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" id="ssN-8O-ePA"/>
+                            <constraint firstItem="YJK-Ew-MOz" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" constant="8" id="y1B-91-DWT"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="2Js-GN-i4e" secondAttribute="bottom" constant="18" id="y5x-z6-fy1"/>
                         </constraints>
                     </view>
@@ -1069,5 +1084,9 @@
         <image name="ic_details.png" width="128" height="128"/>
         <image name="ic_item.png" width="128" height="128"/>
         <image name="ic_item_header.png" width="48" height="48"/>
+        <image name="ic_logout.png" width="48" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3fV-Lj-IXk"/>
+    </inferredMetricsTieBreakers>
 </document>

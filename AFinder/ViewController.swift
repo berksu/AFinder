@@ -148,5 +148,15 @@ class ViewController: UIViewController {
         pageTitleLabel.text = pageTitles[selectedIndex]
         vc.didMove(toParentViewController: self)
     }
+    @IBAction func logoutButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueLogOut", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueLogOut"
+        {
+            
+        }
+    }
     
 }
