@@ -74,8 +74,14 @@ class ViewController: UIViewController,UISearchBarDelegate {
         
     }
     
+    // Search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
+        // # varsa
+        // Parse search
+        
+        
+        // # yoksa
         let hc = viewControllers[0] as! HomeViewController
         hc.searchedKeyword = searchBar.text!
         
