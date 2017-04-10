@@ -936,8 +936,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="367" id="V17-cK-YQX"/>
                                     <constraint firstAttribute="height" constant="30" id="quM-vU-35p"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_acc.png" translatesAutoresizingMaskIntoConstraints="NO" id="bOl-nS-C60">
@@ -1075,6 +1075,6 @@
         <image name="ic_item_header.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FJC-xS-ed2"/>
+        <segue reference="WBm-de-HHp"/>
     </inferredMetricsTieBreakers>
 </document>
