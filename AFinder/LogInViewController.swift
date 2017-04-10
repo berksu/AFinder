@@ -79,13 +79,7 @@ class LogInViewController: UIViewController {
     }
 
 
-    
-    //log out
-    func logOut(){
-        PFUser.logOut()
-        print("log out")
-    }
-    
+
     /*
     // MARK: - Navigation
 
