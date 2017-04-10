@@ -35,6 +35,10 @@ class LogInViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username.text! , password: password.text!) { (user, error) in
             if(user != nil){
                 print("You are successfully logged in :)")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
+                // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+                
+                self.present(viewController, animated: false, completion: nil)
             }else{
                 print("log in problems :(")
                 print(error!)
@@ -72,5 +76,7 @@ class LogInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+   
 
 }

@@ -47,6 +47,10 @@ class SignUpViewController: UIViewController {
         user.signUpInBackground { (succeed, error) in
             if succeed{
                 print("You are successfully signed up")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as UIViewController
+                // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+                
+                self.present(viewController, animated: false, completion: nil)
             }else{
                 print("Sign up problems :(")
                 print(error!)

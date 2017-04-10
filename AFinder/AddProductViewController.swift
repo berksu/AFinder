@@ -26,8 +26,8 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var cameraOpenImg: UIImageView!
     let recognizer = UITapGestureRecognizer()
     
-    
-    
+    @IBOutlet weak var tagStackView: UIStackView!
+    var tagViews : Array<UIView> = []
     
     var googleAPIKey = "AIzaSyDzr3gg8-NQqRnHv7VQ9jFS4jUzqJEVyXk"
     var googleURL: URL {
@@ -51,6 +51,9 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         recognizer.addTarget(self, action: #selector(AddProductViewController.cameraIconTapped))
         
         cameraOpenImg.addGestureRecognizer(recognizer)
+        
+        // Hide stackview
+        hideStackView()
         
     }
     
@@ -116,10 +119,40 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
+    func hideStackView (){
+
+        for subview in tagStackView.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                tagViews.append(subview)
+                item.isHidden = true;
+            }
+        }
+    }
+    
     func textFieldDidChange(_ textField: UITextField) {
         hashtags = separateHashtags(tags: textField.text!)
         // bu hastagleri kutan kutu kutu ayıracak
-        //print(hashtags)
+        
+        tagStackView.isHidden = false
+        
+        print(hashtags.count)
+        
+        for subview in tagStackView.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if tInt < hashtags.count {
+                    item.isHidden = false
+                    item.text = hashtags[item.tag]
+                }
+                
+            }
+        }
+
     }
     
     
