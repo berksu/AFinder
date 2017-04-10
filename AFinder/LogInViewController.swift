@@ -14,6 +14,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var forgotPasswordView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +34,9 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func resetPasswordButton(_ sender: Any) {
+        forgotPasswordView.isHidden = true
+    }
     
     //log in
     @IBAction func logInButton(_ sender: UIButton) {
@@ -57,6 +61,9 @@ class LogInViewController: UIViewController {
     }
 
 
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        forgotPasswordView.isHidden = false
+    }
 
     //reset password with email
     func resetPasswordViaEmail(email: String){
