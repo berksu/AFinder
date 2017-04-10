@@ -22,6 +22,9 @@ class LogInViewController: UIViewController {
         //logIn(userName: "berksu", password: "asd")
         //signUp(userName: "berksuK", password: "asd", email: "berksukismet@gmail.com")
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +48,13 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
 
 
     //reset password with email
