@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UISearchBarDelegate {
 
     @IBOutlet weak var contentView: UIView!
     
@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBarController.delegate = self
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -71,7 +73,33 @@ class ViewController: UIViewController {
         pageTitleLabel.isHidden = true;
         
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let hc = viewControllers[0] as! HomeViewController
+        hc.searchedKeyword = searchBar.text!
+        
+        let previousVC = viewControllers[selectedIndex]
+        
+        previousVC.willMove(toParentViewController: nil)
+        previousVC.view.removeFromSuperview()
+        previousVC.removeFromParentViewController()
+        
+        //sender.isSelected = true
+        let vc = viewControllers[0]
+        
+        addChildViewController(vc)
+        
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        
+        vc.didMove(toParentViewController: self)
 
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -11,20 +11,18 @@ import MapKit
 import CoreLocation
 import Parse
 
-class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     private var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 1500
     var annotationsArray:Array<MKPointAnnotation> = []
 
-    
-    
     var localSearchRequest:MKLocalSearchRequest!
     var localSearch:MKLocalSearch!
     var localSearchResponse:MKLocalSearchResponse!
-
     
+    var searchedKeyword : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +32,30 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         locationFinderInitialization()
         getProductsFromDatabase()
         
+        print("asdasd")
+        
+        if searchedKeyword != nil {
+            goSearchedPlace(searchedPlace: searchedKeyword)
+        }
         
         
-        goSearchedPlace(searchedPlace: "Atilim University")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationFinderInitialization()
+        getProductsFromDatabase()
+        
+        if searchedKeyword != nil {
+            goSearchedPlace(searchedPlace: searchedKeyword)
+        }
 
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {        
+    }
+        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,7 +77,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             
             let center = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            
+                        
             self.mapView.setRegion(region, animated: true)
             
         }
@@ -69,7 +86,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
 
     //initialize location finder for user
-    private func locationFinderInitialization(){
+    public func locationFinderInitialization(){
         //setup CL location manager
         locationManager = CLLocationManager()
         locationManager.delegate = self
