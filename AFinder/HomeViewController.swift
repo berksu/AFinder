@@ -19,6 +19,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var annotationsArray:Array<MKPointAnnotation> = []
 
     
+    
+    var localSearchRequest:MKLocalSearchRequest!
+    var localSearch:MKLocalSearch!
+    var localSearchResponse:MKLocalSearchResponse!
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,11 +33,38 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         //setup mapView
         locationFinderInitialization()
         getProductsFromDatabase()
+        
+        
+        
+        goSearchedPlace(searchedPlace: "Atilim University")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func goSearchedPlace(searchedPlace :String){
+        //2
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchedPlace
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.start { (localSearchResponse, error) -> Void in
+            
+            if localSearchResponse == nil{
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            let center = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            
+            self.mapView.setRegion(region, animated: true)
+            
+        }
+
     }
     
 
