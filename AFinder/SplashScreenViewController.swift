@@ -13,42 +13,27 @@ class SplashScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Direct Home page için segueDirectHome
-        // Login için segueSignIn
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if(PFUser.current() == nil){
-            performSegue(withIdentifier: "segueSignIn", sender: self)
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as UIViewController
+            // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+            
+            self.present(viewController, animated: false, completion: nil)
+            
         }else{
-            performSegue(withIdentifier: "segueDirectHome", sender: self)
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
+            // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+            
+            self.present(viewController, animated: false, completion: nil)
         }
-        
-        //performSegue(withIdentifier: "", sender: self)
-        
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-
-    
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Already logged in
-        if segue.identifier == "segueSignIn"
-        {
-            
-        }
-        
-        if segue.identifier == "segueDirectHome"
-        {
-            
-        }
     }
     
 }
