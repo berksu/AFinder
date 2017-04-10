@@ -14,6 +14,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    let recognizer = UITapGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,8 @@ class LogInViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
+        username.addGestureRecognizer(recognizer)
+        password.addGestureRecognizer(recognizer)
         
     }
 
