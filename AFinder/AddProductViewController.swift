@@ -40,7 +40,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initializeLocationManager()
-        initializeParseAnonymous()
+        //initializeParseAnonymous()
         
         imagePicker.delegate = self
         tagInputField.addTarget(self, action: #selector(AddProductViewController.textFieldDidChange(_:)),
@@ -77,7 +77,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBAction func sendButton(_ sender: UIButton) {
-        addProduct(productName: "key3", information: "kutan dayıda", hashtags: ["ev","anahtarlık","insan evi"])
+        addProduct(productName: "key3", information: "kutan dayıda", hashtags: hashtags)
     }
     
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehg-Ha-oQb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehg-Ha-oQb">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -940,9 +940,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="email" destination="3Tw-5k-cJx" id="iOY-lP-mpn"/>
                         <outlet property="name" destination="PyN-Dg-FU2" id="PCb-Rc-gca"/>
                         <outlet property="password" destination="hUl-wK-O71" id="gNh-XW-e9d"/>
-                        <outlet property="surname" destination="3Tw-5k-cJx" id="oMt-gc-JrB"/>
                         <outlet property="username" destination="N8e-P3-mwF" id="a4d-KS-SdN"/>
                     </connections>
                 </viewController>

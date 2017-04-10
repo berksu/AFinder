@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
 
     
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var surname: UITextField!
+    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -32,13 +32,11 @@ class SignUpViewController: UIViewController {
     
     //sign up
     @IBAction func signUpButton(_ sender: UIButton) {
-        let email = "berksu.kismet@ug.bilkent.edu.tr"
         let user = PFUser()
         user.username = username.text!
         user.password = password.text!
         user["name"] = name.text!
-        user["surname"] = surname.text!
-        user.email = email.lowercased()
+        user.email = email.text!.lowercased()
         
         // other fields can be set just like with PFObject
         //user["phone"] = "415-392-0202"

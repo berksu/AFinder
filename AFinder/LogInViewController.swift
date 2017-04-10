@@ -46,8 +46,7 @@ class LogInViewController: UIViewController {
         }
     }
 
-    
-    
+
     //reset password with email
     func resetPasswordViaEmail(email: String){
         PFUser.requestPasswordResetForEmail(inBackground: email) { (success, error) in
