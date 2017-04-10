@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SplashScreenViewController: UIViewController {
 
@@ -15,6 +16,13 @@ class SplashScreenViewController: UIViewController {
 
         // Direct Home page için segueDirectHome
         // Login için segueSignIn
+        
+        if(PFUser.current() == nil){
+            performSegue(withIdentifier: "segueSignIn", sender: self)
+        }else{
+            performSegue(withIdentifier: "segueDirectHome", sender: self)
+        }
+        
         //performSegue(withIdentifier: "", sender: self)
         
         // Do any additional setup after loading the view.

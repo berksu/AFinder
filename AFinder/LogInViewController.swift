@@ -15,6 +15,8 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var forgotPasswordView: UIView!
+    @IBOutlet weak var resendPasswordEmail: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +29,7 @@ class LogInViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,16 @@ class LogInViewController: UIViewController {
     
     @IBAction func resetPasswordButton(_ sender: Any) {
         forgotPasswordView.isHidden = true
+
+        PFUser.requestPasswordResetForEmail(inBackground: resendPasswordEmail.text!) { (success, error) in
+            if(success){
+                print("New password sent :)")
+            }else{
+                print("Password cannot be sent :(")
+                print(error!)
+            }
+        }
+
     }
     
     //log in
@@ -60,23 +73,12 @@ class LogInViewController: UIViewController {
         view.endEditing(true)
     }
 
-
+    //reset password with email
     @IBAction func forgotPasswordAction(_ sender: Any) {
         forgotPasswordView.isHidden = false
     }
 
-    //reset password with email
-    func resetPasswordViaEmail(email: String){
-        PFUser.requestPasswordResetForEmail(inBackground: email) { (success, error) in
-            if(success){
-                print("New password sent :)")
-            }else{
-                print("Password cannot be sent :(")
-                print(error!)
-            }
-        }
-    }
-    
+
     
     //log out
     func logOut(){
