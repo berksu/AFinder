@@ -71,6 +71,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 goSearchedPlace(searchedPlace: searchedKeyword)
             }
             
+            
         }else{
             print("yuklecem")
             //remove annotaitons
@@ -90,6 +91,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func goUsersCurrentPosition(_ sender: UIButton) {
+        let center = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        mapView.setRegion(region, animated: true)
+    }
+    
     
     func goSearchedPlace(searchedPlace :String){
         //2
@@ -130,7 +139,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
-        
     
         //zoom the starting point
         //centerMapOnLocation(location: locationManager.location!)
