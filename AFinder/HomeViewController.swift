@@ -42,6 +42,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+    //renewed page
     override func viewWillAppear(_ animated: Bool) {
         //locationFinderInitialization()
 

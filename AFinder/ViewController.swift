@@ -94,6 +94,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
         }
     }
     
+    //renew the page
     func reloadSearchKeyword(searchedKeyword: String?, isHashtag: Bool){
         let hc = viewControllers[0] as! HomeViewController
         hc.searchedKeyword = searchedKeyword
