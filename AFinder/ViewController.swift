@@ -76,14 +76,29 @@ class ViewController: UIViewController,UISearchBarDelegate {
     
     // Search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+
         // # varsa
         // Parse search
+        if(searchBar.text!.contains("#")){
+            reloadSearchKeyword(searchedKeyword: searchBar.text, isHashtag: true)
+        }else{
+            // # yoksa
+            reloadSearchKeyword(searchedKeyword: searchBar.text, isHashtag: false)
+        }
         
-        
-        // # yoksa
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText == ""){
+            reloadSearchKeyword(searchedKeyword: nil, isHashtag: false)
+        }
+    }
+    
+    func reloadSearchKeyword(searchedKeyword: String?, isHashtag: Bool){
         let hc = viewControllers[0] as! HomeViewController
-        hc.searchedKeyword = searchBar.text!
+        hc.searchedKeyword = searchedKeyword
+        
+        hc.isHashtagSearced = isHashtag
         
         let previousVC = viewControllers[selectedIndex]
         
@@ -100,11 +115,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
         contentView.addSubview(vc.view)
         
         vc.didMove(toParentViewController: self)
-
-        
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

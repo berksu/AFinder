@@ -16,13 +16,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var mapView: MKMapView!
     private var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 1500
-    var annotationsArray:Array<MKPointAnnotation> = []
 
     var localSearchRequest:MKLocalSearchRequest!
     var localSearch:MKLocalSearch!
     var localSearchResponse:MKLocalSearchResponse!
     
     var searchedKeyword : String!
+    var isHashtagSearced : Bool! = false
+    var searchedText : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +43,40 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        locationFinderInitialization()
-        getProductsFromDatabase()
+        //locationFinderInitialization()
+
         
         if searchedKeyword != nil {
-            goSearchedPlace(searchedPlace: searchedKeyword)
+            
+            if(isHashtagSearced){
+                print("silecem")
+                //remove annotaitons
+                mapView.removeAnnotations(mapView.annotations)
+                
+                //gereklileri yükle
+                let query = PFQuery(className: "Product")
+                query.whereKey("hashtags", contains: searchedKeyword.substring(from: searchedKeyword.index(searchedKeyword.startIndex, offsetBy: 1)))
+                query.findObjectsInBackground { (objects, error) in
+                    if error == nil {
+                        for object in objects!{
+                            let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
+                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
+                        }
+                    }
+                    else {
+                        print("Error ! Cannot reach database")
+                    }
+                }
+            }else{
+                goSearchedPlace(searchedPlace: searchedKeyword)
+            }
+            
+        }else{
+            print("yuklecem")
+            //remove annotaitons
+            mapView.removeAnnotations(mapView.annotations)
+            //ekranı temizle
+            getProductsFromDatabase()
         }
 
         
@@ -176,8 +206,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         annotation.title = title
         annotation.subtitle = subtitle
         
-        annotationsArray.append(annotation)
-        mapView.addAnnotations(annotationsArray)
+        mapView.addAnnotation(annotation)
         
     }
 
