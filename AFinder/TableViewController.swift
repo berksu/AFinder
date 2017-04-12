@@ -15,6 +15,7 @@ struct ownerData{
     var nameOfProduct:String
     var date:Date
     var hashtags:[String]
+    var urlImage: String
 }
 
 class TableViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
@@ -112,12 +113,13 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             if error == nil {
                 for object in objects!{
                     
+                    var urlOfImage = ""
                     if(object["image"] != nil){
                         let userImageFile = object["image"] as! PFFile
-                        let urlOfImage = userImageFile.url
+                        urlOfImage = userImageFile.url!
                     }
                     
-                    let ownerDataTemp = ownerData(nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String])
+                    let ownerDataTemp = ownerData(nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], urlImage: urlOfImage)
                     self.allData.append(ownerDataTemp)
 
                 }
