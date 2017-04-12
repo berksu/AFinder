@@ -74,8 +74,13 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         cell.itemDateLabel.text = dateString
         
-        let url = URL(string: allData[indexPath.row].urlImage)
-        cell.itemThumbImageView.kf.setImage(with: url)
+        if(allData[indexPath.row].urlImage != ""){
+            let url = URL(string: allData[indexPath.row].urlImage)
+            cell.itemThumbImageView.kf.setImage(with: url)
+        }else{
+            //change name for non imaged items
+            cell.itemThumbImageView.image = UIImage(named: "ic_acc.png")
+        }
         
         // Stackview
         for subview in cell.itemTagsStackView.subviews
