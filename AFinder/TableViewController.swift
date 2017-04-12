@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import Parse
+
+
+struct ownerData{
+    var nameOfProduct:String
+    var date:Date
+    var hashtags:[String]
+}
 
 class TableViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
 
+    
+    var allData = [ownerData!]()
     
     @IBOutlet weak var itemsTableView: UITableView!
     
@@ -21,8 +31,15 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        getUsersOwnItem()
+        
+        
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,12 +57,20 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return self.allData.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewItem", for: indexPath) as! TableViewCell
+        
+        cell.itemTitleLabel.text = allData[indexPath.row].nameOfProduct
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        let dateString = dateFormatter.string(from: allData[indexPath.row].date)
+
+        cell.itemDateLabel.text = dateString
         
         
         // Configure the cell...
@@ -54,6 +79,31 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     }
 
 
+    
+    func getUsersOwnItem(){
+        
+        let query = PFQuery(className: "Product")
+        query.whereKey("user", equalTo: PFUser.current()!)
+        
+        
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    
+                    let ownerDataTemp = ownerData(nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String])
+                    self.allData.append(ownerDataTemp)
+
+                }
+                self.itemsTableView.reloadData()
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+        
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -100,5 +150,6 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     */
 
 }
+
 
 

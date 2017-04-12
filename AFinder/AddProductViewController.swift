@@ -77,7 +77,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBAction func sendButton(_ sender: UIButton) {
-        addProduct(productName: "key3", information: "kutan dayıda", hashtags: hashtags)
+        addProduct(productName: hashtags[0], information: "kutan dayıda demedim mi", hashtags: hashtags)
     }
     
     
@@ -186,7 +186,39 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     func addProduct(productName : String, information: String, hashtags: Array<String>){
         let product = PFObject(className: "Product")
-        product["Product"] = productName
+        
+        product.setObject(productName, forKey: "Product")
+        product.setObject(information, forKey: "information")
+        product.setObject(Date(), forKey: "date")
+        product.setObject(PFUser.current(), forKey: "user")
+        product.setObject(hashtags, forKey: "hashtags")
+        
+        if(latestLocation != nil){
+            product.setObject(PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!), forKey: "location")
+        }else{
+            product.setObject(getlocation(), forKey: "location")
+        }
+        
+        if(imageView.image != nil){
+            let imageData: NSData = UIImageJPEGRepresentation(imageView.image!, 1.0)! as NSData
+            let imageFile: PFFile = PFFile(name:"image.jpg", data:imageData as Data)!
+            
+            product.setObject(imageFile, forKey: "image")
+        }
+        imageView.image = nil
+
+        product.saveInBackground(block: { (success, error) in
+            if (success) {
+                print("saving")
+            }else{
+                print("cannot saving")
+                print(error)
+            }
+        })
+        
+        
+        
+        /*product["Product"] = productName
         product["date"] = Date()
         if(latestLocation != nil){
             product["location"] = PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!)
@@ -196,7 +228,9 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         product["information"] = information
         product["hashtags"] = hashtags
         product["user"] = PFUser.current()
-        product.saveInBackground()
+        
+        
+        product.saveInBackground()*/
     }
     
     //Save image
@@ -312,6 +346,7 @@ extension AddProductViewController {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
             imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
+            imageView.image = pickedImage
             //spinner.startAnimating()
             //faceResults.isHidden = true
             //labelResults.isHidden = true
