@@ -73,6 +73,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         cell.itemDateLabel.text = dateString
         
+        // Stackview
         for subview in cell.itemTagsStackView.subviews
         {
             if let item = subview as? UILabel
