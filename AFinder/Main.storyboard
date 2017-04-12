@@ -245,9 +245,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-4J-efM">
-                                                    <rect key="frame" x="0.0" y="8" width="92" height="66"/>
+                                                    <rect key="frame" x="0.0" y="8" width="79" height="66"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="92" id="BYf-G1-ref"/>
+                                                        <constraint firstAttribute="width" constant="79" id="BYf-G1-ref"/>
                                                         <constraint firstAttribute="height" constant="66" id="h1F-kG-Qyc"/>
                                                     </constraints>
                                                 </imageView>
@@ -307,11 +307,11 @@
                                                 <constraint firstItem="LEr-4J-efM" firstAttribute="top" secondItem="Np7-6P-qNh" secondAttribute="top" constant="8" id="LR7-Eb-5go"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wbi-PH-eom" secondAttribute="trailing" constant="72" id="UL8-Bb-JUg"/>
                                                 <constraint firstAttribute="bottom" secondItem="LEr-4J-efM" secondAttribute="bottom" constant="8" id="Yvq-zH-UfR"/>
-                                                <constraint firstItem="IIt-od-wXD" firstAttribute="leading" secondItem="LEr-4J-efM" secondAttribute="trailing" constant="-1" id="asw-2m-TJf"/>
+                                                <constraint firstItem="IIt-od-wXD" firstAttribute="leading" secondItem="LEr-4J-efM" secondAttribute="trailing" constant="12" id="asw-2m-TJf"/>
                                                 <constraint firstItem="wbi-PH-eom" firstAttribute="top" secondItem="Np7-6P-qNh" secondAttribute="topMargin" id="bSP-OI-jMD"/>
                                                 <constraint firstItem="LEr-4J-efM" firstAttribute="leading" secondItem="Np7-6P-qNh" secondAttribute="leadingMargin" constant="-8" id="ckn-VO-Jen"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GEo-Ic-j54" secondAttribute="trailing" constant="6" id="dzB-nf-ldH"/>
-                                                <constraint firstItem="wbi-PH-eom" firstAttribute="leading" secondItem="LEr-4J-efM" secondAttribute="trailing" constant="-1" id="eiP-RU-3de"/>
+                                                <constraint firstItem="wbi-PH-eom" firstAttribute="leading" secondItem="LEr-4J-efM" secondAttribute="trailing" constant="12" id="eiP-RU-3de"/>
                                                 <constraint firstItem="GEo-Ic-j54" firstAttribute="top" secondItem="Np7-6P-qNh" secondAttribute="topMargin" id="nWh-Xy-bpC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IIt-od-wXD" secondAttribute="trailing" constant="103" id="p9c-DC-AsR"/>
                                                 <constraint firstItem="IIt-od-wXD" firstAttribute="top" secondItem="wbi-PH-eom" secondAttribute="bottom" constant="2" id="toI-R5-J2v"/>
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhm-9I-vIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171.01449275362319" y="813.58695652173924"/>
+            <point key="canvasLocation" x="169.56521739130437" y="813.58695652173924"/>
         </scene>
         <!--Add Product View Controller-->
         <scene sceneID="TNE-N0-ePw">
@@ -504,7 +504,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-oE-oKE">
-                                <rect key="frame" x="20" y="371" width="343.66666666666669" height="20"/>
+                                <rect key="frame" x="20" y="371" width="346" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #book  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-4f-BaO">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="20"/>
@@ -514,28 +514,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-d9-2cj">
-                                        <rect key="frame" x="61.000000000000007" y="0.0" width="41.666666666666679" height="20"/>
+                                        <rect key="frame" x="61" y="0.0" width="42" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-hQ-00R">
-                                        <rect key="frame" x="106.66666666666669" y="0.0" width="54.333333333333314" height="20"/>
+                                        <rect key="frame" x="107" y="0.0" width="55" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-cX-ZAC">
-                                        <rect key="frame" x="165" y="0.0" width="87.333333333333314" height="20"/>
+                                        <rect key="frame" x="166" y="0.0" width="88" height="20"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEe-3I-hxc" userLabel="#tag5">
-                                        <rect key="frame" x="256.33333333333331" y="0.0" width="87.333333333333371" height="20"/>
+                                        <rect key="frame" x="258" y="0.0" width="88" height="20"/>
                                         <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -647,7 +647,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMP Splash Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="73.333333333333314" y="352" width="269" height="32"/>
+                                <rect key="frame" x="73" y="352" width="269" height="32"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

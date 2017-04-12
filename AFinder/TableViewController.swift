@@ -74,6 +74,9 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         cell.itemDateLabel.text = dateString
         
+        let url = URL(string: allData[indexPath.row].urlImage)
+        cell.itemThumbImageView.kf.setImage(with: url)
+        
         // Stackview
         for subview in cell.itemTagsStackView.subviews
         {
