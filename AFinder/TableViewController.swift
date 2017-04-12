@@ -112,6 +112,11 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             if error == nil {
                 for object in objects!{
                     
+                    if(object["image"] != nil){
+                        let userImageFile = object["image"] as! PFFile
+                        let urlOfImage = userImageFile.url
+                    }
+                    
                     let ownerDataTemp = ownerData(nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String])
                     self.allData.append(ownerDataTemp)
 
