@@ -6,6 +6,7 @@ target 'AFinder' do
   use_frameworks!
 
   # Pods for AFinder
-  pod 'SwiftyJSON'
+  pod 'SwiftyJSON'  
+  pod 'Kingfisher', '~> 3.0'
 
 end

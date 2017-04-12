@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Kingfisher
 
 
 struct ownerData{
@@ -72,6 +73,25 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         cell.itemDateLabel.text = dateString
         
+        for subview in cell.itemTagsStackView.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < allData[indexPath.row].hashtags.count) {
+                    item.isHidden = false
+                    item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                }
+                
+                if(tInt > allData[indexPath.row].hashtags.count){
+                    item.isHidden = true
+                    cell.itemTagsStackView.distribution = .fillEqually
+                }
+                
+            }
+        }
+
         
         // Configure the cell...
         
