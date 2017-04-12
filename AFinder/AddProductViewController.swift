@@ -200,8 +200,18 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         if(imageView.image != nil){
-            let imageData: NSData = UIImageJPEGRepresentation(imageView.image!, 1.0)! as NSData
-            let imageFile: PFFile = PFFile(name:"image.jpg", data:imageData as Data)!
+            var imagedata = UIImagePNGRepresentation(imageView.image!)
+            
+            // Resize the image if it exceeds the 2MB API limit
+            if (imagedata?.count > 2097152) {
+                let oldSize: CGSize = imageView.image!.size
+                let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
+                imagedata = resizeImage(newSize, image: imageView.image!)
+            }
+
+            
+            //let imageData: NSData = UIImageJPEGRepresentation(imagedata, 1.0)! as NSData
+            let imageFile: PFFile = PFFile(name:"image.jpg", data:imagedata as! Data)!
             
             product.setObject(imageFile, forKey: "image")
         }
