@@ -228,13 +228,13 @@
                                 <color key="tintColor" red="0.027264435279187871" green="0.0015297441479668961" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableViewItems" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgt-cC-RIk">
-                                <rect key="frame" x="20" y="117" width="374" height="619"/>
+                                <rect key="frame" x="20" y="117" width="374" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="580" id="1Qb-z3-tu5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="515" id="1Qb-z3-tu5"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="4Ra-gC-6zF"/>
                                     <constraint firstAttribute="width" constant="374" id="Ed5-uk-3ap"/>
-                                    <constraint firstAttribute="height" constant="619" id="cX3-aw-mva"/>
+                                    <constraint firstAttribute="height" constant="515" id="cX3-aw-mva"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewItem" rowHeight="83" id="G0C-L9-P7w" customClass="TableViewCell" customModule="AFinder" customModuleProvider="target">
