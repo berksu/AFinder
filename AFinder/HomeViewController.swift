@@ -49,8 +49,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         if searchedKeyword != nil {
             
-            if(isHashtagSearced){
-                print("silecem")
+            if(isHashtagSearced == true){                
                 //remove annotaitons
                 mapView.removeAnnotations(mapView.annotations)
                 

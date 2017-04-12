@@ -10,6 +10,9 @@
 		14419D271E9B046500F219EB /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D261E9B046500F219EB /* ic_back.png */; };
 		14419D291E9C24B500F219EB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14419D281E9C24B500F219EB /* SplashScreenViewController.swift */; };
 		14419D2B1E9C31FD00F219EB /* ic_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D2A1E9C31FD00F219EB /* ic_logout.png */; };
+		14419D2D1E9E321100F219EB /* ic_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D2C1E9E321100F219EB /* ic_location.png */; };
+		14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14419D2E1E9E401000F219EB /* TableViewController.swift */; };
+		14419D311E9E43AC00F219EB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14419D301E9E43AC00F219EB /* TableViewCell.swift */; };
 		14917E471E943879007EA01F /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */; };
 		14917E541E957547007EA01F /* dotted-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E4D1E957547007EA01F /* dotted-bar.png */; };
 		14917E551E957547007EA01F /* ic_cam_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E4E1E957547007EA01F /* ic_cam_red.png */; };
@@ -42,7 +45,6 @@
 		C95427D31E92D3B60076A578 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427C91E92D3B60076A578 /* Security.framework */; };
 		C95427D41E92D3B60076A578 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CA1E92D3B60076A578 /* StoreKit.framework */; };
 		C95427D51E92D3B60076A578 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */; };
-		C960E3A71E9C67F300331E1E /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C960E3A61E9C67F300331E1E /* location_icon.png */; };
 		C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99637081E82B5D80023A9F7 /* HomeViewController.swift */; };
 		C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */; };
 		C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC81491E81E1D30072672A /* AppDelegate.swift */; };
@@ -55,6 +57,9 @@
 		14419D261E9B046500F219EB /* ic_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back.png; sourceTree = "<group>"; };
 		14419D281E9C24B500F219EB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		14419D2A1E9C31FD00F219EB /* ic_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logout.png; sourceTree = "<group>"; };
+		14419D2C1E9E321100F219EB /* ic_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_location.png; sourceTree = "<group>"; };
+		14419D2E1E9E401000F219EB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		14419D301E9E43AC00F219EB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		14917E4C1E9574B7007EA01F /* geometria-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "geometria-light.otf"; sourceTree = "<group>"; };
 		14917E4D1E957547007EA01F /* dotted-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dotted-bar.png"; path = "Assets.xcassets/Images/dotted-bar.png"; sourceTree = "<group>"; };
 		14917E4E1E957547007EA01F /* ic_cam_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cam_red.png; path = Assets.xcassets/Images/ic_cam_red.png; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		C95427C91E92D3B60076A578 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C95427CA1E92D3B60076A578 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C960E3A61E9C67F300331E1E /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
 		C99637081E82B5D80023A9F7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C9EC81461E81E1D30072672A /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +132,7 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C960E3A61E9C67F300331E1E /* location_icon.png */,
+				14419D2C1E9E321100F219EB /* ic_location.png */,
 				14419D2A1E9C31FD00F219EB /* ic_logout.png */,
 				14419D261E9B046500F219EB /* ic_back.png */,
 				14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */,
@@ -205,6 +209,8 @@
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
 				C9EC81551E81E1D30072672A /* Info.plist */,
 				14419D281E9C24B500F219EB /* SplashScreenViewController.swift */,
+				14419D2E1E9E401000F219EB /* TableViewController.swift */,
+				14419D301E9E43AC00F219EB /* TableViewCell.swift */,
 			);
 			path = AFinder;
 			sourceTree = "<group>";
@@ -283,10 +289,10 @@
 			files = (
 				14917E581E957547007EA01F /* ic_gallery.png in Resources */,
 				14B0B67E1E9799F300CE5C30 /* ic_signin.png in Resources */,
+				14419D2D1E9E321100F219EB /* ic_location.png in Resources */,
 				14917E571E957547007EA01F /* ic_details.png in Resources */,
 				14419D2B1E9C31FD00F219EB /* ic_logout.png in Resources */,
 				14B0B6801E979CFE00CE5C30 /* ic_password.png in Resources */,
-				C960E3A71E9C67F300331E1E /* location_icon.png in Resources */,
 				14917E591E957547007EA01F /* ic_item.png in Resources */,
 				1497D1071E9300630065C698 /* Main.storyboard in Resources */,
 				14B0B6821E979D3A00CE5C30 /* ic_item_header.png in Resources */,
@@ -362,8 +368,10 @@
 				C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */,
 				C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */,
 				14419D291E9C24B500F219EB /* SplashScreenViewController.swift in Sources */,
+				14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */,
 				C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */,
 				C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */,
+				14419D311E9E43AC00F219EB /* TableViewCell.swift in Sources */,
 				C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */,
 				C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */,
 				C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */,
