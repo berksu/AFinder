@@ -22,6 +22,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
     
     var allData = [ownerData!]()
+    var selectedData : ownerData!
     
     @IBOutlet weak var itemsTableView: UITableView!
     
@@ -140,6 +141,21 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         
     }
     
+    // Whenever the user selects a row , open a new viewcontroller
+    // Display item details
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        selectedData = allData[indexPath.row]
+        performSegue(withIdentifier: "segueItemDetails", sender: self)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueItemDetails" {
+            
+        }
+    }
+    
+
     
     /*
     // Override to support conditional editing of the table view.
@@ -173,16 +189,6 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 

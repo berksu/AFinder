@@ -211,7 +211,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
 
             
             //let imageData: NSData = UIImageJPEGRepresentation(imagedata, 1.0)! as NSData
-            let imageFile: PFFile = PFFile(name:"image.jpg", data:imagedata as! Data)!
+            let imageFile: PFFile = PFFile(name:"image.jpg", data:imagedata as! Data!)!
             
             product.setObject(imageFile, forKey: "image")
         }

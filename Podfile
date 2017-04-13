@@ -8,5 +8,7 @@ target 'AFinder' do
   # Pods for AFinder
   pod 'SwiftyJSON'  
   pod 'Kingfisher', '~> 3.0'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+
 
 end
