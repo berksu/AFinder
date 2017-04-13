@@ -12,6 +12,7 @@ import Kingfisher
 
 
 struct ownerData{
+    var objectId:String
     var nameOfProduct:String
     var date:Date
     var hashtags:[String]
@@ -128,7 +129,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                         urlOfImage = userImageFile.url!
                     }
                     
-                    let ownerDataTemp = ownerData(nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], urlImage: urlOfImage)
+                    let ownerDataTemp = ownerData(objectId: object.objectId!, nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], urlImage: urlOfImage)
                     self.allData.append(ownerDataTemp)
 
                 }
@@ -156,6 +157,34 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     }
     
 
+    
+    
+    
+    func removeItemFromParse(objectId: String){
+        let query = PFQuery(className: "Product")
+        query.whereKey("objedtId", equalTo: objectId)
+        
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    object.deleteInBackground(block: { (deleted, error) in
+                        if(deleted){
+                            print("Data Successfully removed")
+                        }else{
+                            print("Error!! Data cannot be removed from database")
+                        }
+                    })
+                    
+                }
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+        
+        
+    }
+    
     
     /*
     // Override to support conditional editing of the table view.

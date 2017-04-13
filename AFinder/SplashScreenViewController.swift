@@ -23,7 +23,7 @@ class SplashScreenViewController: UIViewController {
         
         super.viewDidAppear(animated)
         
-        /*
+        
         
         if(PFUser.current() == nil){
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as UIViewController
@@ -38,7 +38,7 @@ class SplashScreenViewController: UIViewController {
             self.present(viewController, animated: false, completion: nil)
         }
  
- */
+ 
 
     }
 
