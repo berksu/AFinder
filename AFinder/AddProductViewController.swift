@@ -344,6 +344,27 @@ extension AddProductViewController {
                     }
                     print(labelResultsText)
                     self.tagInputField.text = labelResultsText
+                    
+                    // Put hastangs to the tagStackView
+                    self.tagStackView.isHidden = false
+                    self.hashtags = self.separateHashtags(tags: labelResultsText)
+                    
+                    for subview in self.tagStackView.subviews
+                    {
+                        if let item = subview as? UILabel
+                        {
+                            let tInt = (item.tag as? Int)!
+                            
+                            if tInt < self.hashtags.count {
+                                item.isHidden = false
+                                item.text = "#"+self.hashtags[item.tag]+" "
+                            }
+                            
+                        }
+                    }
+
+                    
+                    
                 } else {
                     print("No labels found")
                 }
