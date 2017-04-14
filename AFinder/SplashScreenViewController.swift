@@ -24,7 +24,7 @@ class SplashScreenViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        
+        /*
         if(PFUser.current() == nil){
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as UIViewController
             // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
@@ -37,6 +37,7 @@ class SplashScreenViewController: UIViewController {
             
             self.present(viewController, animated: false, completion: nil)
         }
+ */
  
  
 
