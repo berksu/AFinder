@@ -45,6 +45,10 @@
 		C95427D31E92D3B60076A578 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427C91E92D3B60076A578 /* Security.framework */; };
 		C95427D41E92D3B60076A578 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CA1E92D3B60076A578 /* StoreKit.framework */; };
 		C95427D51E92D3B60076A578 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */; };
+		C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9767BE31EA13EC3008A10BF /* customAnnotation.swift */; };
+		C9767BE61EA140CE008A10BF /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9767BE51EA140CE008A10BF /* AnnotationView.swift */; };
+		C9767BE81EA1436C008A10BF /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9767BE71EA1436C008A10BF /* CustomCalloutView.xib */; };
+		C9767BEF1EA14651008A10BF /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9767BEE1EA14651008A10BF /* CustomCalloutView.swift */; };
 		C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99637081E82B5D80023A9F7 /* HomeViewController.swift */; };
 		C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */; };
 		C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC81491E81E1D30072672A /* AppDelegate.swift */; };
@@ -94,6 +98,10 @@
 		C95427C91E92D3B60076A578 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C95427CA1E92D3B60076A578 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C9767BE31EA13EC3008A10BF /* customAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customAnnotation.swift; sourceTree = "<group>"; };
+		C9767BE51EA140CE008A10BF /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		C9767BE71EA1436C008A10BF /* CustomCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCalloutView.xib; sourceTree = "<group>"; };
+		C9767BEE1EA14651008A10BF /* CustomCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		C99637081E82B5D80023A9F7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C9EC81461E81E1D30072672A /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +179,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9767BED1EA145A7008A10BF /* CustomCalloutView */ = {
+			isa = PBXGroup;
+			children = (
+				C9767BE71EA1436C008A10BF /* CustomCalloutView.xib */,
+				C9767BEE1EA14651008A10BF /* CustomCalloutView.swift */,
+			);
+			name = CustomCalloutView;
+			sourceTree = "<group>";
+		};
 		C9EC813D1E81E1D20072672A = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +215,7 @@
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
 				C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */,
+				C9767BE31EA13EC3008A10BF /* customAnnotation.swift */,
 				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
 				C94FDE011E84217C00252C21 /* ImageViewController.swift */,
 				C91E8B291E957D4B00F67286 /* AddProductViewController.swift */,
@@ -205,8 +223,10 @@
 				1497D1061E9300630065C698 /* Main.storyboard */,
 				C9EC814B1E81E1D30072672A /* ViewController.swift */,
 				C94C12C91E96C7B4004194DB /* LogInViewController.swift */,
+				C9767BED1EA145A7008A10BF /* CustomCalloutView */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
+				C9767BE51EA140CE008A10BF /* AnnotationView.swift */,
 				C9EC81551E81E1D30072672A /* Info.plist */,
 				14419D281E9C24B500F219EB /* SplashScreenViewController.swift */,
 				14419D2E1E9E401000F219EB /* TableViewController.swift */,
@@ -306,6 +326,7 @@
 				C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */,
 				14419D271E9B046500F219EB /* ic_back.png in Resources */,
 				14917E541E957547007EA01F /* dotted-bar.png in Resources */,
+				C9767BE81EA1436C008A10BF /* CustomCalloutView.xib in Resources */,
 				14B0B6861E97E06700CE5C30 /* 1491595053_icons_password.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,9 +388,12 @@
 			files = (
 				C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */,
 				C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */,
+				C9767BEF1EA14651008A10BF /* CustomCalloutView.swift in Sources */,
 				14419D291E9C24B500F219EB /* SplashScreenViewController.swift in Sources */,
+				C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */,
 				14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */,
 				C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */,
+				C9767BE61EA140CE008A10BF /* AnnotationView.swift in Sources */,
 				C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */,
 				14419D311E9E43AC00F219EB /* TableViewCell.swift in Sources */,
 				C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */,

@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
         // Do any additional setup after loading the view.
         //setup mapView
+        
         locationFinderInitialization()
         getProductsFromDatabase()
         
@@ -210,6 +211,69 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     
+    
+    
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation
+        {
+            return nil
+        }
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        if annotationView == nil{
+            annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            annotationView?.canShowCallout = false
+        }else{
+            annotationView?.annotation = annotation
+        }
+        annotationView?.image = UIImage(named: "test")
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
+    {
+        // 1
+        if view.annotation is MKUserLocation
+        {
+            // Don't proceed with custom callout
+            return
+        }
+        // 2
+        let customAnnotation = view.annotation as! customAnnotation
+        let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
+        let calloutView = views?[0] as! CustomCalloutView
+        calloutView.productName.text = customAnnotation.name
+        calloutView.tags.text = customAnnotation.address
+        calloutView.info.text = customAnnotation.phone
+        //calloutView.image.image = customAnnotation.image
+       
+        let button = UIButton(frame: calloutView.tags.frame)
+        button.addTarget(self, action: #selector(HomeViewController.callPhoneNumber(sender:)), for: .touchUpInside)
+        calloutView.addSubview(button)
+        calloutView.image.image = customAnnotation.image
+        // 3
+        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        view.addSubview(calloutView)
+        mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+    }
+    
+    
+    func callPhoneNumber(sender: UIButton)
+    {
+        print("bbbbb")
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        if view.isKind(of: AnnotationView.self)
+        {
+            for subview in view.subviews
+            {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
@@ -248,7 +312,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     //add all lost items on the map
-    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
+    /*func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
         
         //add pin
         let annotation = MKPointAnnotation()
@@ -258,6 +322,18 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         annotation.subtitle = subtitle
         
         mapView.addAnnotation(annotation)
+        
+    }*/
+    
+    
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
+        
+        let point = customAnnotation(coordinate: location)
+        point.image = UIImage(named: "CNN_International_logo_2014")
+        point.name = title
+        point.address = subtitle
+        point.phone = "1111"
+        mapView.addAnnotation(point)
         
     }
 
