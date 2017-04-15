@@ -25,6 +25,9 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     var allData = [ownerData!]()
     var selectedData : ownerData!
     
+    // Spinner before tableview load
+    var indicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var itemsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -41,8 +44,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
-        
-        
+                
         
     }
 

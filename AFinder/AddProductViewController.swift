@@ -147,7 +147,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
                 
                 if tInt < hashtags.count {
                     item.isHidden = false
-                    item.text = hashtags[item.tag]
+                    item.text = " #"+hashtags[item.tag]+" "
                 }
                 
             }
