@@ -195,16 +195,8 @@ class ViewController: UIViewController,UISearchBarDelegate {
         vc.didMove(toParentViewController: self)
     }
     
-    //logout
-    @IBAction func logoutButton(_ sender: Any) {
-        performSegue(withIdentifier: "segueLogOut", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueLogOut"
-        {
-            PFUser.logOut()
-        }
     }
     
 }
