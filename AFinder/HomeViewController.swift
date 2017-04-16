@@ -125,48 +125,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     
-    
-    //test
-    func testToSearchFromLocation(){
-        
-        // Add below code to get address for touch coordinates.
-        let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
-        
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            
-            // Place details
-            var placeMark: CLPlacemark!
-            placeMark = placemarks?[0]
-            
-            // Address dictionary
-            print(placeMark.addressDictionary as Any)
-            
-            // Location name
-            if let locationName = placeMark.addressDictionary!["Name"] as? NSString {
-                print(locationName)
-            }
-            // Street address
-            if let street = placeMark.addressDictionary!["Thoroughfare"] as? NSString {
-                print(street)
-            }
-            // City
-            if let city = placeMark.addressDictionary!["City"] as? NSString {
-                print(city)
-            }
-            // Zip code
-            if let zip = placeMark.addressDictionary!["ZIP"] as? NSString {
-                print(zip)
-            }
-            // Country
-            if let country = placeMark.addressDictionary!["Country"] as? NSString {
-                print(country)
-            }
-        })
-        
-    }
-
-    
 
     //initialize location finder for user
     public func locationFinderInitialization(){

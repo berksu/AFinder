@@ -14,8 +14,10 @@ import Kingfisher
 struct ownerData{
     var objectId:String
     var nameOfProduct:String
+    var information: String
     var date:Date
     var hashtags:[String]
+    var position:CLLocationCoordinate2D
     var urlImage: String
 }
 
@@ -72,11 +74,11 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         
         cell.itemTitleLabel.text = allData[indexPath.row].nameOfProduct
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        let dateString = dateFormatter.string(from: allData[indexPath.row].date)
+        //let dateFormatter = DateFormatter()
+        //dateFormatter.dateFormat = "dd MMM yyyy"
+        //let dateString = dateFormatter.string(from: allData[indexPath.row].date)
 
-        cell.itemDateLabel.text = dateString
+        cell.itemDateLabel.text = dateToString(date: allData[indexPath.row].date)
         
         if(allData[indexPath.row].urlImage != ""){
             let url = URL(string: allData[indexPath.row].urlImage)
@@ -114,6 +116,11 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     }
 
 
+    func dateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: date)
+    }
     
     func getUsersOwnItem(){
         
@@ -131,7 +138,14 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                         urlOfImage = userImageFile.url!
                     }
                     
-                    let ownerDataTemp = ownerData(objectId: object.objectId!, nameOfProduct:object["Product"] as! String, date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], urlImage: urlOfImage)
+                    var itemInfo = ""
+                    if(object["information"] != nil){
+                        itemInfo = object["information"] as! String
+                    }
+                    
+                    
+                    
+                    let ownerDataTemp = ownerData(objectId: object.objectId!, nameOfProduct:object["Product"] as! String, information: itemInfo ,date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude), urlImage: urlOfImage)
                     self.allData.append(ownerDataTemp)
 
                 }
@@ -154,39 +168,13 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueItemDetails" {
-            
+            // Create a new variable to store the instance of PlayerTableViewController
+            let destinationVC = segue.destination as! productDetailsViewController
+            destinationVC.selectedItem = selectedData
         }
     }
     
 
-    
-    
-    
-    func removeItemFromParse(objectId: String){
-        let query = PFQuery(className: "Product")
-        query.whereKey("objedtId", equalTo: objectId)
-        
-        query.findObjectsInBackground { (objects, error) in
-            if error == nil {
-                for object in objects!{
-                    object.deleteInBackground(block: { (deleted, error) in
-                        if(deleted){
-                            print("Data Successfully removed")
-                        }else{
-                            print("Error!! Data cannot be removed from database")
-                        }
-                    })
-                    
-                }
-            }
-            else {
-                print("Error ! Cannot reach database")
-            }
-        }
-        
-        
-    }
-    
     
     /*
     // Override to support conditional editing of the table view.

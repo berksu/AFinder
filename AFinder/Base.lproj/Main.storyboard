@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jmO-qi-lZf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jmO-qi-lZf">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -528,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="837.68115942028987" y="135.32608695652175"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Details View Controller-->
         <scene sceneID="Uh4-oh-cVH">
             <objects>
-                <viewController id="Oz9-FT-DeA" sceneMemberID="viewController">
+                <viewController id="Oz9-FT-DeA" customClass="productDetailsViewController" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H35-zu-XLK"/>
                         <viewControllerLayoutGuide type="bottom" id="c6N-Jl-sdw"/>
@@ -597,6 +597,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="closeButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="yrB-Mo-xCE"/>
                                             <segue destination="EsU-ir-X65" kind="show" id="eRj-TH-jbf"/>
                                         </connections>
                                     </button>
@@ -612,6 +613,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="deleteButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="izs-9E-Bgs"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-Po-4XX">
                                         <rect key="frame" x="8" y="65" width="135" height="15"/>
@@ -746,6 +750,14 @@
                             <constraint firstItem="gnp-WB-iJx" firstAttribute="leading" secondItem="wEl-MX-qxf" secondAttribute="leading" id="zZP-sp-gb0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="8fH-TL-8dB" id="se1-XR-3hd"/>
+                        <outlet property="informationTextField" destination="p72-ci-JQs" id="MRq-A2-n62"/>
+                        <outlet property="itemNameLabel" destination="1Bq-3w-SW8" id="nwU-tv-rTc"/>
+                        <outlet property="mapView" destination="Xic-hz-fqz" id="3ks-7Z-bDN"/>
+                        <outlet property="productImage" destination="Xzh-pu-7j0" id="vDb-h3-MyD"/>
+                        <outlet property="test" destination="2zB-Po-4XX" id="RF4-Sk-H2j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZx-ey-UlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -788,7 +800,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0C-L9-P7w" id="Np7-6P-qNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-4J-efM">
@@ -1231,7 +1243,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="141.33333333333331" y="34" width="132.99999999999994" height="41"/>
+                                <rect key="frame" x="140.66666666666669" y="34" width="133.00000000000006" height="41"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
