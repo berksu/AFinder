@@ -31,6 +31,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
     @IBOutlet weak var newAdImageView: UIImageView!
     let recognizer = UITapGestureRecognizer()
     
+    @IBOutlet weak var bottomView: SpringView!
     var previousIndex : Int = 0
     
     @IBOutlet weak var dividerSpring: SpringImageView!
@@ -78,7 +79,15 @@ class ViewController: UIViewController,UISearchBarDelegate {
         
         UIApplication.shared.isStatusBarHidden = true
         
+        bottomView.layer.borderWidth = 1
+        bottomView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        bottomView.isHidden = false
+        bottomView.animate()
         
     }
     
@@ -194,6 +203,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
         if (selectedIndex == 0)  && (previousIndex != selectedIndex){
             dividerSpring.isHidden = true
             dividerSpringFirst.isHidden = false
+            dividerSpringFirst.delay = 0
             dividerSpringFirst.animation = "slideLeft"
             dividerSpringFirst.animate()
         }

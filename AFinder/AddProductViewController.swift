@@ -11,7 +11,7 @@ import SwiftyJSON
 import Parse
 import CoreLocation
 
-class AddProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tagInputField: UITextField!
@@ -50,6 +50,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         //initializeParseAnonymous()
         
         imagePicker.delegate = self
+        //self.tagInputField.delegate = self
         tagInputField.addTarget(self, action: #selector(AddProductViewController.textFieldDidChange(_:)),
                                 for: UIControlEvents.editingChanged)
         
@@ -89,6 +90,8 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func sendButton(_ sender: UIButton) {
         addProduct(productName: hashtags[0], information: "kutan dayıda demedim mi", hashtags: hashtags)
     }
+    
+    
     
     
     @IBAction func openCamera(_ sender: UIButton) {
@@ -141,6 +144,12 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        self.tagInputField.resignFirstResponder()
+        return false
+    }
+    
     func textFieldDidChange(_ textField: UITextField) {
         hashtags = separateHashtags(tags: textField.text!)
         // bu hastagleri kutan kutu kutu ayıracak
@@ -149,7 +158,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         tagStackView.distribution = .fillProportionally
         onOptionChanged()
         
-        print(hashtags.count)
+        
         
         for subview in tagStackView.subviews
         {
