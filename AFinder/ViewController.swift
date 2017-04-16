@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Spring
 
 class ViewController: UIViewController,UISearchBarDelegate {
 
@@ -32,6 +33,9 @@ class ViewController: UIViewController,UISearchBarDelegate {
     
     var previousIndex : Int = 0
     
+    @IBOutlet weak var dividerSpring: SpringImageView!
+    @IBOutlet weak var dividerSpringFirst: SpringImageView!
+    @IBOutlet weak var dividerFinds: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +74,11 @@ class ViewController: UIViewController,UISearchBarDelegate {
         didPressTab(buttons[selectedIndex])
         // Hide the page title as default
         searchBarController.isHidden = false
-        pageTitleLabel.isHidden = true;
+        pageTitleLabel.isHidden = false;
+        
+        UIApplication.shared.isStatusBarHidden = true
+        
+        
         
     }
     
@@ -150,7 +158,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
         contentView.addSubview(vc.view)
         
         pageTitleLabel.isHidden = false;
-        pageTitleLabel.text = "Finds"
+        //pageTitleLabel.text = "Finds"
         searchBarController.isHidden = true
         
         vc.didMove(toParentViewController: self)
@@ -173,9 +181,32 @@ class ViewController: UIViewController,UISearchBarDelegate {
         //sender.isSelected = true
         let vc = viewControllers[selectedIndex]
         
+        if (selectedIndex == 1)  && (previousIndex != selectedIndex){
+            
+            dividerSpringFirst.isHidden = true
+            dividerSpring.animation = "slideRight"
+            dividerSpring.isHidden = false
+            dividerSpring.animate()
+            //SpringImageView test = dividerFinds as! SpringImageView
+            
+        }
+        
+        if (selectedIndex == 0)  && (previousIndex != selectedIndex){
+            dividerSpring.isHidden = true
+            dividerSpringFirst.isHidden = false
+            dividerSpringFirst.animation = "slideLeft"
+            dividerSpringFirst.animate()
+        }
         
         //buttonDividers[selectedIndex].image = buttonDivierImages[0]
         //buttonDividers[previousIndex].image = buttonDivierImages[1]
+        
+        if selectedIndex == 0{
+            searchBarController.isHidden = false
+        }
+        else{
+            searchBarController.isHidden = true
+        }
         
         addChildViewController(vc)
         
@@ -183,15 +214,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
         contentView.addSubview(vc.view)
         
         
-        if selectedIndex == 0{
-            pageTitleLabel.isHidden = true;
-            searchBarController.isHidden = false
-        }
-        else{
-            pageTitleLabel.isHidden = false;
-            searchBarController.isHidden = true
-        }
-        pageTitleLabel.text = pageTitles[selectedIndex]
+        //pageTitleLabel.text = pageTitles[selectedIndex]
         vc.didMove(toParentViewController: self)
     }
     

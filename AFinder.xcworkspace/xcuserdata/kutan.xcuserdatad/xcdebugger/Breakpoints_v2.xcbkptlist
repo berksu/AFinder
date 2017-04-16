@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFinder/HomeViewController.swift"
-            timestampString = "513684100.795899"
+            timestampString = "513978866.477301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFinder/HomeViewController.swift"
-            timestampString = "513684100.795899"
+            timestampString = "513978866.477301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFinder/HomeViewController.swift"
-            timestampString = "513684100.795899"
+            timestampString = "513978866.477301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,38 +97,22 @@
             endingLineNumber = "39"
             landmarkName = "imageForUrl(urlString:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Spring.ImageLoader.imageForUrl (urlString : Swift.String, completionHandler : (Swift.Optional&lt;__ObjC.UIImage&gt;, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Spring"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "513974995.606021"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Spring.ImageLoader.(imageForUrl (urlString : Swift.String, completionHandler : (Swift.Optional&lt;__ObjC.UIImage&gt;, Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Spring"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "513974995.607885"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AFinder/AddProductViewController.swift"
+            timestampString = "514055295.686908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "addProduct(productName:information:hashtags:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

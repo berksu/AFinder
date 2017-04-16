@@ -23,9 +23,9 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     var latestLocation : CLLocation? = nil
     var hashtags : Array<String> = []
     
-    @IBOutlet weak var cameraOpenImg: UIImageView!
-    let recognizer = UITapGestureRecognizer()
     
+    @IBOutlet weak var tutorialLabel: UILabel!
+    var tutorialLabelTexts: Array<String> = []
     @IBOutlet weak var tagStackView: UIStackView!
     var tagViews : Array<UIView> = []
     
@@ -34,7 +34,14 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
     }
     
+    enum addOptions {
+        case camera
+        case gallery
+        case textField
+    }
     
+    
+    var option = addOptions.textField
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +53,9 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         tagInputField.addTarget(self, action: #selector(AddProductViewController.textFieldDidChange(_:)),
                                 for: UIControlEvents.editingChanged)
         
-        
-        cameraOpenImg.isUserInteractionEnabled = true
-        recognizer.addTarget(self, action: #selector(AddProductViewController.cameraIconTapped))
-        
-        cameraOpenImg.addGestureRecognizer(recognizer)
-        
         // Hide stackview
         hideStackView()
+        self.tagInputField.becomeFirstResponder()
         
     }
     
@@ -74,6 +76,14 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    // Whenever an option is changed
+    // Swap uiviews
+    func onOptionChanged(){
+        
+        tutorialLabel.isHidden = true
+        tagStackView.isHidden = false
+    }
     
     
     @IBAction func sendButton(_ sender: UIButton) {
@@ -136,6 +146,8 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         // bu hastagleri kutan kutu kutu ayıracak
         
         tagStackView.isHidden = false
+        tagStackView.distribution = .fillProportionally
+        onOptionChanged()
         
         print(hashtags.count)
         
@@ -220,6 +232,10 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         product.saveInBackground(block: { (success, error) in
             if (success) {
                 print("saving")
+                OperationQueue.main.addOperation {
+                    [weak self] in
+                    self?.performSegue(withIdentifier: "segueHome", sender: self)
+                }
             }else{
                 print("cannot saving")
                 print(error)
@@ -253,15 +269,14 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     
-    /*
-     // MARK: - Navigation
-     
+    
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "segueHome" {
+            
+        }
      }
-     */
+    
     
 }
 
@@ -385,6 +400,9 @@ extension AddProductViewController {
             // Base64 encode the image and create the request
             let binaryImageData = base64EncodeImage(pickedImage)
             createRequest(with: binaryImageData)
+            tutorialLabel.isHidden = true
+            tagStackView.distribution = .fillEqually
+            
         }
         
         dismiss(animated: true, completion: nil)
