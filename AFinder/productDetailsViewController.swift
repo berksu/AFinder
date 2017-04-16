@@ -53,6 +53,29 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
             //change name for non imaged items
             productImage.image = UIImage(named: "ic_acc.png")
         }
+        
+        
+        
+        // Stackview
+        for subview in test.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < selectedItem.hashtags.count) {
+                    item.isHidden = false
+                    item.text = " #"+selectedItem.hashtags[item.tag] + " "
+                }
+                
+                if(tInt > selectedItem.hashtags.count){
+                    item.isHidden = true
+                    test.distribution = .fillEqually
+                }
+                
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
