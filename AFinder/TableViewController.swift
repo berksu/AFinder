@@ -90,6 +90,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             cell.itemThumbImageView.image = UIImage(named: "ic_acc.png")
         }
         
+        
         // Stackview
         for subview in cell.itemTagsStackView.subviews
         {
