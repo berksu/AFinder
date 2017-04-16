@@ -28,6 +28,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     // Spinner before tableview load
     var indicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var itemsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -44,6 +45,9 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
+        
+        var attr = NSDictionary(object: UIFont(name: "Quicksand-Bold", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
+        self.segmentControl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
                 
         
     }
