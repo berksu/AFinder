@@ -17,7 +17,7 @@ class ProductPublishViewController: UIViewController {
     var pItemNote : String!
     
     @IBOutlet weak var pItemThumbImage: UIImageView!
-    @IBOutlet weak var pNoteTextField: UITextField!
+    
     
     
     @IBAction func pPublishAction(_ sender: Any) {
@@ -32,17 +32,12 @@ class ProductPublishViewController: UIViewController {
 
         //pItemName = pHashtags[0]
         
-        pNoteTextField.addTarget(self, action: #selector(AddProductViewController.textFieldDidChange(_:)),
-                                for: UIControlEvents.editingChanged)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldDidChange(_ textField: UITextField) {
-        pItemNote = textField.text!
     }
     
 
