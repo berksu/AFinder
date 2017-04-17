@@ -715,21 +715,21 @@
                                         <rect key="frame" x="8" y="65" width="135" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #tag1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-Yp-Sq5">
-                                                <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42.333333333333336" height="15"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tag2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDS-yH-Uza">
-                                                <rect key="frame" x="45.666666666666671" y="0.0" width="40.000000000000014" height="15"/>
+                                                <rect key="frame" x="47.333333333333343" y="0.0" width="38.666666666666657" height="15"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #tag3 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-86-cK6">
-                                                <rect key="frame" x="90.666666666666686" y="0.0" width="44.333333333333314" height="15"/>
+                                                <rect key="frame" x="91" y="0.0" width="44" height="15"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -897,21 +897,21 @@
                                                     <rect key="frame" x="91" y="31" width="172" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #tag1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-Sr-LVs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55.333333333333343" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="58" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tag2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEz-HA-Wv4">
-                                                            <rect key="frame" x="58.333333333333343" y="0.0" width="54.333333333333314" height="20"/>
+                                                            <rect key="frame" x="61" y="0.0" width="52.666666666666657" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #tag3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-fe-hRJ">
-                                                            <rect key="frame" x="115.66666666666664" y="0.0" width="56.333333333333357" height="20"/>
+                                                            <rect key="frame" x="116.66666666666664" y="0.0" width="55.333333333333357" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1137,10 +1137,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-oE-oKE">
-                                <rect key="frame" x="35" y="257" width="343.66666666666669" height="16.333333333333314"/>
+                                <rect key="frame" x="35" y="257" width="305" height="16.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #book  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-4f-BaO" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="0.0" width="57" height="16.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51.333333333333329" height="16.333333333333314"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1155,7 +1155,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-d9-2cj" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="61" y="0.0" width="41.666666666666657" height="16.333333333333314"/>
+                                        <rect key="frame" x="55.333333333333329" y="0.0" width="36" height="16.333333333333314"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1170,7 +1170,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-hQ-00R" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="106.66666666666664" y="0.0" width="54.333333333333357" height="16.333333333333314"/>
+                                        <rect key="frame" x="95.333333333333343" y="0.0" width="48.333333333333314" height="16.333333333333314"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1185,7 +1185,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryx-cX-ZAC" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="165" y="0.0" width="87.333333333333314" height="16.333333333333314"/>
+                                        <rect key="frame" x="147.66666666666669" y="0.0" width="76.666666666666657" height="16.333333333333314"/>
                                         <color key="backgroundColor" red="0.93498021364212036" green="0.35012739896774292" blue="0.16352269053459167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1200,7 +1200,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEe-3I-hxc" userLabel="#tag5" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="256.33333333333331" y="0.0" width="87.333333333333371" height="16.333333333333314"/>
+                                        <rect key="frame" x="228.33333333333329" y="0.0" width="76.666666666666714" height="16.333333333333314"/>
                                         <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1709,23 +1709,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-59-7tu">
-                                <rect key="frame" x="20" y="329" width="374" height="52"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="7ot-62-Ywh"/>
-                                    <constraint firstAttribute="width" constant="374" id="8kc-ZR-rU1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="34"/>
-                                <state key="normal" title="PUBLISH">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pPublishAction:" destination="Jrp-yW-iSy" eventType="touchUpInside" id="uYw-Cc-iL5"/>
-                                    <action selector="sendButton:" destination="wBV-pN-B68" eventType="touchUpInside" id="UMw-D3-2fn"/>
-                                    <action selector="sendButton:" destination="8il-FR-as4" eventType="touchUpInside" id="paw-fm-ckl"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREVIEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKZ-GZ-Ve3">
                                 <rect key="frame" x="105" y="44" width="205" height="21"/>
                                 <constraints>
@@ -1829,22 +1812,29 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="place can be good !" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yz8-ON-GkU">
-                                <rect key="frame" x="66" y="265" width="282" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="282" id="Mej-uF-JKN"/>
-                                    <constraint firstAttribute="height" constant="30" id="nBg-Nq-MHZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjW-6m-THR">
                                 <rect key="frame" x="87" y="522" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-59-7tu">
+                                <rect key="frame" x="20" y="358" width="374" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="7ot-62-Ywh"/>
+                                    <constraint firstAttribute="width" constant="374" id="8kc-ZR-rU1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="34"/>
+                                <state key="normal" title="PUBLISH">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pPublishAction:" destination="Jrp-yW-iSy" eventType="touchUpInside" id="uYw-Cc-iL5"/>
+                                    <action selector="sendButton:" destination="wBV-pN-B68" eventType="touchUpInside" id="UMw-D3-2fn"/>
+                                    <action selector="sendButton:" destination="8il-FR-as4" eventType="touchUpInside" id="paw-fm-ckl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDC-ng-Fwz">
-                                <rect key="frame" x="20" y="389" width="374" height="52"/>
+                                <rect key="frame" x="20" y="418" width="374" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Ehw-XK-cio"/>
@@ -1860,14 +1850,24 @@
                                     <action selector="sendButton:" destination="wBV-pN-B68" eventType="touchUpInside" id="PlR-fE-gOV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hZX-yl-tqn">
+                                <rect key="frame" x="20" y="269" width="374" height="59"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="tfE-Ye-can"/>
+                                    <constraint firstAttribute="width" constant="374" id="zEf-Mf-bJw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99952429533004761" green="0.0" blue="0.16857525706291199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lOz-6Y-iub" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" constant="74" id="19h-0G-vjt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yz8-ON-GkU" secondAttribute="trailing" constant="46" id="7aH-t7-FXF"/>
+                            <constraint firstItem="hZX-yl-tqn" firstAttribute="trailing" secondItem="PEJ-wM-r4q" secondAttribute="trailingMargin" id="ABd-O9-JY5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eKZ-GZ-Ve3" secondAttribute="trailing" constant="84" id="EYh-IR-eGC"/>
                             <constraint firstItem="8Nb-Q3-C3Z" firstAttribute="top" secondItem="ua1-PD-Reo" secondAttribute="bottom" constant="20" id="F47-U1-aBY"/>
-                            <constraint firstItem="Yz8-ON-GkU" firstAttribute="top" secondItem="lOz-6Y-iub" secondAttribute="bottom" constant="8" id="Kxc-eV-ZTD"/>
+                            <constraint firstItem="qVC-59-7tu" firstAttribute="top" secondItem="hZX-yl-tqn" secondAttribute="bottom" constant="30" id="FmP-eY-uFX"/>
                             <constraint firstItem="lOz-6Y-iub" firstAttribute="top" secondItem="8Nb-Q3-C3Z" secondAttribute="bottom" constant="10.666666666666657" id="LCg-al-ic3"/>
                             <constraint firstItem="qVC-59-7tu" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" id="LVB-Uy-QOS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lOz-6Y-iub" secondAttribute="trailing" constant="74" id="NY1-9c-fmb"/>
@@ -1876,18 +1876,17 @@
                             <constraint firstItem="kDC-ng-Fwz" firstAttribute="trailing" secondItem="PEJ-wM-r4q" secondAttribute="trailingMargin" id="Xr7-mc-mEc"/>
                             <constraint firstItem="kDC-ng-Fwz" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" id="Xu7-tp-tsG"/>
                             <constraint firstItem="8Nb-Q3-C3Z" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" constant="28" id="euu-Hq-czV"/>
-                            <constraint firstItem="qVC-59-7tu" firstAttribute="top" secondItem="Yz8-ON-GkU" secondAttribute="bottom" constant="34" id="g3X-nS-31k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Nb-Q3-C3Z" secondAttribute="trailing" constant="10" id="gY5-xQ-GX7"/>
-                            <constraint firstItem="Yz8-ON-GkU" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" constant="46" id="iKC-0x-K5Y"/>
+                            <constraint firstItem="hZX-yl-tqn" firstAttribute="top" secondItem="lOz-6Y-iub" secondAttribute="bottom" constant="12" id="hVw-5x-CTg"/>
                             <constraint firstItem="eKZ-GZ-Ve3" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" constant="85" id="lTw-jc-Hlj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ua1-PD-Reo" secondAttribute="leading" constant="-130" id="lam-RQ-yO8"/>
+                            <constraint firstItem="hZX-yl-tqn" firstAttribute="leading" secondItem="PEJ-wM-r4q" secondAttribute="leadingMargin" id="qhS-pt-YwR"/>
                             <constraint firstItem="ua1-PD-Reo" firstAttribute="top" secondItem="eKZ-GZ-Ve3" secondAttribute="bottom" constant="22" id="qjv-fP-0Tp"/>
                             <constraint firstItem="qVC-59-7tu" firstAttribute="trailing" secondItem="PEJ-wM-r4q" secondAttribute="trailingMargin" id="vav-kI-mmL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pItemThumbImage" destination="xjW-6m-THR" id="NTb-AB-AC2"/>
-                        <outlet property="pNoteTextField" destination="Yz8-ON-GkU" id="6nh-bW-GN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bu6-jf-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1907,7 +1906,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="141" y="34" width="133" height="41"/>
+                                <rect key="frame" x="141.33333333333331" y="34" width="132.99999999999994" height="41"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
