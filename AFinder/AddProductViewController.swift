@@ -88,7 +88,9 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
     
     
     @IBAction func sendButton(_ sender: UIButton) {
-        addProduct(productName: hashtags[0], information: "kutan dayıda demedim mi", hashtags: hashtags)
+        //addProduct(productName: hashtags[0], information: "kutan dayıda demedim mi", hashtags: hashtags)
+        
+        performSegue(withIdentifier: "segueLastPhase", sender: self)
     }
     
     
@@ -282,6 +284,10 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueHome" {
+            
+        }
+        
+        if segue.identifier == "segueLastPhase" {
             
         }
      }

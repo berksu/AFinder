@@ -32,6 +32,8 @@
 		14419D701EA39B1B00F219EB /* ic_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D6F1EA39B1B00F219EB /* ic_keyboard.png */; };
 		14419D741EA3F1F400F219EB /* ic_map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D731EA3F1F400F219EB /* ic_map_icon.png */; };
 		14419D761EA3F2CD00F219EB /* ic_finds_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D751EA3F2CD00F219EB /* ic_finds_icon.png */; };
+		14419D781EA42B5900F219EB /* ic_exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D771EA42B5900F219EB /* ic_exit.png */; };
+		14419D7A1EA443FF00F219EB /* ProductPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14419D791EA443FF00F219EB /* ProductPublishViewController.swift */; };
 		14917E471E943879007EA01F /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */; };
 		14917E541E957547007EA01F /* dotted-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E4D1E957547007EA01F /* dotted-bar.png */; };
 		14917E551E957547007EA01F /* ic_cam_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 14917E4E1E957547007EA01F /* ic_cam_red.png */; };
@@ -101,6 +103,8 @@
 		14419D6F1EA39B1B00F219EB /* ic_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard.png; sourceTree = "<group>"; };
 		14419D731EA3F1F400F219EB /* ic_map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_map_icon.png; sourceTree = "<group>"; };
 		14419D751EA3F2CD00F219EB /* ic_finds_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_finds_icon.png; sourceTree = "<group>"; };
+		14419D771EA42B5900F219EB /* ic_exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_exit.png; sourceTree = "<group>"; };
+		14419D791EA443FF00F219EB /* ProductPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPublishViewController.swift; sourceTree = "<group>"; };
 		14917E4C1E9574B7007EA01F /* geometria-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "geometria-light.otf"; sourceTree = "<group>"; };
 		14917E4D1E957547007EA01F /* dotted-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dotted-bar.png"; path = "Assets.xcassets/Images/dotted-bar.png"; sourceTree = "<group>"; };
 		14917E4E1E957547007EA01F /* ic_cam_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cam_red.png; path = Assets.xcassets/Images/ic_cam_red.png; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				14419D771EA42B5900F219EB /* ic_exit.png */,
 				14419D751EA3F2CD00F219EB /* ic_finds_icon.png */,
 				14419D731EA3F1F400F219EB /* ic_map_icon.png */,
 				14419D6F1EA39B1B00F219EB /* ic_keyboard.png */,
@@ -285,6 +290,7 @@
 				14419D2E1E9E401000F219EB /* TableViewController.swift */,
 				14419D301E9E43AC00F219EB /* TableViewCell.swift */,
 				14419D3A1EA103A300F219EB /* SettingsViewController.swift */,
+				14419D791EA443FF00F219EB /* ProductPublishViewController.swift */,
 			);
 			path = AFinder;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				14419D621EA2E42300F219EB /* BebasNeue-Bold.otf in Resources */,
 				14B0B6801E979CFE00CE5C30 /* ic_password.png in Resources */,
 				14419D6C1EA3966F00F219EB /* ic_down_arrow.png in Resources */,
+				14419D781EA42B5900F219EB /* ic_exit.png in Resources */,
 				14419D3D1EA109CE00F219EB /* ic_map_settings.png in Resources */,
 				14917E591E957547007EA01F /* ic_item.png in Resources */,
 				14B0B6821E979D3A00CE5C30 /* ic_item_header.png in Resources */,
@@ -461,6 +468,7 @@
 				C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */,
 				C9767BEF1EA14651008A10BF /* CustomCalloutView.swift in Sources */,
 				14419D291E9C24B500F219EB /* SplashScreenViewController.swift in Sources */,
+				14419D7A1EA443FF00F219EB /* ProductPublishViewController.swift in Sources */,
 				C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */,
 				14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */,
 				C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */,
