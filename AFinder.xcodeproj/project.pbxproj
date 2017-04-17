@@ -63,6 +63,7 @@
 		C95427D31E92D3B60076A578 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427C91E92D3B60076A578 /* Security.framework */; };
 		C95427D41E92D3B60076A578 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CA1E92D3B60076A578 /* StoreKit.framework */; };
 		C95427D51E92D3B60076A578 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */; };
+		C9652DFB1EA446FE00F626C6 /* productDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9652DFA1EA446FE00F626C6 /* productDetailsViewController.swift */; };
 		C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9767BE31EA13EC3008A10BF /* customAnnotation.swift */; };
 		C9767BE61EA140CE008A10BF /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9767BE51EA140CE008A10BF /* AnnotationView.swift */; };
 		C9767BE81EA1436C008A10BF /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9767BE71EA1436C008A10BF /* CustomCalloutView.xib */; };
@@ -134,6 +135,7 @@
 		C95427C91E92D3B60076A578 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C95427CA1E92D3B60076A578 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C95427CB1E92D3B60076A578 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C9652DFA1EA446FE00F626C6 /* productDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDetailsViewController.swift; sourceTree = "<group>"; };
 		C9767BE31EA13EC3008A10BF /* customAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customAnnotation.swift; sourceTree = "<group>"; };
 		C9767BE51EA140CE008A10BF /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		C9767BE71EA1436C008A10BF /* CustomCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCalloutView.xib; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */,
 				C9EC814B1E81E1D30072672A /* ViewController.swift */,
 				C94C12C91E96C7B4004194DB /* LogInViewController.swift */,
+				C9652DFA1EA446FE00F626C6 /* productDetailsViewController.swift */,
 				C9767BED1EA145A7008A10BF /* CustomCalloutView */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
@@ -472,6 +475,7 @@
 				C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */,
 				C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */,
 				14419D3B1EA103A300F219EB /* SettingsViewController.swift in Sources */,
+				C9652DFB1EA446FE00F626C6 /* productDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
