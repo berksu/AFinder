@@ -1857,7 +1857,7 @@
                                     <constraint firstAttribute="height" constant="59" id="tfE-Ye-can"/>
                                     <constraint firstAttribute="width" constant="374" id="zEf-Mf-bJw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
