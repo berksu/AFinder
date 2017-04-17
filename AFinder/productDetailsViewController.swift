@@ -85,7 +85,26 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     
     @IBAction func deleteButton(_ sender: UIButton) {
-        removeItemFromParse(objectId: selectedItem.objectId)
+        //show alert about pinnig
+        let alert = UIAlertController(title:"Do you want to delete this item ?", message: "", preferredStyle : UIAlertControllerStyle.alert)
+        
+        //If user want to pin this point
+        let deleteItem=UIAlertAction(title:"Delete it !",style: UIAlertActionStyle.default){ACTION in
+            //show this point closer
+            //self.centerMapOnLocation(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            //add pin
+            self.removeItemFromParse(objectId: self.selectedItem.objectId)
+        }
+        
+        //If user do not want to pn this point
+        let cancelDelete = UIAlertAction(title:"Cancel",style: UIAlertActionStyle.default){ACTION in
+            //self.locationManager.startUpdatingLocation()
+        }
+        
+        alert.addAction(deleteItem)
+        alert.addAction(cancelDelete)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func closeButton(_ sender: UIButton) {
