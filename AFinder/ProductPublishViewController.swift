@@ -26,8 +26,11 @@ class ProductPublishViewController: UIViewController {
     @IBAction func pPublishAction(_ sender: Any) {
         
         if pItemNote != "" {
-            
+        
         }
+
+
+        addProduct(productName : pItemName, information: "asd", hashtags: pHashtags, location: location)
         
     }
     override func viewDidLoad() {
@@ -79,10 +82,7 @@ class ProductPublishViewController: UIViewController {
         product.saveInBackground(block: { (success, error) in
             if (success) {
                 print("saving")
-                OperationQueue.main.addOperation {
-                    [weak self] in
-                    self?.performSegue(withIdentifier: "segueHome", sender: self)
-                }
+                
             }else{
                 print("cannot saving")
                 print(error)
