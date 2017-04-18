@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import Parse
 
+
 class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     
@@ -36,8 +37,10 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         //setup mapView
         mapView.delegate = self
         
+        
         addAnnotation(location: selectedItem.position, title: selectedItem.nameOfProduct, subtitle: selectedItem.information)
-        testToSearchFromLocation()
+        searchAddressFromLocation()
+        
     }
     
     func initializations(){
@@ -163,7 +166,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     
     //test
-    func testToSearchFromLocation(){
+    func searchAddressFromLocation(){
         
         // Add below code to get address for touch coordinates.
         let geoCoder = CLGeocoder()
@@ -209,6 +212,39 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         })
         
         
+    }
+    
+    
+    
+    func isPointInsideOfRegion(searchedPlace: String, itemLocation: CLLocation, searchedArea: Double){
+        var localSearchRequest:MKLocalSearchRequest!
+        var localSearch:MKLocalSearch!
+
+        //2
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchedPlace
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.start { (localSearchResponse, error) -> Void in
+            
+            if localSearchResponse == nil{
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            let searchedLocation = CLLocation(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
+            
+            print(searchedLocation.distance(from: itemLocation))
+            
+            if(searchedLocation.distance(from: itemLocation) < searchedArea){
+                print("item found")
+            }else{
+                print("item is not here")
+            }
+            
+        }
+    
     }
     
     /*
