@@ -11,6 +11,8 @@ import Parse
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,11 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sliderValue(_ sender: UISlider) {
+        let value = Int (sender.value) * 100
+        distanceLabel.text = "\(value)m"
+        
+    }
 
     @IBAction func logoutAction(_ sender: Any) {
         performSegue(withIdentifier: "segueLogout", sender: self)
