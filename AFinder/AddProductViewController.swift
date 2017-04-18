@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import Parse
 import CoreLocation
 
 class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
@@ -65,10 +64,10 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         // Dispose of any resources that can be recreated.a
     }
     
-    func initializeParseAnonymous(){
-        PFUser.enableAutomaticUser()
-        PFUser.current()?.saveInBackground()
-    }
+    //func initializeParseAnonymous(){
+    //    PFUser.enableAutomaticUser()
+    //    PFUser.current()?.saveInBackground()
+    //}
     
     @IBAction func loadImage(_ sender: UIButton) {
         imagePicker.allowsEditing = false
@@ -202,73 +201,10 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         print(error)
     }
     
-    func getlocation()->PFGeoPoint{
-        return PFGeoPoint(latitude: (locationManager.location?.coordinate.latitude)!, longitude:(locationManager.location?.coordinate.longitude)!)
-    }
-    
-    
-    func addProduct(productName : String, information: String, hashtags: Array<String>){
-        let product = PFObject(className: "Product")
-        
-        product.setObject(productName, forKey: "Product")
-        product.setObject(information, forKey: "information")
-        product.setObject(Date(), forKey: "date")
-        product.setObject(PFUser.current(), forKey: "user")
-        product.setObject(hashtags, forKey: "hashtags")
-        
-        if(latestLocation != nil){
-            product.setObject(PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!), forKey: "location")
-        }else{
-            product.setObject(getlocation(), forKey: "location")
-        }
-        
-        if(imageView.image != nil){
-            var imagedata = UIImagePNGRepresentation(imageView.image!)
-            
-            // Resize the image if it exceeds the 2MB API limit
-            if (imagedata?.count > 2097152) {
-                let oldSize: CGSize = imageView.image!.size
-                let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-                imagedata = resizeImage(newSize, image: imageView.image!)
-            }
 
-            
-            //let imageData: NSData = UIImageJPEGRepresentation(imagedata, 1.0)! as NSData
-            let imageFile: PFFile = PFFile(name:"image.jpg", data:imagedata as! Data!)!
-            
-            product.setObject(imageFile, forKey: "image")
-        }
-        imageView.image = nil
+    
 
-        product.saveInBackground(block: { (success, error) in
-            if (success) {
-                print("saving")
-                OperationQueue.main.addOperation {
-                    [weak self] in
-                    self?.performSegue(withIdentifier: "segueHome", sender: self)
-                }
-            }else{
-                print("cannot saving")
-                print(error)
-            }
-        })
-        
-        
-        
-        /*product["Product"] = productName
-        product["date"] = Date()
-        if(latestLocation != nil){
-            product["location"] = PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!)
-        }else{
-            product["location"] = getlocation()
-        }
-        product["information"] = information
-        product["hashtags"] = hashtags
-        product["user"] = PFUser.current()
-        
-        
-        product.saveInBackground()*/
-    }
+
     
     //Save image
     /*func saveImage(){
@@ -288,7 +224,17 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         }
         
         if segue.identifier == "segueLastPhase" {
+            // Create a new variable to store the instance of PlayerTableViewController
+            let destinationVC = segue.destination as! ProductPublishViewController
+            destinationVC.pItemName = hashtags[0]
+            destinationVC.pHashtags = hashtags
+            destinationVC.productImage = imageView.image
             
+            if(latestLocation != nil){
+                destinationVC.location = latestLocation?.coordinate
+            }else{
+                destinationVC.location = locationManager.location?.coordinate
+            }
         }
      }
     
