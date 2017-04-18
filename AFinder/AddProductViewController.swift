@@ -156,26 +156,35 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         hashtags = separateHashtags(tags: textField.text!)
         // bu hastagleri kutan kutu kutu ayıracak
         
-        tagStackView.isHidden = false
-        tagStackView.distribution = .fillProportionally
-        onOptionChanged()
+        if(hashtags.last?.length > 5){
+            textField.text = textField.text?.substring(to: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-1))!)
+            
+            textField.textColor = UIColor.red
+        }else{
         
+            textField.textColor = UIColor.white
+            
+            tagStackView.isHidden = false
+            tagStackView.distribution = .fillProportionally
+            onOptionChanged()
+            
         
-        
-        for subview in tagStackView.subviews
-        {
-            if let item = subview as? UILabel
+            for subview in tagStackView.subviews
             {
-                let tInt = (item.tag as? Int)!
-                
-                if tInt < hashtags.count {
-                    item.isHidden = false
-                    item.text = " #"+hashtags[item.tag]+" "
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if tInt < hashtags.count {
+                        item.isHidden = false
+                        item.text = " #"+hashtags[item.tag]+" "
+                    }
+                    
                 }
-                
             }
+            
         }
-
+        
     }
     
     
