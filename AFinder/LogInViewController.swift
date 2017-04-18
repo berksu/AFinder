@@ -61,7 +61,9 @@ class LogInViewController: UIViewController {
                 
                 self.present(viewController, animated: false, completion: nil)
             }else{
+                // Invalid login fields
                 print("log in problems :(")
+                
                 print(error!)
             }
         }
