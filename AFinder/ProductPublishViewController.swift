@@ -9,14 +9,16 @@
 import UIKit
 import Parse
 
-class ProductPublishViewController: UIViewController {
+class ProductPublishViewController: UIViewController,UITextViewDelegate {
 
     var pHashtags : Array<String> = []
     var pItemName : String!
-    var pItemNote : String!
-    
     var productImage: UIImage!
     var location: CLLocationCoordinate2D!
+    
+    var isTextFieldEditted = false
+    
+    
     
     @IBOutlet weak var informationAboutProduct: UITextView!
     
@@ -25,20 +27,23 @@ class ProductPublishViewController: UIViewController {
     
     
     @IBAction func pPublishAction(_ sender: Any) {
-        
-        if pItemNote != "" {
-        
+        print(pHashtags)
+        if isTextFieldEditted {
+            addProduct(productName : pItemName, information: "", hashtags: pHashtags, location: location)
+        }else{
+            addProduct(productName : pItemName, information: informationAboutProduct.text , hashtags: pHashtags, location: location)
         }
 
-
-        addProduct(productName : pItemName, information: "asd", hashtags: pHashtags, location: location)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         //pItemName = pHashtags[0]
+        informationAboutProduct.delegate = self
+        informationAboutProduct.text = "Give additional information about item. For example : I gave this phone to starbucks :)"
+        informationAboutProduct.textColor = UIColor.lightGray
+        
         pItemThumbImage.image = productImage
 
     }
@@ -48,6 +53,25 @@ class ProductPublishViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if informationAboutProduct.textColor == UIColor.lightGray {
+            informationAboutProduct.text = ""
+            informationAboutProduct.textColor = UIColor.black
+            isTextFieldEditted = true
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if informationAboutProduct.text == "" {
+            
+            informationAboutProduct.text = "Give additional information about item. For example : I gave this phone to starbucks :)"
+            informationAboutProduct.textColor = UIColor.lightGray
+             isTextFieldEditted = false
+        }
+    }
     
     
     func addProduct(productName : String, information: String, hashtags: Array<String>, location: CLLocationCoordinate2D){
