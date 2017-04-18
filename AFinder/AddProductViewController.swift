@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import CoreLocation
 
+
 class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -17,6 +18,7 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
     
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
+    let maxWordLength = 5
     
     var locationManager = CLLocationManager()
     var latestLocation : CLLocation? = nil
@@ -156,10 +158,31 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         hashtags = separateHashtags(tags: textField.text!)
         // bu hastagleri kutan kutu kutu ayıracak
         
+    
         if(hashtags.last?.length > 5){
             textField.text = textField.text?.substring(to: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-1))!)
             
-            textField.textColor = UIColor.red
+            var lastWord = textField.text?.substring(from: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-5))!)
+            
+            //textField.textColor = UIColor.red
+            // Over max length
+            let nsString = textField.text as! NSString
+            
+            let stringLength = textField.text?.characters.count
+            // Arbitrarily check if the string in the text field is not empty
+            // Apply your own logic for when to update the string
+            if stringLength > 0{
+                
+                let text = NSMutableAttributedString(string: textField.text!)
+                // Currently the range is assumed to be the whole text (the range covers the whole string)
+                // You'll have to apply your own logic here
+                //text.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSMakeRange(0,1))
+                print((textField.text?.length)!-4)
+                text.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSMakeRange((textField.text?.length)!-maxWordLength,maxWordLength))
+                textField.attributedText = text
+            
+            }
+            
         }else{
         
             textField.textColor = UIColor.white
