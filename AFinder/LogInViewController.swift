@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Spring
 
 class LogInViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var resendPasswordEmail: UITextField!
+    
+    @IBOutlet weak var usernameLabel: SpringLabel!
+    @IBOutlet weak var passwordLabel: SpringLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class LogInViewController: UIViewController {
         //signUp(userName: "berksuK", password: "asd", email: "berksukismet@gmail.com")
         
         //turn off the keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         
@@ -62,15 +66,41 @@ class LogInViewController: UIViewController {
                 self.present(viewController, animated: false, completion: nil)
             }else{
                 // Invalid login fields
+                self.wrongInputFields()
                 print("log in problems :(")
+                
                 
                 print(error!)
             }
         }
     }
     
+    func wrongInputFields(){
+        usernameLabel.textColor = UIColor.red
+        usernameLabel.animation = "fadeOut"
+        usernameLabel.duration = 0.5
+        usernameLabel.animate()
+        
+        usernameLabel.animateNext {
+            self.usernameLabel.animation = "fadeIn"
+            self.usernameLabel.animate()
+        }
+        
+        passwordLabel.textColor = UIColor.red
+        passwordLabel.animation = "fadeOut"
+        passwordLabel.duration = 0.5
+        passwordLabel.animate()
+        
+        passwordLabel.animateNext {
+            self.passwordLabel.animation = "fadeIn"
+            self.passwordLabel.animate()
+        }
+
+    }
+    
+    
     //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
+    override func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
