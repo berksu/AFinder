@@ -10,10 +10,19 @@ import UIKit
 import Parse
 import Spring
 
+
+// Check if we have an update
+// Adding item , removing item
+// Other ops.
+var haveNotification : Bool = false
+
 class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     
+    
+    @IBOutlet weak var singleNotificationView: SpringView!
+    @IBOutlet weak var notificationView: SpringView!
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var searchBarController: UISearchBar!
@@ -38,6 +47,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     @IBOutlet weak var dividerSpring: SpringImageView!
     @IBOutlet weak var dividerSpringFirst: SpringImageView!
     @IBOutlet weak var dividerFinds: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +64,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         //view.addGestureRecognizer(tap)
         
+       
         newAdImageView.isUserInteractionEnabled = true
         recognizer.addTarget(self, action: #selector(ViewController.profileImageHasBeenTapped))
         
@@ -79,6 +91,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         // Hide the page title as default
         searchBarController.isHidden = false
         pageTitleLabel.isHidden = false;
+        notificationView.isHidden = true
         
         UIApplication.shared.isStatusBarHidden = true
         
@@ -86,6 +99,47 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         bottomView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if haveNotification {
+            displayNotification()
+        }
+        
+    }
+    
+    public func displayNotification(){
+        singleNotificationView.animation = "slideRight"
+        singleNotificationView.delay = 0.5
+        singleNotificationView.duration = 1.5
+        singleNotificationView.isHidden = false
+        singleNotificationView.animate()
+        
+        singleNotificationView.animateNext {
+            self.singleNotificationView.delay = 1.5
+            self.singleNotificationView.animation = "fadeOut"
+            self.singleNotificationView.animate()
+        }
+    }
+    
+    @IBAction func notificationButtonPressed(_ sender: Any) {
+        
+        
+        notificationView.animation = "slideDown"
+        notificationView.duration = 1
+        notificationView.isHidden = false
+        notificationView.curve = "linear"
+        notificationView.animate()
+        notificationView.alpha = 0.7
+    }
+    
+    @IBAction func closeNotificationButton(_ sender: Any) {
+                
+        notificationView.animation = "fadeOut"
+        notificationView.duration = 1
+        notificationView.isHidden = false
+        notificationView.curve = "linear"
+        notificationView.animate()        
     }
     
     override func viewDidAppear(_ animated: Bool) {

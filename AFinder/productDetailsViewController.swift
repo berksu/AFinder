@@ -123,7 +123,12 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 object?.deleteInBackground(block: { (deleted, error) in
                     if(deleted){
                         print("Data Successfully removed")
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        
+                        // we have a notification (single)
+                        // pop it
+                        haveNotification = true
+                        
                         self.present(viewController, animated: false, completion: nil)
                     }else{
                         print("Error!! Data cannot be removed from database")

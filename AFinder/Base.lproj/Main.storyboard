@@ -308,7 +308,7 @@
                                 <rect key="frame" x="0.0" y="81" width="414" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAZ-BG-e1i">
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAZ-BG-e1i" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="81" width="414" height="227"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYP-pq-NdQ">
@@ -371,23 +371,38 @@
                                             <outlet property="delegate" destination="EsU-ir-X65" id="90e-Do-Wlb"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlM-lo-AZO">
+                                        <rect key="frame" x="184" y="189" width="46" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="OHK-XI-mTF"/>
+                                            <constraint firstAttribute="width" constant="46" id="tZF-Vf-rBO"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_up_arrow.png"/>
+                                        <connections>
+                                            <action selector="closeNotificationButton:" destination="EsU-ir-X65" eventType="touchUpInside" id="RHN-Nd-hni"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HYP-pq-NdQ" firstAttribute="leading" secondItem="YAZ-BG-e1i" secondAttribute="leading" constant="159" id="48w-Z4-zKn"/>
+                                    <constraint firstAttribute="trailing" secondItem="PlM-lo-AZO" secondAttribute="trailing" constant="184" id="I17-JC-Kh5"/>
+                                    <constraint firstItem="PlM-lo-AZO" firstAttribute="top" secondItem="L0u-Wt-AhS" secondAttribute="bottom" constant="-1" id="I78-4f-sM6"/>
+                                    <constraint firstAttribute="bottom" secondItem="PlM-lo-AZO" secondAttribute="bottom" constant="4" id="NIe-Ci-xvZ"/>
                                     <constraint firstAttribute="trailing" secondItem="HYP-pq-NdQ" secondAttribute="trailing" constant="158" id="NVh-Iq-2F5"/>
                                     <constraint firstItem="HYP-pq-NdQ" firstAttribute="top" secondItem="YAZ-BG-e1i" secondAttribute="top" constant="8" id="WLb-V2-nBh"/>
                                     <constraint firstAttribute="width" constant="414" id="ZGd-9V-6F1"/>
                                     <constraint firstItem="L0u-Wt-AhS" firstAttribute="leading" secondItem="YAZ-BG-e1i" secondAttribute="leading" constant="8" id="aRI-0o-sdX"/>
                                     <constraint firstAttribute="trailing" secondItem="L0u-Wt-AhS" secondAttribute="trailing" constant="8" id="bWJ-v8-g8n"/>
+                                    <constraint firstItem="PlM-lo-AZO" firstAttribute="leading" secondItem="YAZ-BG-e1i" secondAttribute="leading" constant="184" id="huJ-86-fwC"/>
                                     <constraint firstItem="L0u-Wt-AhS" firstAttribute="top" secondItem="HYP-pq-NdQ" secondAttribute="bottom" constant="8" id="jDB-pD-Cmi"/>
                                     <constraint firstAttribute="height" constant="227" id="wv2-SP-IXF"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="551-se-quM">
+                            <view hidden="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="551-se-quM" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="345" width="414" height="46"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Cm-RhP">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Cm-RhP">
                                         <rect key="frame" x="0.0" y="6" width="58" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="58" id="13a-3K-0T4"/>
@@ -634,6 +649,17 @@
                                 </constraints>
                                 <state key="normal" image="ic_exit.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-6t-dcN">
+                                <rect key="frame" x="356" y="10" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="Cvj-vm-a8P"/>
+                                    <constraint firstAttribute="height" constant="17" id="aix-mA-rHD"/>
+                                </constraints>
+                                <state key="normal" image="ic_not.png"/>
+                                <connections>
+                                    <action selector="notificationButtonPressed:" destination="EsU-ir-X65" eventType="touchUpInside" id="QeD-AP-O6t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -646,6 +672,7 @@
                             <constraint firstItem="gvb-5s-Yo0" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" constant="10" id="4TJ-ca-HgW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="117" id="5L1-DJ-yFO"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" id="7rv-Zi-5rJ"/>
+                            <constraint firstItem="gvb-5s-Yo0" firstAttribute="leading" secondItem="bwE-6t-dcN" secondAttribute="trailing" constant="17" id="AkI-f1-dDN"/>
                             <constraint firstItem="TrF-YW-26A" firstAttribute="top" secondItem="QwT-jl-Keg" secondAttribute="top" constant="677" id="B6C-VA-11w"/>
                             <constraint firstItem="Avn-2V-TFy" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="-16" id="Cx4-fJ-5LZ"/>
                             <constraint firstItem="TrF-YW-26A" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="140" id="DfO-vv-yEG"/>
@@ -653,9 +680,11 @@
                             <constraint firstItem="Zna-gQ-JKy" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="226" id="HE9-V1-7eL"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
                             <constraint firstItem="gvb-5s-Yo0" firstAttribute="leading" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="113" id="NSV-kP-hyL"/>
+                            <constraint firstItem="bwE-6t-dcN" firstAttribute="leading" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="79" id="ORi-jV-6fb"/>
                             <constraint firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="-418" id="Ojf-zx-ek2"/>
                             <constraint firstAttribute="trailing" secondItem="gvb-5s-Yo0" secondAttribute="trailing" constant="7" id="QhY-qE-s3X"/>
                             <constraint firstAttribute="trailing" secondItem="YAZ-BG-e1i" secondAttribute="trailing" id="R2n-E7-6s7"/>
+                            <constraint firstItem="bwE-6t-dcN" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" constant="10" id="YuC-DS-10W"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="gVy-XP-eo7" secondAttribute="bottom" id="a5S-Bn-EgF"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" id="dEA-Qg-rwJ"/>
                             <constraint firstItem="2Js-GN-i4e" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="118" id="f6h-yg-NqW"/>
@@ -683,9 +712,11 @@
                         <outlet property="dividerSpring" destination="pk6-oc-sh8" id="j31-4r-ufb"/>
                         <outlet property="dividerSpringFirst" destination="uRQ-yD-Bgm" id="LEt-cH-dyn"/>
                         <outlet property="newAdImageView" destination="TrF-YW-26A" id="CXb-gP-Z4n"/>
+                        <outlet property="notificationView" destination="YAZ-BG-e1i" id="HlB-zs-StS"/>
                         <outlet property="notificationsTableView" destination="L0u-Wt-AhS" id="5ls-H1-t9b"/>
                         <outlet property="pageTitleLabel" destination="2Js-GN-i4e" id="ii2-2P-4dj"/>
                         <outlet property="searchBarController" destination="k7M-Sm-TBJ" id="e2u-EY-tJh"/>
+                        <outlet property="singleNotificationView" destination="551-se-quM" id="Bh2-4C-eId"/>
                         <outletCollection property="buttons" destination="y6p-Vu-1NO" collectionClass="NSMutableArray" id="BYZ-fV-u6i"/>
                         <outletCollection property="buttons" destination="MfT-Ao-iB0" collectionClass="NSMutableArray" id="nrB-Fu-hOn"/>
                     </connections>
@@ -1676,7 +1707,7 @@
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LBf-Nq-Lev">
                                         <rect key="frame" x="16" y="14.666666666666657" width="342" height="16.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #book  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zST-Og-Cfi" customClass="SpringLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" #book  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zST-Og-Cfi" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="0.0" width="55.333333333333329" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -1691,7 +1722,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmw-GR-Blm" customClass="SpringLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmw-GR-Blm" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="59.333333333333321" y="0.0" width="41.666666666666679" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -1706,7 +1737,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0T-we-ACo" customClass="SpringLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0T-we-ACo" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="105.00000000000001" y="0.0" width="54.333333333333357" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -1721,7 +1752,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-i6-mcf" customClass="SpringLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-i6-mcf" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="163.33333333333331" y="0.0" width="87.333333333333343" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -1736,7 +1767,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-bA-Xco" userLabel="#tag5" customClass="SpringLabel" customModule="Spring">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-bA-Xco" userLabel="#tag5" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="87.333333333333286" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -3273,6 +3304,8 @@
         <image name="ic_location.png" width="128" height="128"/>
         <image name="ic_map_icon.png" width="128" height="128"/>
         <image name="ic_map_settings.png" width="128" height="128"/>
+        <image name="ic_not.png" width="64" height="64"/>
+        <image name="ic_up_arrow.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eRj-TH-jbf"/>

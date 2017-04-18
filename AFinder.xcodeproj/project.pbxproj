@@ -10,6 +10,7 @@
 		14272A1A1EA6379400F5C609 /* ic_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 14272A191EA6379400F5C609 /* ic_check.png */; };
 		14272A1C1EA63B5600F5C609 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */; };
 		14272A1E1EA63BFA00F5C609 /* ic_not.png in Resources */ = {isa = PBXBuildFile; fileRef = 14272A1D1EA63BFA00F5C609 /* ic_not.png */; };
+		14272A201EA63E6C00F5C609 /* ic_up_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14272A1F1EA63E6C00F5C609 /* ic_up_arrow.png */; };
 		14419D271E9B046500F219EB /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D261E9B046500F219EB /* ic_back.png */; };
 		14419D291E9C24B500F219EB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14419D281E9C24B500F219EB /* SplashScreenViewController.swift */; };
 		14419D2B1E9C31FD00F219EB /* ic_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 14419D2A1E9C31FD00F219EB /* ic_logout.png */; };
@@ -84,6 +85,7 @@
 		14272A191EA6379400F5C609 /* ic_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_check.png; sourceTree = "<group>"; };
 		14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		14272A1D1EA63BFA00F5C609 /* ic_not.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_not.png; sourceTree = "<group>"; };
+		14272A1F1EA63E6C00F5C609 /* ic_up_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_up_arrow.png; sourceTree = "<group>"; };
 		14419D261E9B046500F219EB /* ic_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back.png; sourceTree = "<group>"; };
 		14419D281E9C24B500F219EB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		14419D2A1E9C31FD00F219EB /* ic_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logout.png; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				14272A1F1EA63E6C00F5C609 /* ic_up_arrow.png */,
 				14272A1D1EA63BFA00F5C609 /* ic_not.png */,
 				14272A191EA6379400F5C609 /* ic_check.png */,
 				14419D771EA42B5900F219EB /* ic_exit.png */,
@@ -400,6 +403,7 @@
 				14419D4E1EA1763900F219EB /* Main.storyboard in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,
 				14917E551E957547007EA01F /* ic_cam_red.png in Resources */,
+				14272A201EA63E6C00F5C609 /* ic_up_arrow.png in Resources */,
 				14419D761EA3F2CD00F219EB /* ic_finds_icon.png in Resources */,
 				14272A1E1EA63BFA00F5C609 /* ic_not.png in Resources */,
 				14917E5A1E957547007EA01F /* ic_rounded_rect.png in Resources */,
