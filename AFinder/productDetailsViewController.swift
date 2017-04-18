@@ -69,9 +69,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 if (tInt < selectedItem.hashtags.count) {
                     item.isHidden = false
                     item.text = " #"+selectedItem.hashtags[item.tag] + " "
-                }
-                
-                if(tInt > selectedItem.hashtags.count){
+                }                
+                else{
                     item.isHidden = true
                     test.distribution = .fillEqually
                 }
