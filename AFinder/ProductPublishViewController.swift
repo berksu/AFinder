@@ -18,6 +18,7 @@ class ProductPublishViewController: UIViewController {
     var productImage: UIImage!
     var location: CLLocationCoordinate2D!
     
+    @IBOutlet weak var informationAboutProduct: UITextView!
     
     @IBOutlet weak var pItemThumbImage: UIImageView!
     
