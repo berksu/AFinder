@@ -106,7 +106,7 @@
                   moduleName = "Spring"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "514237872.545669"
+                  timestampString = "514239084.391168"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
@@ -121,7 +121,7 @@
                   moduleName = "Spring"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "514237872.547498"
+                  timestampString = "514239084.393056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
@@ -142,9 +142,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "addProduct(productName:information:hashtags:)"
-            landmarkType = "7">
+            endingLineNumber = "245">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -82,6 +82,7 @@ class ProductPublishViewController: UIViewController {
         product.saveInBackground(block: { (success, error) in
             if (success) {
                 print("saving")
+                self.performSegue(withIdentifier: "segueHome", sender: self)
                 
             }else{
                 print("cannot saving")
