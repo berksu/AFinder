@@ -92,7 +92,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             cell.itemThumbImageView.image = UIImage(named: "ic_acc.png")
         }
         
-        
+        //print("hastags count \(allData[indexPath.row].hashtags.count)")
         // Stackview
         for subview in cell.itemTagsStackView.subviews
         {
@@ -104,8 +104,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                     item.isHidden = false
                     item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
                 }
-                
-                if(tInt > allData[indexPath.row].hashtags.count){
+                else{
                     item.isHidden = true
                     cell.itemTagsStackView.distribution = .fillEqually
                 }

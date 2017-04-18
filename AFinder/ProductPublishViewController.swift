@@ -24,6 +24,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var pItemThumbImage: UIImageView!
     
+    @IBOutlet weak var tagStackView: UIStackView!
     
     
     @IBAction func pPublishAction(_ sender: Any) {
@@ -45,8 +46,29 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
         informationAboutProduct.textColor = UIColor.lightGray
         
         pItemThumbImage.image = productImage
+        
+        // Stackview
+        for subview in tagStackView.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < pHashtags.count) {
+                    item.isHidden = false
+                    item.text = " #"+pHashtags[item.tag] + " "
+                }
+                else{
+                    item.isHidden = true
+                    tagStackView.distribution = .fillEqually
+                }
+                
+            }
+        }
+        
 
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
