@@ -89,6 +89,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func saveButton(_ sender: Any) {
         
+        parseUpdateInformation(objectId: selectedItem.objectId)
+        
         informationTextField.animation = "fadeOut"
         informationTextField.duration = 1
         informationTextField.animate()
@@ -101,8 +103,26 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
             self.informationTextField.animate()
         }
         
-        
+        saveButton.animation = "fadeOut"
+        saveButton.duration = 1
+        saveButton.isHidden = true
+        saveButton.animate()
+
     }
+    
+    
+    func parseUpdateInformation(objectId: String){
+        var query = PFQuery(className:"Product")
+        query.getObjectInBackground(withId: objectId) { (product, error) -> Void in
+            if error != nil {
+                print(error)
+            } else if let product = product {
+                product["information"] = self.informationTextField.text
+                product.saveInBackground()
+            }
+        }
+    }
+    
     
     @IBAction func editButton(_ sender: Any) {
         
