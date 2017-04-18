@@ -9,16 +9,20 @@
 import UIKit
 import MapKit
 import Parse
+import Spring
 
 
 class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     
+    @IBOutlet weak var saveButton: SpringButton!
+    
+    
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var informationTextField: UITextView!
+    @IBOutlet weak var informationTextField: SpringTextView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
-    
+    @IBOutlet weak var locationTextField: SpringTextView!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -41,13 +45,16 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         addAnnotation(location: selectedItem.position, title: selectedItem.nameOfProduct, subtitle: selectedItem.information)
         searchAddressFromLocation()
         
+        // Initial values
+        saveButton.isHidden = true
+        
     }
     
     func initializations(){
         
         itemNameLabel.text = selectedItem.nameOfProduct
         dateLabel.text = dateToString(date: selectedItem.date)
-        
+        informationTextField.text = selectedItem.information
         
         if(selectedItem.urlImage != ""){
             let url = URL(string: selectedItem.urlImage)
@@ -69,7 +76,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 if (tInt < selectedItem.hashtags.count) {
                     item.isHidden = false
                     item.text = " #"+selectedItem.hashtags[item.tag] + " "
-                }                
+                }
                 else{
                     item.isHidden = true
                     test.distribution = .fillEqually
@@ -80,6 +87,36 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+        
+        informationTextField.animation = "fadeOut"
+        informationTextField.duration = 1
+        informationTextField.animate()
+        
+        informationTextField.animateNext {
+            self.informationTextField.animation = "fadeIn"
+            self.informationTextField.duration = 1
+            self.informationTextField.textColor = UIColor.black
+            self.informationTextField.backgroundColor = UIColor.white
+            self.informationTextField.animate()
+        }
+        
+        
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        
+        informationTextField.isEditable = true
+        informationTextField.textColor = UIColor.white
+        informationTextField.backgroundColor = UIColor.black
+        
+        saveButton.animation = "fadeIn"
+        saveButton.duration = 1
+        saveButton.isHidden = false
+        saveButton.animate()
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -207,7 +244,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 }
                 print("adres")
                 print(address)
-                self.informationTextField.text = address
+                self.locationTextField.text = address
                 
             }else{
                 self.informationTextField.text = "Address cannot be found !"

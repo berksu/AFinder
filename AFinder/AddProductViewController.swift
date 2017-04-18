@@ -229,7 +229,7 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
             let destinationVC = segue.destination as! ProductPublishViewController
             destinationVC.pItemName = hashtags[0]
             destinationVC.pHashtags = hashtags
-            destinationVC.productImage = imageView.image
+            destinationVC.productImage = imageView.image            
             
             if(latestLocation != nil){
                 destinationVC.location = latestLocation?.coordinate
