@@ -115,7 +115,6 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     
     func removeItemFromParse(objectId: String){
-        print("girdiiii")
         let query = PFQuery(className: "Product")
         
         query.getObjectInBackground(withId: objectId) { (object, error) in
@@ -124,6 +123,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 object?.deleteInBackground(block: { (deleted, error) in
                     if(deleted){
                         print("Data Successfully removed")
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
+                        self.present(viewController, animated: false, completion: nil)
                     }else{
                         print("Error!! Data cannot be removed from database")
                     }
@@ -247,14 +248,12 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     }
     
-    /*
-     // MARK: - Navigation
-     
+    
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
-     */
+    
     
 }

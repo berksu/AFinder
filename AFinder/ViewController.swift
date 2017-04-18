@@ -10,10 +10,11 @@ import UIKit
 import Parse
 import Spring
 
-class ViewController: UIViewController,UISearchBarDelegate {
+class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var searchBarController: UISearchBar!
     @IBOutlet var buttons : [UIButton]!
@@ -41,6 +42,8 @@ class ViewController: UIViewController,UISearchBarDelegate {
         super.viewDidLoad()
         
         searchBarController.delegate = self
+        notificationsTableView.delegate = self
+        notificationsTableView.dataSource = self
         
         //Looks for single or multiple taps.
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -227,6 +230,25 @@ class ViewController: UIViewController,UISearchBarDelegate {
         //pageTitleLabel.text = pageTitles[selectedIndex]
         vc.didMove(toParentViewController: self)
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 3
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
+        // Configure the cell...
+        
+        return cell
+    }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
