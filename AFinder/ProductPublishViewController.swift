@@ -30,6 +30,7 @@ class ProductPublishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         //pItemName = pHashtags[0]
         
 

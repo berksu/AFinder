@@ -21,6 +21,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     @IBOutlet weak var contentView: UIView!
     
     
+    
+    @IBOutlet weak var notificationIcon: SpringButton!
     @IBOutlet weak var singleNotificationView: SpringView!
     @IBOutlet weak var notificationView: SpringView!
     @IBOutlet weak var notificationsTableView: UITableView!
@@ -104,6 +106,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     override func viewWillAppear(_ animated: Bool) {
         if haveNotification {
             displayNotification()
+            onNotificationReceived()
         }
         
     }
@@ -122,6 +125,20 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         }
     }
     
+    func onNotificationReceived(){
+        
+        notificationIcon.repeatCount = 3
+        notificationIcon.animation = "fadeOut"
+        notificationIcon.duration = 1.5
+        notificationIcon.animate()
+        
+        notificationIcon.animateNext {
+            self.notificationIcon.animation = "fadeIn"
+            self.notificationIcon.duration = 1.5
+            self.notificationIcon.animate()
+        }
+    }
+    
     @IBAction func notificationButtonPressed(_ sender: Any) {
         
         
@@ -130,7 +147,15 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         notificationView.isHidden = false
         notificationView.curve = "linear"
         notificationView.animate()
-        notificationView.alpha = 0.7
+        
+        if selectedIndex == 0{
+            notificationView.alpha = 0.7
+        }
+        else {
+            notificationView.alpha = 1
+        }
+        
+        
     }
     
     @IBAction func closeNotificationButton(_ sender: Any) {
@@ -207,6 +232,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         print("asd")
         let previousVC = viewControllers[selectedIndex]
         
+        notificationView.alpha = 1
+        
         previousVC.willMove(toParentViewController: nil)
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParentViewController()
@@ -249,6 +276,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         if (selectedIndex == 1)  && (previousIndex != selectedIndex){
             
+            notificationView.alpha = 1
             dividerSpringFirst.isHidden = true
             dividerSpring.animation = "slideRight"
             dividerSpring.isHidden = false
@@ -259,6 +287,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         if (selectedIndex == 0)  && (previousIndex != selectedIndex){
             dividerSpring.isHidden = true
+            notificationView.alpha = 0.75
             dividerSpringFirst.isHidden = false
             dividerSpringFirst.delay = 0
             dividerSpringFirst.animation = "slideLeft"
