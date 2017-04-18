@@ -9,12 +9,15 @@
 import UIKit
 import Parse
 
-
 class ProductPublishViewController: UIViewController {
 
     var pHashtags : Array<String> = []
     var pItemName : String!
     var pItemNote : String!
+    
+    var productImage: UIImage!
+    var location: CLLocationCoordinate2D!
+    
     
     @IBOutlet weak var pItemThumbImage: UIImageView!
     
@@ -31,7 +34,7 @@ class ProductPublishViewController: UIViewController {
         super.viewDidLoad()
 
         //pItemName = pHashtags[0]
-        
+        pItemThumbImage.image = productImage
 
     }
 
@@ -40,6 +43,81 @@ class ProductPublishViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    func addProduct(productName : String, information: String, hashtags: Array<String>, location: CLLocationCoordinate2D){
+        let product = PFObject(className: "Product")
+        
+        product.setObject(productName, forKey: "Product")
+        product.setObject(information, forKey: "information")
+        product.setObject(Date(), forKey: "date")
+        product.setObject(PFUser.current(), forKey: "user")
+        product.setObject(hashtags, forKey: "hashtags")
+        
+        product.setObject(PFGeoPoint(latitude: (location.latitude), longitude: (location.longitude)), forKey: "location")
+        
+        
+        if(pItemThumbImage.image != nil){
+            var imagedata = UIImagePNGRepresentation(pItemThumbImage.image!)
+            
+            // Resize the image if it exceeds the 2MB API limit
+            if ((imagedata?.count)! > 2097152) {
+                let oldSize: CGSize = pItemThumbImage.image!.size
+                let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
+                imagedata = resizeImage(newSize, image: pItemThumbImage.image!)
+            }
+            
+            
+            //let imageData: NSData = UIImageJPEGRepresentation(imagedata, 1.0)! as NSData
+            let imageFile: PFFile = PFFile(name:"image.jpg", data:imagedata as! Data!)!
+            
+            product.setObject(imageFile, forKey: "image")
+        }
+        pItemThumbImage.image = nil
+        
+        product.saveInBackground(block: { (success, error) in
+            if (success) {
+                print("saving")
+                OperationQueue.main.addOperation {
+                    [weak self] in
+                    self?.performSegue(withIdentifier: "segueHome", sender: self)
+                }
+            }else{
+                print("cannot saving")
+                print(error)
+            }
+        })
+        
+        
+            
+        
+        /*product["Product"] = productName
+         product["date"] = Date()
+         if(latestLocation != nil){
+         product["location"] = PFGeoPoint(latitude: (latestLocation?.coordinate.latitude)!, longitude: (latestLocation?.coordinate.longitude)!)
+         }else{
+         product["location"] = getlocation()
+         }
+         product["information"] = information
+         product["hashtags"] = hashtags
+         product["user"] = PFUser.current()
+         
+         
+         product.saveInBackground()*/
+    }
+    
+    //func getlocation()->PFGeoPoint{
+    //    return PFGeoPoint(latitude: (locationManager.location?.coordinate.latitude)!, longitude:(locationManager.location?.coordinate.longitude)!)
+    //}
+
+    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
+        UIGraphicsBeginImageContext(imageSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        let resizedImage = UIImagePNGRepresentation(newImage!)
+        UIGraphicsEndImageContext()
+        return resizedImage!
+    }
 
     /*
     // MARK: - Navigation
