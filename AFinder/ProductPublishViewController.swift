@@ -28,7 +28,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
     
     @IBAction func pPublishAction(_ sender: Any) {
         print(pHashtags)
-        if isTextFieldEditted {
+        if !isTextFieldEditted {
             addProduct(productName : pItemName, information: "", hashtags: pHashtags, location: location)
         }else{
             addProduct(productName : pItemName, information: informationAboutProduct.text , hashtags: pHashtags, location: location)
