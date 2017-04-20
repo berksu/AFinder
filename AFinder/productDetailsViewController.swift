@@ -213,12 +213,21 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     func addAnnotation(location: CLLocationCoordinate2D, title: String, subtitle: String){
         
-        let point = customAnnotation(coordinate: location)
+        /*let point = customAnnotation(coordinate: location)
         point.image = UIImage(named: "CNN_International_logo_2014")
         point.name = title
         point.address = subtitle
         point.phone = "1111"
         mapView.addAnnotation(point)
+        */
+        
+        
+        let point = MKPointAnnotation()
+        point.title = title
+        point.subtitle = subtitle
+        point.coordinate = location
+        mapView.addAnnotation(point)
+        
         
         //go this location
         let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
@@ -226,7 +235,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    
+        
+
     //test
     func searchAddressFromLocation(){
         

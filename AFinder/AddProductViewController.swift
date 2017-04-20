@@ -60,6 +60,7 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         self.hideKeyboardWhenTappedAround()
         self.tagInputField.becomeFirstResponder()
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,8 +92,22 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
     
     @IBAction func sendButton(_ sender: UIButton) {
         //addProduct(productName: hashtags[0], information: "kutan dayıda demedim mi", hashtags: hashtags)
+        if(hashtags.count != 0){
+            performSegue(withIdentifier: "segueLastPhase", sender: self)
+        }else{
+            //show alert
+            let alert = UIAlertController(title:"You have to add at least one hashtag for item", message: "", preferredStyle : UIAlertControllerStyle.alert)
+            
+            //If user pressed okay
+            let okayButton = UIAlertAction(title:"OK",style: UIAlertActionStyle.default){ACTION in
+                //self.locationManager.startUpdatingLocation()
+            }
+            
+            alert.addAction(okayButton)
+
+            self.present(alert, animated: true, completion: nil)
+        }
         
-        performSegue(withIdentifier: "segueLastPhase", sender: self)
     }
     
     
@@ -154,15 +169,17 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
         return false
     }
     
+    
+    
+    
     func textFieldDidChange(_ textField: UITextField) {
         hashtags = separateHashtags(tags: textField.text!)
         // bu hastagleri kutan kutu kutu ayıracak
         
-    
-        if(hashtags.last?.length > 5){
-            textField.text = textField.text?.substring(to: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-1))!)
+        
+        if(hashtags.last?.length > maxWordLength){
+            tagInputField.text = textField.text?.substring(to: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-1))!)
             
-            var lastWord = textField.text?.substring(from: (textField.text?.index((textField.text?.startIndex)!, offsetBy: (textField.text?.length)!-5))!)
             
             //textField.textColor = UIColor.red
             // Over max length
@@ -177,21 +194,20 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
                 // Currently the range is assumed to be the whole text (the range covers the whole string)
                 // You'll have to apply your own logic here
                 //text.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSMakeRange(0,1))
-                print((textField.text?.length)!-4)
                 text.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSMakeRange((textField.text?.length)!-maxWordLength,maxWordLength))
                 textField.attributedText = text
             
             }
             
         }else{
-        
+            
             textField.textColor = UIColor.white
             
             tagStackView.isHidden = false
             tagStackView.distribution = .fillProportionally
             onOptionChanged()
             
-        
+            
             for subview in tagStackView.subviews
             {
                 if let item = subview as? UILabel
@@ -205,8 +221,11 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
                     
                 }
             }
-            
+
+        
         }
+        
+        
         
     }
     

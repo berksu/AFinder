@@ -43,6 +43,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+ 
+    
     //renewed page
     override func viewWillAppear(_ animated: Bool) {
         //locationFinderInitialization()
@@ -61,7 +63,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     if error == nil {
                         for object in objects!{
                             let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
+                            self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                         }
                     }
                     else {
@@ -214,7 +216,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    /*func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation
         {
             return nil
@@ -272,7 +274,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             }
         }
     }
-    
+    */
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
@@ -300,8 +302,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             if error == nil {
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
+                    //self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
                     //print(object["Product"])
+                    self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                 }
             }
             else {
@@ -323,7 +326,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         mapView.addAnnotation(annotation)
         
-    }*/
+    }
     
     
     func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String){
@@ -335,7 +338,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         point.phone = "1111"
         mapView.addAnnotation(point)
         
-    }
+    }*/
 
     /*
     // MARK: - Navigation
@@ -346,5 +349,84 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    
+    
+    
+    //berksu annotation tests
+    
+    func addAnnotationFromDatabase2(location: CLLocationCoordinate2D, title: String, subtitle: String, addingDate:Date){
+        
+        let now = Date()
+        
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.day]
+        //formatter.maximumUnitCount = 2   // often, you don't care about seconds if the elapsed time is in months, so you'll set max unit to whatever is appropriate in your case
+        
+        let string = formatter.string(from: addingDate, to: now)
+        var token = string?.components(separatedBy: " ")
+        print (token?[0])
+        
+        let point = MyPointAnnotation()
+        point.title = title
+        point.subtitle = subtitle
+        point.coordinate = location
+        
+        //point.pinTintColor = .green
+        if(Int((token?[0])!)! < 7){
+            point.pinTintColor = .green
+        }else if(Int((token?[0])!)! > 7 && Int((token?[0])!)! < 15){
+            point.pinTintColor = .yellow
+        }else{
+            point.pinTintColor = .red
+        }
+        mapView.addAnnotation(point)
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation
+        {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if let annotation = annotation as? MyPointAnnotation {
+            annotationView?.pinTintColor = annotation.pinTintColor
+            let btn = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = btn
+        
+            
+        }
+        
+        return annotationView
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
+        let ac = UIAlertController(title: "oldu", message: "girdi", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+
 
 }
+
+
+class MyPointAnnotation : MKPointAnnotation {
+    var pinTintColor: UIColor?
+}
+
+

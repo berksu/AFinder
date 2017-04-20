@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Spring
+import MapKit
 
 
 // Check if we have an update
@@ -49,6 +50,19 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     @IBOutlet weak var dividerSpring: SpringImageView!
     @IBOutlet weak var dividerSpringFirst: SpringImageView!
     @IBOutlet weak var dividerFinds: UIImageView!
+    
+    
+    
+    //create a completer
+    lazy var searchCompleter: MKLocalSearchCompleter = {
+        let sC = MKLocalSearchCompleter()
+        sC.delegate = self
+        return sC
+    }()
+    
+    var searchSource: [String]?
+    
+    
     
     
     override func viewDidLoad() {
@@ -101,7 +115,10 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         bottomView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
         
         
+        searchBarController.tintColor = .red
+        self.hideKeyboardWhenTappedAround()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if haveNotification {
@@ -184,13 +201,18 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             // # yoksa
             reloadSearchKeyword(searchedKeyword: searchBar.text, isHashtag: false)
         }
+        searchBar.endEditing(true)
         
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == ""){
             reloadSearchKeyword(searchedKeyword: nil, isHashtag: false)
+        }else{
+            searchCompleter.queryFragment = searchText
         }
+        
+        print(searchSource)
     }
     
     //renew the page
@@ -338,3 +360,23 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }
     
 }
+
+
+
+
+extension ViewController: MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        //get result, transform it to our needs and fill our dataSource
+        self.searchSource = completer.results.map { $0.title }
+        //DispatchQueue.main.async {
+        //    self.tableVIew.reloadData()
+        //}
+    }
+    
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        //handle the error
+        print(error.localizedDescription)
+    }
+}
+
+
