@@ -185,6 +185,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        //mapView.showsPointsOfInterest = false
+
     
         //zoom the starting point
         //centerMapOnLocation(location: locationManager.location!)
@@ -383,9 +385,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }else{
             point.pinTintColor = .red
         }
+        
         mapView.addAnnotation(point)
         
     }
+    
+    
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation
@@ -398,17 +404,18 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
             annotationView!.canShowCallout = true
+            
+            let btn = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = btn
+            //annotationView!.rightCalloutAccessoryView = btn
         } else {
             annotationView?.annotation = annotation
         }
         
         if let annotation = annotation as? MyPointAnnotation {
             annotationView?.pinTintColor = annotation.pinTintColor
-            let btn = UIButton(type: .detailDisclosure)
-            annotationView?.rightCalloutAccessoryView = btn
-        
-            
         }
+        
         
         return annotationView
     }
