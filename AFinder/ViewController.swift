@@ -54,7 +54,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     @IBOutlet weak var dividerSpringFirst: SpringImageView!
     @IBOutlet weak var dividerFinds: UIImageView!
     
-    
+    var fadeCounter : CGFloat = 0.0
     
     //create a completer
     lazy var searchCompleter: MKLocalSearchCompleter = {
@@ -77,6 +77,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         searchListTableView.delegate = self
         searchListTableView.dataSource = self
+        searchListTableView.separatorStyle = .none
         
         //Looks for single or multiple taps.
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -119,6 +120,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         bottomView.layer.borderWidth = 1
         bottomView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
         
+        
+        searchListTableView.isHidden = true
         
         searchBarController.tintColor = .red
         self.hideKeyboardWhenTappedAround()
@@ -208,6 +211,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             reloadSearchKeyword(searchedKeyword: searchBar.text, isHashtag: false)
         }
         searchBar.endEditing(true)
+        fadeCounter = 0.0
+        searchListTableView.isHidden = true
         
     }
     
@@ -216,9 +221,14 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             reloadSearchKeyword(searchedKeyword: nil, isHashtag: false)
         }else{
             searchCompleter.queryFragment = searchText
+            searchListTableView.isHidden = false
         }
         
-        print(searchSource)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchListTableView.isHidden = true
+        fadeCounter = 0.0
     }
     
     //renew the page
@@ -253,6 +263,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     //Calls this function when the tap is recognized.
     override func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        fadeCounter = 0.0
         view.endEditing(true)
     }
     
@@ -386,6 +397,11 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         else if tableView == self.searchListTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarTableView", for: indexPath) as! SearchTableViewCell
             // Configure the cell...
+            
+            cell.searchItem.animation = "fadeIn"
+            cell.searchItem.text = searchSource?[indexPath.row]
+            cell.searchItem.duration = 0.7
+            cell.searchItem.animate()
             
             return cell
 

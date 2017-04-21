@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Spring
 
 class SearchTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var searchItem: UILabel!
+    @IBOutlet weak var searchItem: SpringLabel!
+    @IBOutlet weak var dividerItem: SpringView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
