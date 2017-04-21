@@ -16,11 +16,14 @@ import MapKit
 // Adding item , removing item
 // Other ops.
 var haveNotification : Bool = false
+var initialViewIndex : Int = 0
+var directPass : Bool = false
 
 class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var searchListTableView: UITableView!
     
     
     @IBOutlet weak var notificationIcon: SpringButton!
@@ -72,6 +75,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         notificationsTableView.delegate = self
         notificationsTableView.dataSource = self
         
+        searchListTableView.delegate = self
+        searchListTableView.dataSource = self
+        
         //Looks for single or multiple taps.
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
@@ -103,7 +109,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         //buttonDividers[0].image = buttonDivierImages[0]
         
         buttons[selectedIndex].isSelected = true
-        didPressTab(buttons[selectedIndex])
         // Hide the page title as default
         searchBarController.isHidden = false
         pageTitleLabel.isHidden = false;
@@ -126,6 +131,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             onNotificationReceived()
         }
         
+        didPressTab(buttons[initialViewIndex])
     }
     
     public func displayNotification(){
@@ -298,6 +304,13 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         if (selectedIndex == 1)  && (previousIndex != selectedIndex){
             
+            
+            if(directPass) {
+                dividerSpringFirst.isHidden = true
+                dividerSpring.isHidden = false
+                return
+            }
+            
             notificationView.alpha = 1
             dividerSpringFirst.isHidden = true
             dividerSpring.animation = "slideRight"
@@ -343,15 +356,41 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        if tableView == self.notificationsTableView {
+            return 3
+        }
+        else if tableView == self.searchListTableView {
+            return (searchSource?.count)!
+        }
+        else {
+            return 0
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
-        // Configure the cell...
         
-        return cell
+        
+        if tableView == self.notificationsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
+            // Configure the cell...
+            
+            return cell
+            
+        }
+        else if tableView == self.searchListTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarTableView", for: indexPath) as! SearchTableViewCell
+            // Configure the cell...
+            
+            return cell
+
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarTableView", for: indexPath) as! SearchTableViewCell
+            // Configure the cell...
+            
+            return cell
+        }
     }
 
     
@@ -368,9 +407,9 @@ extension ViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         //get result, transform it to our needs and fill our dataSource
         self.searchSource = completer.results.map { $0.title }
-        //DispatchQueue.main.async {
-        //    self.tableVIew.reloadData()
-        //}
+        DispatchQueue.main.async {
+           self.searchListTableView.reloadData()
+        }
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140F1DF31EA98943000DA745 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140F1DF21EA98943000DA745 /* SearchTableViewCell.swift */; };
 		14272A1A1EA6379400F5C609 /* ic_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 14272A191EA6379400F5C609 /* ic_check.png */; };
 		14272A1C1EA63B5600F5C609 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */; };
 		14272A1E1EA63BFA00F5C609 /* ic_not.png in Resources */ = {isa = PBXBuildFile; fileRef = 14272A1D1EA63BFA00F5C609 /* ic_not.png */; };
@@ -52,7 +53,6 @@
 		14B0B6841E97DFD300CE5C30 /* ic_acc.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6831E97DFD300CE5C30 /* ic_acc.png */; };
 		14B0B6861E97E06700CE5C30 /* 1491595053_icons_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */; };
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
-		C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */; };
 		C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E8B291E957D4B00F67286 /* AddProductViewController.swift */; };
 		C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94C12C91E96C7B4004194DB /* LogInViewController.swift */; };
 		C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FDE011E84217C00252C21 /* ImageViewController.swift */; };
@@ -82,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140F1DF21EA98943000DA745 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		14272A191EA6379400F5C609 /* ic_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_check.png; sourceTree = "<group>"; };
 		14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		14272A1D1EA63BFA00F5C609 /* ic_not.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_not.png; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 		14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1491595053_icons_password.png; sourceTree = "<group>"; };
 		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
-		C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
 		C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		C9128F821E93232A002EC7C3 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
 		C91E8B291E957D4B00F67286 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +222,82 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		140F1DE91EA98857000DA745 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C9EC814B1E81E1D30072672A /* ViewController.swift */,
+				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
+			);
+			name = HomeScreen;
+			sourceTree = "<group>";
+		};
+		140F1DEA1EA98875000DA745 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				14419D281E9C24B500F219EB /* SplashScreenViewController.swift */,
+			);
+			name = SplashScreen;
+			sourceTree = "<group>";
+		};
+		140F1DEB1EA9887C000DA745 /* Login-Register */ = {
+			isa = PBXGroup;
+			children = (
+				C94C12C91E96C7B4004194DB /* LogInViewController.swift */,
+				C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */,
+			);
+			name = "Login-Register";
+			sourceTree = "<group>";
+		};
+		140F1DEC1EA98886000DA745 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				14419D791EA443FF00F219EB /* ProductPublishViewController.swift */,
+				C91E8B291E957D4B00F67286 /* AddProductViewController.swift */,
+			);
+			name = AddProduct;
+			sourceTree = "<group>";
+		};
+		140F1DED1EA98897000DA745 /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0B45F1EA4575100E545AD /* productDetailsViewController.swift */,
+			);
+			name = "Product Detail";
+			sourceTree = "<group>";
+		};
+		140F1DEE1EA988A1000DA745 /* FindView */ = {
+			isa = PBXGroup;
+			children = (
+				14419D2E1E9E401000F219EB /* TableViewController.swift */,
+				14419D301E9E43AC00F219EB /* TableViewCell.swift */,
+			);
+			name = FindView;
+			sourceTree = "<group>";
+		};
+		140F1DEF1EA988A8000DA745 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				14419D3A1EA103A300F219EB /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		140F1DF01EA98907000DA745 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		140F1DF11EA98935000DA745 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				140F1DF21EA98943000DA745 /* SearchTableViewCell.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		C95427C11E92D2920076A578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +348,15 @@
 		C9EC81481E81E1D30072672A /* AFinder */ = {
 			isa = PBXGroup;
 			children = (
+				140F1DF11EA98935000DA745 /* Search */,
+				140F1DF01EA98907000DA745 /* Notification */,
+				140F1DEF1EA988A8000DA745 /* Settings */,
+				140F1DEE1EA988A1000DA745 /* FindView */,
+				140F1DED1EA98897000DA745 /* Product Detail */,
+				140F1DEC1EA98886000DA745 /* AddProduct */,
+				140F1DEB1EA9887C000DA745 /* Login-Register */,
+				140F1DEA1EA98875000DA745 /* SplashScreen */,
+				140F1DE91EA98857000DA745 /* HomeScreen */,
 				14419D4C1EA1763900F219EB /* Main.storyboard */,
 				C9128F811E93232A002EC7C3 /* Quicksand-Bold.otf */,
 				14917E4C1E9574B7007EA01F /* geometria-light.otf */,
@@ -283,26 +368,13 @@
 				14419D611EA2E40A00F219EB /* BebasNeue Thin.otf */,
 				14018D8C1E82A89B009FCE8E /* Images */,
 				C9EC81491E81E1D30072672A /* AppDelegate.swift */,
-				C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */,
 				C9767BE31EA13EC3008A10BF /* customAnnotation.swift */,
-				C99637081E82B5D80023A9F7 /* HomeViewController.swift */,
 				C94FDE011E84217C00252C21 /* ImageViewController.swift */,
-				C91E8B291E957D4B00F67286 /* AddProductViewController.swift */,
-				C90F7BAA1E92D92E00B04D7F /* AddProduct.swift */,
-				C9EC814B1E81E1D30072672A /* ViewController.swift */,
-				C94C12C91E96C7B4004194DB /* LogInViewController.swift */,
 				C9767BED1EA145A7008A10BF /* CustomCalloutView */,
 				C9EC81501E81E1D30072672A /* Assets.xcassets */,
 				C9EC81521E81E1D30072672A /* LaunchScreen.storyboard */,
 				C9767BE51EA140CE008A10BF /* AnnotationView.swift */,
-				C9A0B45F1EA4575100E545AD /* productDetailsViewController.swift */,
 				C9EC81551E81E1D30072672A /* Info.plist */,
-				14419D281E9C24B500F219EB /* SplashScreenViewController.swift */,
-				14419D2E1E9E401000F219EB /* TableViewController.swift */,
-				14419D301E9E43AC00F219EB /* TableViewCell.swift */,
-				14419D3A1EA103A300F219EB /* SettingsViewController.swift */,
-				14419D791EA443FF00F219EB /* ProductPublishViewController.swift */,
-				14272A1B1EA63B5600F5C609 /* NotificationTableViewCell.swift */,
 			);
 			path = AFinder;
 			sourceTree = "<group>";
@@ -346,7 +418,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Berksu Kısmet";
 				TargetAttributes = {
 					C9EC81451E81E1D20072672A = {
@@ -492,13 +564,13 @@
 				C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */,
 				14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */,
 				C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */,
+				140F1DF31EA98943000DA745 /* SearchTableViewCell.swift in Sources */,
 				C9767BE61EA140CE008A10BF /* AnnotationView.swift in Sources */,
 				C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */,
 				14419D311E9E43AC00F219EB /* TableViewCell.swift in Sources */,
 				C9A0B4601EA4575100E545AD /* productDetailsViewController.swift in Sources */,
 				C94C12CA1E96C7B4004194DB /* LogInViewController.swift in Sources */,
 				C94FDE021E84217C00252C21 /* ImageViewController.swift in Sources */,
-				C90F7BAB1E92D92E00B04D7F /* AddProduct.swift in Sources */,
 				C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */,
 				14419D3B1EA103A300F219EB /* SettingsViewController.swift in Sources */,
 			);
@@ -544,6 +616,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -594,6 +667,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

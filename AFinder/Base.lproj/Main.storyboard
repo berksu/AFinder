@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -308,7 +308,7 @@
                                 <rect key="frame" x="0.0" y="81" width="414" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="551-se-quM" customClass="SpringView" customModule="Spring">
+                            <view hidden="YES" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="551-se-quM" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="345" width="414" height="46"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCA-Cm-RhP">
@@ -325,11 +325,11 @@
                                             <constraint firstAttribute="width" constant="359" id="Mm7-VW-J7O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.76470588240000004" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gCA-Cm-RhP" firstAttribute="top" secondItem="551-se-quM" secondAttribute="top" constant="6" id="0lu-3V-Ijf"/>
                                     <constraint firstItem="gCA-Cm-RhP" firstAttribute="leading" secondItem="551-se-quM" secondAttribute="leading" id="1NC-2G-f2Q"/>
@@ -592,7 +592,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="398" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IKD-I5-HRp" id="9W4-5P-lcs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="43.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="XGO-dz-sCP">
@@ -657,6 +657,44 @@
                                     <constraint firstAttribute="bottom" secondItem="L0u-Wt-AhS" secondAttribute="bottom" constant="41" id="yt2-aX-YcS"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LgG-4n-Gq2">
+                                <rect key="frame" x="0.0" y="81" width="414" height="189"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="7OE-1D-YH2"/>
+                                    <constraint firstAttribute="width" constant="414" id="ACW-b2-CaV"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchBarTableView" id="mEs-fH-CmV" customClass="SearchTableViewCell" customModule="AFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEs-fH-CmV" id="JN6-bE-6sf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0g-fe-foq">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="j0r-zv-eob"/>
+                                                        <constraint firstAttribute="height" constant="21" id="nmk-Ty-5iF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="T0g-fe-foq" firstAttribute="top" secondItem="JN6-bE-6sf" secondAttribute="topMargin" constant="3" id="lvl-EA-h7W"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="T0g-fe-foq" secondAttribute="leading" id="ne5-SB-ZrA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="T0g-fe-foq" secondAttribute="bottom" constant="3" id="oCt-rh-XR8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchItem" destination="T0g-fe-foq" id="Gg2-Yp-bya"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -676,11 +714,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="TrF-YW-26A" secondAttribute="trailing" constant="131" id="G9a-HA-4Hn"/>
                             <constraint firstItem="Zna-gQ-JKy" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="226" id="HE9-V1-7eL"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="Jat-Yu-4VA"/>
+                            <constraint firstAttribute="trailing" secondItem="LgG-4n-Gq2" secondAttribute="trailing" id="MLK-MZ-z5u"/>
                             <constraint firstItem="gvb-5s-Yo0" firstAttribute="leading" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="113" id="NSV-kP-hyL"/>
                             <constraint firstItem="bwE-6t-dcN" firstAttribute="leading" secondItem="2Js-GN-i4e" secondAttribute="trailing" constant="79" id="ORi-jV-6fb"/>
                             <constraint firstAttribute="leading" secondItem="k7M-Sm-TBJ" secondAttribute="trailing" constant="-418" id="Ojf-zx-ek2"/>
                             <constraint firstAttribute="trailing" secondItem="gvb-5s-Yo0" secondAttribute="trailing" constant="7" id="QhY-qE-s3X"/>
                             <constraint firstAttribute="trailing" secondItem="YAZ-BG-e1i" secondAttribute="trailing" id="R2n-E7-6s7"/>
+                            <constraint firstItem="LgG-4n-Gq2" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="SgC-t1-Wsb"/>
                             <constraint firstItem="bwE-6t-dcN" firstAttribute="top" secondItem="5lb-wn-POW" secondAttribute="bottom" constant="10" id="YuC-DS-10W"/>
                             <constraint firstItem="l5U-zP-RyH" firstAttribute="top" secondItem="gVy-XP-eo7" secondAttribute="bottom" id="a5S-Bn-EgF"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" id="dEA-Qg-rwJ"/>
@@ -699,6 +739,7 @@
                             <constraint firstItem="TrF-YW-26A" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="trailing" constant="-254" id="wWD-5j-Ujd"/>
                             <constraint firstItem="oyT-up-BPc" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="ySk-D4-iQg"/>
                             <constraint firstItem="gVy-XP-eo7" firstAttribute="top" secondItem="oyT-up-BPc" secondAttribute="bottom" constant="-59" id="zI5-tz-L4f"/>
+                            <constraint firstItem="LgG-4n-Gq2" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" id="zWd-CB-ye6"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -715,6 +756,7 @@
                         <outlet property="notificationsTableView" destination="L0u-Wt-AhS" id="5ls-H1-t9b"/>
                         <outlet property="pageTitleLabel" destination="2Js-GN-i4e" id="ii2-2P-4dj"/>
                         <outlet property="searchBarController" destination="k7M-Sm-TBJ" id="e2u-EY-tJh"/>
+                        <outlet property="searchListTableView" destination="LgG-4n-Gq2" id="gKx-Sy-INs"/>
                         <outlet property="singleNotificationView" destination="551-se-quM" id="Bh2-4C-eId"/>
                         <outletCollection property="buttons" destination="y6p-Vu-1NO" collectionClass="NSMutableArray" id="BYZ-fV-u6i"/>
                         <outletCollection property="buttons" destination="MfT-Ao-iB0" collectionClass="NSMutableArray" id="nrB-Fu-hOn"/>
@@ -1117,7 +1159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0C-L9-P7w" id="Np7-6P-qNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-4J-efM">
@@ -3276,8 +3318,8 @@
         <image name="ic_up_arrow.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zGS-1m-Zns"/>
-        <segue reference="vyY-mb-cM2"/>
+        <segue reference="eRj-TH-jbf"/>
+        <segue reference="x5E-R1-ir2"/>
         <segue reference="Bnt-TB-T8H"/>
     </inferredMetricsTieBreakers>
 </document>
