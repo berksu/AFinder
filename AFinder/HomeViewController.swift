@@ -295,7 +295,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     //}
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        if view.isKind(of: AnnotationView.self)
+        if view.isKind(of: MKPinAnnotationView.self)
         {
             for subview in view.subviews
             {
