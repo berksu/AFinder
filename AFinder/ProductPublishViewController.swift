@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SwiftSpinner
 
 class ProductPublishViewController: UIViewController,UITextViewDelegate {
 
@@ -28,6 +29,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
     
     
     @IBAction func pPublishAction(_ sender: Any) {
+        view.endEditing(true)
         print(pHashtags)
         if !isTextFieldEditted {
             addProduct(productName : pItemName, information: "", hashtags: pHashtags, location: location)
@@ -97,6 +99,9 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
     
     
     func addProduct(productName : String, information: String, hashtags: Array<String>, location: CLLocationCoordinate2D){
+        
+        SwiftSpinner.show("Lost item is uploading...")
+        
         let product = PFObject(className: "Product")
         
         product.setObject(productName, forKey: "Product")
@@ -129,6 +134,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
         product.saveInBackground(block: { (success, error) in
             if (success) {
                 print("saving")
+                SwiftSpinner.hide()
                 self.performSegue(withIdentifier: "segueHome", sender: self)
                 
             }else{

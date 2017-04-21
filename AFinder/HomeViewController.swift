@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var isHashtagSearced : Bool! = false
     var searchedText : String!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,9 +41,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             goSearchedPlace(searchedPlace: searchedKeyword)
         }
         
-        
     }
     
+
  
     
     //renewed page
@@ -169,6 +170,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     
+    
 
     //initialize location finder for user
     public func locationFinderInitialization(){
@@ -186,8 +188,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.isScrollEnabled = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         //mapView.showsPointsOfInterest = false
-
-    
+        
         //zoom the starting point
         //centerMapOnLocation(location: locationManager.location!)
         
@@ -493,8 +494,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 }
 
 
-class MyPointAnnotation : MKPointAnnotation {
-    var pinTintColor: UIColor?
-}
+//class MyPointAnnotation : MKPointAnnotation {
+//    var pinTintColor: UIColor?
+//}
 
 

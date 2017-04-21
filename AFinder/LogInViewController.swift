@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Spring
+import SwiftSpinner
 
 class LogInViewController: UIViewController {
 
@@ -57,14 +58,19 @@ class LogInViewController: UIViewController {
     
     //log in
     @IBAction func logInButton(_ sender: UIButton) {
+        view.endEditing(true)
+        SwiftSpinner.show("Connecting to Afinder :)")
         PFUser.logInWithUsername(inBackground: username.text! , password: password.text!) { (user, error) in
             if(user != nil){
                 print("You are successfully logged in :)")
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
                 // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
-                
+                SwiftSpinner.hide()
                 self.present(viewController, animated: false, completion: nil)
             }else{
+                SwiftSpinner.show("Failed connection...", animated: false).addTapHandler({
+                    SwiftSpinner.hide()
+                }, subtitle: "Tap to screen for reentering your username and password")
                 // Invalid login fields
                 self.wrongInputFields()
                 print("log in problems :(")

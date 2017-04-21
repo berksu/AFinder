@@ -124,9 +124,12 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchListTableView.isHidden = true
         
         searchBarController.tintColor = .red
-        self.hideKeyboardWhenTappedAround()
+        
+        //güzel yol degil ama simdilik mecbur
+        searchBarController.showsCancelButton = true
     }
     
+   
     
     override func viewWillAppear(_ animated: Bool) {
         if haveNotification {
@@ -136,6 +139,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         didPressTab(buttons[initialViewIndex])
     }
+    
+    
     
     public func displayNotification(){
         singleNotificationView.animation = "slideRight"
@@ -202,6 +207,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     // Search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
+        searchListTableView.isHidden = true
         // # varsa
         // Parse search
         if(searchBar.text!.contains("#")){
@@ -212,22 +218,23 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         }
         searchBar.endEditing(true)
         fadeCounter = 0.0
-        searchListTableView.isHidden = true
+        
         
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == ""){
             reloadSearchKeyword(searchedKeyword: nil, isHashtag: false)
-        }else{
+            searchListTableView.isHidden = true
+        }else if(!searchText.contains("#")){
             searchCompleter.queryFragment = searchText
             searchListTableView.isHidden = false
         }
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchListTableView.isHidden = true
+        searchBar.endEditing(true)
         fadeCounter = 0.0
     }
     
@@ -414,6 +421,14 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         }
     }
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBarController.text = searchSource?[indexPath.row]
+        // # yoksa
+        reloadSearchKeyword(searchedKeyword: searchBarController.text, isHashtag: false)
+        searchBarController.endEditing(true)
+        searchListTableView.isHidden = true
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

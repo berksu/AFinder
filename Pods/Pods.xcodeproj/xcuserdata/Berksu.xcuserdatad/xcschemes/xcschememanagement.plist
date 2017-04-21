@@ -6,47 +6,43 @@
 	<dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-AFinder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Spring.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12B45E438E3DC631ECA31178FDDB0A92</key>
+		<key>62565CA0E992EF817A68BC36990DE3B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AAE217723843FB658EAE8B3D766BC6F</key>
+		<key>91AEAAC64DCC7AA1380A894DF23E5E7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>798EF67E92FCC72F4801DFE6925FCFE9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9C3E031EBB6BAF781A22692E77DE2E03</key>
+		<key>9A4D95676236A8291D9506DE1125F429</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -56,17 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCE2D2790A6E71ABEE225E4EA3B3323A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EEA1CD26DA01B35772B16B044877170E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FAACB9CAB50A496A0494222C5EC7149E</key>
+		<key>E6CBE64170C0E36AAB9F1D0F967C5A75</key>
 		<dict>
 			<key>primary</key>
 			<true/>

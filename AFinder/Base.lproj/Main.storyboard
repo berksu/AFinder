@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jmO-qi-lZf">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -592,7 +592,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="398" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IKD-I5-HRp" id="9W4-5P-lcs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="XGO-dz-sCP">
@@ -669,7 +669,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEs-fH-CmV" id="JN6-bE-6sf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0g-fe-foq" customClass="SpringLabel" customModule="Spring">
@@ -1159,7 +1159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0C-L9-P7w" id="Np7-6P-qNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-4J-efM">
@@ -1600,7 +1600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dt-wY-U2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.68115942028987" y="813.58695652173924"/>
+            <point key="canvasLocation" x="838" y="990"/>
         </scene>
         <!--Add Product View Controller-->
         <scene sceneID="EVO-mm-deP">
@@ -2074,7 +2074,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="140.66666666666669" y="34" width="133.00000000000006" height="41"/>
+                                <rect key="frame" x="141.33333333333331" y="34" width="132.99999999999994" height="41"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3318,8 +3318,8 @@
         <image name="ic_up_arrow.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eRj-TH-jbf"/>
-        <segue reference="x5E-R1-ir2"/>
         <segue reference="Bnt-TB-T8H"/>
+        <segue reference="x5E-R1-ir2"/>
+        <segue reference="UeA-oJ-K8V"/>
     </inferredMetricsTieBreakers>
 </document>
