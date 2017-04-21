@@ -406,8 +406,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             annotationView!.canShowCallout = true
             
             let btn = UIButton(type: .detailDisclosure)
-            annotationView?.rightCalloutAccessoryView = btn
-            //annotationView!.rightCalloutAccessoryView = btn
+            annotationView?.leftCalloutAccessoryView = btn
         } else {
             annotationView?.annotation = annotation
         }

@@ -360,7 +360,12 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             return 3
         }
         else if tableView == self.searchListTableView {
-            return (searchSource?.count)!
+            if(searchSource != nil){
+                return (searchSource?.count)!
+            }else{
+                return 0
+            }
+            
         }
         else {
             return 0
