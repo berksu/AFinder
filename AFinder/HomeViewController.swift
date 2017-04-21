@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     if error == nil {
                         for object in objects!{
                             let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                            self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
+                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                         }
                     }
                     else {
@@ -232,6 +232,33 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
         annotationView?.image = UIImage(named: "test")
         return annotationView
+    }*/
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation
+        {
+            return nil
+        }
+        
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+            annotationView!.canShowCallout = false
+            
+            //let btn = UIButton(type: .detailDisclosure)
+            //annotationView?.leftCalloutAccessoryView = btn
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if let annotation = annotation as? customAnnotation {
+            annotationView?.pinTintColor = annotation.pinTintColor
+        }
+        
+        
+        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
@@ -251,10 +278,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         calloutView.info.text = customAnnotation.phone
         //calloutView.image.image = customAnnotation.image
        
-        let button = UIButton(frame: calloutView.tags.frame)
-        button.addTarget(self, action: #selector(HomeViewController.callPhoneNumber(sender:)), for: .touchUpInside)
-        calloutView.addSubview(button)
-        calloutView.image.image = customAnnotation.image
+        //let button = UIButton(frame: calloutView.tags.frame)
+        //button.addTarget(self, action: #selector(HomeViewController.callPhoneNumber(sender:)), for: .touchUpInside)
+        //calloutView.addSubview(button)
+        //calloutView.image.image = customAnnotation.image
         // 3
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
@@ -262,10 +289,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     
-    func callPhoneNumber(sender: UIButton)
-    {
-        print("bbbbb")
-    }
+    //func callPhoneNumber(sender: UIButton)
+    //{
+    //    print("bbbbb")
+    //}
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         if view.isKind(of: AnnotationView.self)
@@ -276,7 +303,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             }
         }
     }
-    */
+ 
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
@@ -304,9 +331,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             if error == nil {
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
+                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                     //self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
                     //print(object["Product"])
-                    self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
+                    //self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                 }
             }
             else {
@@ -341,6 +369,40 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.addAnnotation(point)
         
     }*/
+    
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String, addingDate:Date){
+        let now = Date()
+        
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.day]
+        //formatter.maximumUnitCount = 2   // often, you don't care about seconds if the elapsed time is in months, so you'll set max unit to whatever is appropriate in your case
+        
+        let string = formatter.string(from: addingDate, to: now)
+        var token = string?.components(separatedBy: " ")
+        print (token?[0])
+
+        
+        let point = customAnnotation()
+        point.image = UIImage(named: "CNN_International_logo_2014")
+        point.coordinate = location
+        point.name = title
+        point.address = subtitle
+        point.phone = "1111"
+        
+        //point.pinTintColor = .green
+        if(Int((token?[0])!)! < 7){
+            point.pinTintColor = .green
+        }else if(Int((token?[0])!)! > 7 && Int((token?[0])!)! < 15){
+            point.pinTintColor = .yellow
+        }else{
+            point.pinTintColor = .red
+        }
+
+        
+        mapView.addAnnotation(point)
+
+    }
 
     /*
     // MARK: - Navigation
@@ -359,7 +421,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     //berksu annotation tests
     
-    func addAnnotationFromDatabase2(location: CLLocationCoordinate2D, title: String, subtitle: String, addingDate:Date){
+    /*func addAnnotationFromDatabase2(location: CLLocationCoordinate2D, title: String, subtitle: String, addingDate:Date){
         
         let now = Date()
         
@@ -425,7 +487,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let ac = UIAlertController(title: "oldu", message: "girdi", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
-    }
+    }*/
 
 
 }
