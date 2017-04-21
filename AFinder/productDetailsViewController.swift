@@ -167,7 +167,10 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func closeButton(_ sender: UIButton) {
+        //initialViewIndex = 1
+        //directPass = true
     }
+    
     
     
     func removeItemFromParse(objectId: String){
@@ -184,6 +187,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                         // we have a notification (single)
                         // pop it
                         haveNotification = true
+                        directPass = true
+                        initialViewIndex = 1
                         
                         self.present(viewController, animated: false, completion: nil)
                     }else{

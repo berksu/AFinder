@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFinder/ViewController.swift"
-            timestampString = "514235937.648918"
+            timestampString = "514427684.576984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "reloadSearchKeyword(searchedKeyword:isHashtag:)"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
