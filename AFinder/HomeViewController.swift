@@ -11,6 +11,12 @@ import MapKit
 import CoreLocation
 import Parse
 
+
+struct items{
+    var nameOfProduct:String
+    var position:CLLocationCoordinate2D
+}
+
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
@@ -25,6 +31,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var isHashtagSearced : Bool! = false
     var searchedText : String!
     
+    var allItems = [items!]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +47,49 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         if searchedKeyword != nil {
             goSearchedPlace(searchedPlace: searchedKeyword)
         }
+     
+        getAllDataFromParse()
         
     }
     
+    
+    func getAllDataFromParse(){
+        
+        //gereklileri yükle
+        let query = PFQuery(className: "Product")
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    
+                    
+                    let ownerDataTemp = items(nameOfProduct:object["Product"] as! String, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude))
+                    self.allItems.append(ownerDataTemp)
+                    
+                }
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
 
+        
+    }
+
+
+    @IBAction func getEdgeLocation(_ sender: UIButton) {
+        let edge = mapView.edgePoints()
+        print(edge.ne)
+        print(edge.sw)
+        
+        for i in 0..<allItems.count{
+            if(allItems[i].position.latitude <= edge.ne.latitude && allItems[i].position.latitude >= edge.sw.latitude && allItems[i].position.longitude >= edge.sw.longitude && allItems[i].position.longitude <= edge.ne.longitude){
+                print(allItems[i].nameOfProduct)
+            }
+        }
+        //if(location.latitude <= edge.ne.latitude && location.latitude >= edge.sw.latitude && location.longitude <= edge.sw.longitude && location.longitude >= edge.ne.longitude){
+        //    print(object["Product"])
+        //}
+    }
  
     
     //renewed page
@@ -189,6 +235,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         //mapView.showsPointsOfInterest = false
         
+       
         //zoom the starting point
         //centerMapOnLocation(location: locationManager.location!)
         
@@ -497,5 +544,17 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 //class MyPointAnnotation : MKPointAnnotation {
 //    var pinTintColor: UIColor?
 //}
+
+typealias Edges = (ne: CLLocationCoordinate2D, sw: CLLocationCoordinate2D)
+
+extension MKMapView {
+    func edgePoints() -> Edges {
+        let nePoint = CGPoint(x: self.bounds.maxX, y: self.bounds.origin.y)
+        let swPoint = CGPoint(x: self.bounds.minX, y: self.bounds.maxY)
+        let neCoord = self.convert(nePoint, toCoordinateFrom: self)
+        let swCoord = self.convert(swPoint, toCoordinateFrom: self)
+        return (ne: neCoord, sw: swCoord)
+    }
+}
 
 
