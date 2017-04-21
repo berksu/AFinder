@@ -82,7 +82,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         dateFormatter.dateFormat = "dd MMM yyyy"
         let dateString = dateFormatter.string(from: allData[indexPath.row].date)
         
-        cell.itemDateLabel.text = dateString
+        //cell.itemDateLabel.text = dateString
         
         if(allData[indexPath.row].urlImage != ""){
             let url = URL(string: allData[indexPath.row].urlImage)
@@ -101,16 +101,41 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                 let tInt = (item.tag as? Int)!
                 
                 if (tInt < allData[indexPath.row].hashtags.count) {
+                    item.alpha = 1
                     item.isHidden = false
                     item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
                 }
                 else{
-                    item.isHidden = true
+                    //item.isHidden = true
+                    item.alpha = 0
+                    item.text = ""
                     cell.itemTagsStackView.distribution = .fillEqually
                 }
                 
             }
         }
+        
+        for subview in cell.itemTagsStackView_Bottom.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < allData[indexPath.row].hashtags.count) {
+                    item.alpha = 1
+                    item.isHidden = false
+                    item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                }
+                else{
+                    //item.isHidden = true
+                    item.alpha = 0
+                    item.text = ""
+                    cell.itemTagsStackView.distribution = .fillEqually
+                }
+                
+            }
+        }
+
         
         
         

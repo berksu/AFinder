@@ -14,8 +14,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var itemThumbImageView: UIImageView!
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemTagsStackView: UIStackView!
-    @IBOutlet weak var itemDateLabel: UILabel!
-    
+    @IBOutlet weak var itemDateLabel: UILabel!    
+    @IBOutlet weak var itemTagsStackView_Bottom: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
