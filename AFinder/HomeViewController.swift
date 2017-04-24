@@ -33,6 +33,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     var allItems = [items!]()
     
+    var circleRadius:Double = 300
+    var isDrawCircle = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,8 +52,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
      
         getAllDataFromParse()
-        
+
     }
+    
     
     
     func getAllDataFromParse(){
@@ -86,9 +90,21 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 print(allItems[i].nameOfProduct)
             }
         }
+        
+        isDrawCircle = !isDrawCircle
+        if(isDrawCircle){
+            mapView.removeOverlays(mapView.overlays)
+            let circle = MKCircle(center: mapView.centerCoordinate, radius: circleRadius)
+            mapView.add(circle)
+        }else{
+            mapView.removeOverlays(mapView.overlays)
+        }
+
         //if(location.latitude <= edge.ne.latitude && location.latitude >= edge.sw.latitude && location.longitude <= edge.sw.longitude && location.longitude >= edge.ne.longitude){
         //    print(object["Product"])
         //}
+        //addRadiusCircle(location: CLLocation(latitude: mapView.centerCoordinate.latitude,longitude: mapView.centerCoordinate.longitude),radius: 200)
+
     }
  
     
@@ -110,7 +126,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     if error == nil {
                         for object in objects!{
                             let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
+                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String])
                         }
                     }
                     else {
@@ -251,16 +267,53 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     //    mapView.setRegion(coordinateRegion, animated: true)
     //}
     
+    //Ekrana yuvarlak cizme kodu
+    //func addRadiusCircle(location: CLLocation, radius: Double){
+    //    mapView.removeOverlays(mapView.overlays)
+    //    let circle = MKCircle(center: location.coordinate, radius: radius)
+    //    mapView.add(circle)
+    //}
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if(isDrawCircle){
+            mapView.removeOverlays(mapView.overlays)
+            let circle = MKCircle(center: mapView.centerCoordinate, radius: circleRadius)
+            mapView.add(circle)
+        }else{
+            mapView.removeOverlays(mapView.overlays)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        if overlay is MKCircle {
+            let circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = .red
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.05)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return MKPolylineRenderer()
+        }
+    }
+    
 
-    func mapView(_: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        print("rendererForOverlay");
+    //func mapView(_: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        //print("rendererForOverlay");
         //let renderer = MKPolylineRenderer(overlay: overlay)
-        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        /*let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
         renderer.strokeColor = UIColor.blue
         renderer.lineWidth = 3.0
         
-        return renderer
-    }
+        return renderer*/
+        
+        //var overlayRenderer : MKCircleRenderer = MKCircleRenderer(overlay: overlay);
+        //overlayRenderer.lineWidth = 1.0
+        //overlayRenderer.strokeColor = .red
+        //overlayRenderer.circle = MKCircle(centerCoordinate: mapView.userLocation , radius: 1000)
+
+        //return overlayRenderer
+    //}
 
     
     
@@ -293,6 +346,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+            annotationView!.isEnabled = true
             annotationView!.canShowCallout = false
             
             //let btn = UIButton(type: .detailDisclosure)
@@ -321,26 +375,74 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let customAnnotation = view.annotation as! customAnnotation
         let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
         let calloutView = views?[0] as! CustomCalloutView
-        calloutView.productName.text = customAnnotation.name
-        calloutView.tags.text = customAnnotation.address
-        calloutView.info.text = customAnnotation.phone
+        //calloutView.productName.text = customAnnotation.name
+        calloutView.date.text = customAnnotation.date
+        
+        // Stackview
+        for subview in calloutView.stackViewTop.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < customAnnotation.stacks.count) {
+                    item.alpha = 1
+                    item.isHidden = false
+                    item.text = " #" + customAnnotation.stacks[item.tag] + " "
+                }
+                else{
+                    //item.isHidden = true
+                    item.alpha = 0
+                    item.text = ""
+                    calloutView.stackViewTop.distribution = .fillEqually
+                }
+                
+            }
+        }
+        
+        for subview in calloutView.stackViewBottom.subviews
+        {
+            if let item = subview as? UILabel
+            {
+                let tInt = (item.tag as? Int)!
+                
+                if (tInt < customAnnotation.stacks.count) {
+                    item.alpha = 1
+                    item.isHidden = false
+                    item.text = " #" + customAnnotation.stacks[item.tag] + " "
+                }
+                else{
+                    //item.isHidden = true
+                    item.alpha = 0
+                    item.text = ""
+                    calloutView.stackViewTop.distribution = .fillEqually
+                }
+                
+            }
+        }
+
+        //calloutView.tags.text = customAnnotation.address
+        //calloutView.info.text = customAnnotation.phone
         //calloutView.image.image = customAnnotation.image
        
-        //let button = UIButton(frame: calloutView.tags.frame)
-        //button.addTarget(self, action: #selector(HomeViewController.callPhoneNumber(sender:)), for: .touchUpInside)
-        //calloutView.addSubview(button)
+        let button = UIButton(frame: calloutView.date.frame)
+        button.addTarget(self, action: #selector(HomeViewController.info(sender:)), for: .touchUpInside)
+        calloutView.addSubview(button)
         //calloutView.image.image = customAnnotation.image
         // 3
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
+
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
     }
+
     
     
-    //func callPhoneNumber(sender: UIButton)
-    //{
-    //    print("bbbbb")
-    //}
+    func info(sender: UIButton)
+    {
+        let v = sender.superview as! CustomCalloutView
+        print("girdim")
+    }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         if view.isKind(of: MKPinAnnotationView.self)
@@ -372,6 +474,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     
+    func dateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
     func getProductsFromDatabase(){
         let query = PFQuery(className: "Product")
         
@@ -379,7 +487,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             if error == nil {
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
+                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String])
                     //self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
                     //print(object["Product"])
                     //self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
@@ -418,7 +526,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }*/
     
-    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, subtitle: String, addingDate:Date){
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, date: String, addingDate:Date, tags: [String]){
         let now = Date()
         
         let formatter = DateComponentsFormatter()
@@ -431,12 +539,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         print (token?[0])
 
         
-        let point = customAnnotation()
-        point.image = UIImage(named: "CNN_International_logo_2014")
+        let point = customAnnotation(coordinate: location)
+        //let point = customAnnotation()
+        //point.image = UIImage(named: "CNN_International_logo_2014")
         point.coordinate = location
         point.name = title
-        point.address = subtitle
-        point.phone = "1111"
+        point.date = date
+        point.stacks = tags
+        //point.address = subtitle
+        //point.phone = "1111"
         
         //point.pinTintColor = .green
         if(Int((token?[0])!)! < 7){

@@ -11,12 +11,12 @@ import UIKit
 class CustomCalloutView: UIView {
 
     
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var tags: UILabel!
-    @IBOutlet weak var info: UILabel!
+    @IBOutlet weak var date: UILabel!
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var stackViewTop: UIStackView!
+    @IBOutlet weak var stackViewBottom: UIStackView!
     
+    @IBOutlet weak var infoButton: UIButton!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -24,5 +24,7 @@ class CustomCalloutView: UIView {
         // Drawing code
     }
     */
+    
+
 
 }
