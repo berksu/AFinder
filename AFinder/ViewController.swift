@@ -48,6 +48,10 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     let recognizer = UITapGestureRecognizer()
     
     @IBOutlet weak var bottomView: SpringView!
+    @IBOutlet weak var bottomViewBottomPart: UIView!
+    @IBOutlet weak var popularTagsStackView: UIStackView!
+    var isBottomFirstOpening = false
+    var isBottomMenuOpen : Bool = false
     var previousIndex : Int = 0
     
     @IBOutlet weak var dividerSpring: SpringImageView!
@@ -114,6 +118,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBarController.isHidden = false
         pageTitleLabel.isHidden = false;
         notificationView.isHidden = true
+        bottomViewBottomPart.isHidden = true
         
         UIApplication.shared.isStatusBarHidden = true
         
@@ -275,7 +280,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }
     
     func profileImageHasBeenTapped(){
-        print("asd")
+        
+        /*
+        
         let previousVC = viewControllers[selectedIndex]
         
         notificationView.alpha = 1
@@ -301,7 +308,96 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBarController.isHidden = true
         
         vc.didMove(toParentViewController: self)
+        */
         
+        
+        if (isBottomMenuOpen){
+            closeBottomMenu()
+            isBottomMenuOpen = false
+        }
+        else {
+            openBottomMenu()
+            isBottomMenuOpen = true
+        }
+        
+
+    }
+    
+    func openBottomMenu(){
+        
+        bottomViewBottomPart.isHidden = false
+        
+        if(!isBottomFirstOpening) {
+            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y + bottomViewBottomPart.frame.size.height
+        
+            isBottomFirstOpening = true
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+            
+            self.bottomView.frame.origin.y = self.bottomView.frame.origin.y - self.bottomViewBottomPart.frame.size.height
+            self.newAdImageView.frame.origin.y = self.newAdImageView.frame.origin.y -
+                self.bottomViewBottomPart.frame.size.height
+            
+        }, completion: { finished in
+            
+        })
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+            
+            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y -
+                self.bottomViewBottomPart.frame.size.height
+            
+        }, completion: { finished in
+            
+        })
+        
+        popularTagsStackView.frame.origin.x = popularTagsStackView.frame.origin.x - popularTagsStackView.frame.size.width - 50
+        
+        popularTagsStackView.isHidden = false
+        
+        let firstPos = popularTagsStackView.frame.origin.x
+        
+        UIView.animate(withDuration: 9.0, delay: 1.0, options: [.curveEaseOut,.repeat], animations: {
+            
+            for subview in self.popularTagsStackView.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    item.frame.origin.x = item.frame.origin.x + 830
+                }
+            }
+            
+        }, completion: { finished in
+            self.popularTagsStackView.isHidden = true
+            self.popularTagsStackView.frame.origin.x = firstPos
+        })
+        
+    }
+    
+    func closeBottomMenu(){
+        
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            
+            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y +
+                self.bottomViewBottomPart.frame.size.height
+            
+            
+        }, completion: { finished in
+            self.bottomViewBottomPart.isHidden = true
+            
+        })
+        
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+            
+            self.bottomView.frame.origin.y = self.bottomView.frame.origin.y + self.bottomViewBottomPart.frame.size.height
+            self.newAdImageView.frame.origin.y = self.newAdImageView.frame.origin.y +
+                self.bottomViewBottomPart.frame.size.height
+            
+        }, completion: { finished in
+            
+        })
 
     }
 
