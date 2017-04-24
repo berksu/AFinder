@@ -36,6 +36,7 @@ public class SwiftSpinner: UIView {
         
         blurEffect = UIBlurEffect(style: blurEffectStyle)
         blurView = UIVisualEffectView()
+        blurView.alpha = 0.98
         addSubview(blurView)
         
         vibrancyView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
@@ -109,7 +110,7 @@ public class SwiftSpinner: UIView {
         }
     }
 
-    private let innerCircleDefaultColor = UIColor.gray.cgColor
+    private let innerCircleDefaultColor = UIColor.red.cgColor
     fileprivate var _innerColor: UIColor?
     public var innerColor: UIColor? {
         get { return _innerColor }
@@ -387,7 +388,7 @@ public class SwiftSpinner: UIView {
     // layout elements
     //
     
-    private var blurEffectStyle: UIBlurEffectStyle = .dark
+    private var blurEffectStyle: UIBlurEffectStyle = .light
     private var blurEffect: UIBlurEffect!
     private var blurView: UIVisualEffectView!
     private var vibrancyView: UIVisualEffectView!

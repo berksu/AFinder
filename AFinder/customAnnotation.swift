@@ -8,17 +8,17 @@
 
 import MapKit
 
-class customAnnotation: MKPointAnnotation {
+class customAnnotation: NSObject, MKAnnotation {
     
-    //var coordinate: CLLocationCoordinate2D
-    var phone: String!
+    var coordinate: CLLocationCoordinate2D
     var name: String!
-    var address: String!
-    var image: UIImage!
+    var date: String!
+    
+    var stacks: [String]!
     var pinTintColor: UIColor?
     
-    //init(coordinate: CLLocationCoordinate2D) {
-    //    self.coordinate = coordinate
-    //}
+    init(coordinate: CLLocationCoordinate2D) {
+        self.coordinate = coordinate
+    }
     
 }

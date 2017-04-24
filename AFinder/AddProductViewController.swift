@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import CoreLocation
-
+import SwiftSpinner
 
 class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
@@ -121,6 +121,14 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             
             imagePicker.allowsEditing = false
+            imagePicker.modalPresentationStyle = .overCurrentContext
+            
+            
+            //let screenSize = UIScreen.main.bounds.size
+            //let aspectRatio:CGFloat = 4.0/3.0
+            //let scale = screenSize.height/screenSize.width * aspectRatio
+            //imagePicker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale);
+            
             self.present(imagePicker, animated: true, completion: nil)
         }
         
@@ -134,6 +142,8 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             
             imagePicker.allowsEditing = true
+            imagePicker.modalPresentationStyle = .overCurrentContext
+            
             self.present(imagePicker, animated: true, completion: nil)
             
         }
@@ -296,7 +306,6 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
 extension AddProductViewController {
     
     func analyzeResults(_ dataToParse: Data) {
-        
         // Update UI on the main thread
         DispatchQueue.main.async(execute: {
             
@@ -393,6 +402,7 @@ extension AddProductViewController {
                     print("No labels found")
                 }
             }
+            SwiftSpinner.hide()
         })
         
     }
@@ -405,6 +415,8 @@ extension AddProductViewController {
             //spinner.startAnimating()
             //faceResults.isHidden = true
             //labelResults.isHidden = true
+            SwiftSpinner.show("Image is analyzing ...")
+            
             
             // Base64 encode the image and create the request
             let binaryImageData = base64EncodeImage(pickedImage)
@@ -418,6 +430,8 @@ extension AddProductViewController {
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //picker.view!.removeFromSuperview()
+        //picker.removeFromParentViewController()
         dismiss(animated: true, completion: nil)
     }
     
