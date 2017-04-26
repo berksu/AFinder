@@ -68,6 +68,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         getAllDataFromParse()
         
+        let center = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        mapView.setRegion(region, animated: true)
+
+        
     }
     
     

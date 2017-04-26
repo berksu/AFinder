@@ -201,11 +201,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
                 notificationView.alpha = 1
             }
         }else{
-            notificationView.animation = "fadeOut"
-            notificationView.duration = 1
-            notificationView.curve = "linear"
-            notificationView.animate()
-            notificationView.isHidden = true
+            closeNotification()
         }
         
         
@@ -213,13 +209,17 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }
     
     @IBAction func closeNotificationButton(_ sender: Any) {
-                
+        closeNotification()
+    }
+    
+    func closeNotification(){
         notificationView.animation = "fadeOut"
         notificationView.duration = 1
         notificationView.curve = "linear"
         notificationView.animate()
         notificationView.isHidden = true
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         bottomView.isHidden = false
@@ -246,6 +246,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        closeNotification()
         if(searchText == ""){
             reloadSearchKeyword(searchedKeyword: nil, isHashtag: false)
             searchListTableView.isHidden = true
@@ -259,6 +260,11 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchListTableView.isHidden = true
         searchBar.endEditing(true)
         fadeCounter = 0.0
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        closeNotification()
+        return true
     }
 
     
@@ -513,7 +519,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
             // Configure the cell...
             cell.date.text = dateToString(date: (HomeViewController.currentItemsOnScreen[indexPath.row]?.date)!)
-            print("Buraya iyi bak \((HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags[0])!)")
+
             // Stackview
             for subview in cell.stackTop.subviews
             {
