@@ -17,6 +17,7 @@ class CustomCalloutView: UIView {
     @IBOutlet weak var stackViewBottom: UIStackView!
     
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var findButton: UIButton!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

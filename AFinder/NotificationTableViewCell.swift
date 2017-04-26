@@ -10,6 +10,12 @@ import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var stackTop: UIStackView!
+    @IBOutlet weak var stackBottom: UIStackView!
+    @IBOutlet weak var date: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,14 +10,21 @@ import UIKit
 import MapKit
 import CoreLocation
 import Parse
+import Spring
 
 
 struct items{
     var nameOfProduct:String
     var position:CLLocationCoordinate2D
+    var date: Date
+    var hashtags: [String]!
 }
 
-class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+class CustomButton: UIButton {
+    var product: customAnnotation!
+}
+
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     private var locationManager = CLLocationManager()
@@ -32,9 +39,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var searchedText : String!
     
     var allItems = [items!]()
+    static var currentItemsOnScreen:[items?] = [items(nameOfProduct: "asd", position: CLLocationCoordinate2D(latitude: 39.0, longitude: 37.0), date: Date(),hashtags: ["kutan","homeViewControllerdan","tablewiev","reload","cagarilacak"]), items(nameOfProduct: "asd", position: CLLocationCoordinate2D(latitude: 39.0, longitude: 37.0), date: Date(),hashtags: ["berksu","bu","kadar","yapti"]) ]
     
     var circleRadius:Double = 300
     var isDrawCircle = false
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +60,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         print("asdasd")
         
+
+        
         if searchedKeyword != nil {
             goSearchedPlace(searchedPlace: searchedKeyword)
         }
-     
+        
         getAllDataFromParse()
-
+        
     }
     
     
@@ -66,7 +81,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 for object in objects!{
                     
                     
-                    let ownerDataTemp = items(nameOfProduct:object["Product"] as! String, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude))
+                    let ownerDataTemp = items(nameOfProduct:object["Product"] as! String, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude), date: object["date"] as! Date, hashtags: object["hashtags"] as! [String])
                     self.allItems.append(ownerDataTemp)
                     
                 }
@@ -79,6 +94,23 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
 
+    func getCurrentItems(){
+        HomeViewController.currentItemsOnScreen.removeAll()
+        let edge = mapView.edgePoints()
+        print(edge.ne)
+        print(edge.sw)
+        
+        for i in 0..<allItems.count{
+            if(allItems[i].position.latitude <= edge.ne.latitude && allItems[i].position.latitude >= edge.sw.latitude && allItems[i].position.longitude >= edge.sw.longitude && allItems[i].position.longitude <= edge.ne.longitude){
+                print(allItems[i].nameOfProduct)
+                HomeViewController.currentItemsOnScreen.append(allItems[i])
+            }
+        }
+        
+        //performSegue(withIdentifier: "homeViewSeque", sender: self)
+        
+    }
+    
 
     @IBAction func getEdgeLocation(_ sender: UIButton) {
         let edge = mapView.edgePoints()
@@ -126,7 +158,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     if error == nil {
                         for object in objects!{
                             let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                            self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String])
+                            if object["information"] != nil{
+                                self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String], information: object["information"] as! String, id: object.objectId!)
+                            }else{
+                                self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String], information: "", id: object.objectId!)
+                            }
                         }
                     }
                     else {
@@ -232,6 +268,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(HomeViewController.currentItemsOnScreen.count != 0){
+            var viewController = segue.destination as! ViewController
+            //viewController.itemsOnCurrentPage = currentItemsOnScreen as! [items]
+            viewController.notificationsTableView.reloadData()
+        }
+        
+    }
+    
     
 
     //initialize location finder for user
@@ -257,9 +302,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+
     
-
-
+    
     //close to the map
     //private func centerMapOnLocation(location: CLLocation) {
     //    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -282,6 +327,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }else{
             mapView.removeOverlays(mapView.overlays)
         }
+        getCurrentItems()
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -342,10 +388,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             return nil
         }
         
-        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation")
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+            annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
             annotationView!.isEnabled = true
             annotationView!.canShowCallout = false
             
@@ -356,10 +402,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
         
         if let annotation = annotation as? customAnnotation {
-            annotationView?.pinTintColor = annotation.pinTintColor
+            var tempAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+            tempAnnotationView.pinTintColor = annotation.pinTintColor
+            annotationView?.image = tempAnnotationView.image
+            //annotationView?.pinTintColor = annotation.pinTintColor
         }
         
-        
+        //annotationView?.image = UIImage(named: "pinTest.png")
         return annotationView
     }
     
@@ -415,7 +464,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     //item.isHidden = true
                     item.alpha = 0
                     item.text = ""
-                    calloutView.stackViewTop.distribution = .fillEqually
+                    calloutView.stackViewBottom.distribution = .fillEqually
                 }
                 
             }
@@ -425,27 +474,68 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         //calloutView.info.text = customAnnotation.phone
         //calloutView.image.image = customAnnotation.image
        
-        let button = UIButton(frame: calloutView.date.frame)
+        let button = CustomButton(frame: calloutView.infoButton.frame)
+        button.product = customAnnotation
         button.addTarget(self, action: #selector(HomeViewController.info(sender:)), for: .touchUpInside)
         calloutView.addSubview(button)
+        
+        
+        let findbutton = CustomButton(frame: calloutView.findButton.frame)
+        findbutton.product = customAnnotation
+        findbutton.addTarget(self, action: #selector(HomeViewController.find(sender:)), for: .touchUpInside)
+        calloutView.addSubview(findbutton)
+
         //calloutView.image.image = customAnnotation.image
         // 3
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
-
+        
+        view.bringSubview(toFront: calloutView)
+        mapView.bringSubview(toFront: view)
+        
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
     }
 
     
     
-    func info(sender: UIButton)
+    func find(sender: CustomButton)
     {
-        let v = sender.superview as! CustomCalloutView
-        print("girdim")
+        //show alert
+        let alert = UIAlertController(title:"This item is found", message: "If you click yes, this item will be cleared on the map", preferredStyle : UIAlertControllerStyle.alert)
+        
+        //If user pressed yes
+        let yesButton = UIAlertAction(title:"Yes",style: UIAlertActionStyle.default){ACTION in
+            self.removeItemFromParse(objectId: sender.product.objectID)
+        }
+        
+        let cancelButton = UIAlertAction(title:"Cancel",style: UIAlertActionStyle.default){ACTION in
+            //self.locationManager.startUpdatingLocation()
+        }
+        
+        alert.addAction(yesButton)
+        alert.addAction(cancelButton)
+        
+        self.present(alert, animated: true, completion: nil)
+
     }
     
+    
+    func info(sender: CustomButton)
+    {
+        //let v = sender.superview as! CustomCalloutView
+        print("girdim alırım bir dal info")
+        print(sender.product.name)
+        print(sender.product.date)
+        print(sender.product.stacks)
+        print(sender.product.info)
+        print(sender.product.objectID)
+    }
+
+    
+    
+
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        if view.isKind(of: MKPinAnnotationView.self)
+        if view.isKind(of: AnnotationView.self)
         {
             for subview in view.subviews
             {
@@ -454,6 +544,42 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
     }
  
+    
+    
+    func removeItemFromParse(objectId: String){
+        let query = PFQuery(className: "Product")
+        
+        query.getObjectInBackground(withId: objectId) { (object, error) in
+            if error == nil {
+                
+                object?.deleteInBackground(block: { (deleted, error) in
+                    if(deleted){
+                        print("Data Successfully removed")
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        
+                        // we have a notification (single)
+                        // pop it
+                        haveNotification = true
+                        directPass = true
+                        initialViewIndex = 1
+                        
+                        self.present(viewController, animated: false, completion: nil)
+                    }else{
+                        print("Error!! Data cannot be removed from database")
+                    }
+                })
+                
+                
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+        
+    }
+    
+    
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
@@ -487,7 +613,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             if error == nil {
                 for object in objects!{
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
-                    self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String])
+                    
+                    if object["information"] != nil{
+                        self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String], information: object["information"] as! String, id: object.objectId!)
+                    }else{
+                        self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String], information: "", id: object.objectId!)
+                    }
+                    
                     //self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String)
                     //print(object["Product"])
                     //self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
@@ -526,7 +658,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }*/
     
-    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, date: String, addingDate:Date, tags: [String]){
+    func addAnnotationFromDatabase(location: CLLocationCoordinate2D, title: String, date: String, addingDate:Date, tags: [String], information: String, id: String){
         let now = Date()
         
         let formatter = DateComponentsFormatter()
@@ -542,10 +674,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let point = customAnnotation(coordinate: location)
         //let point = customAnnotation()
         //point.image = UIImage(named: "CNN_International_logo_2014")
-        point.coordinate = location
+        //point.coordinate = location
+        point.objectID = id
         point.name = title
         point.date = date
         point.stacks = tags
+        point.info = information
         //point.address = subtitle
         //point.phone = "1111"
         

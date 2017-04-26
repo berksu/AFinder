@@ -79,6 +79,7 @@
 		C99637091E82B5D80023A9F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99637081E82B5D80023A9F7 /* HomeViewController.swift */; };
 		C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */; };
 		C9A0B4601EA4575100E545AD /* productDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0B45F1EA4575100E545AD /* productDetailsViewController.swift */; };
+		C9A6713E1EAEB9AA00B7D5CE /* pinTest.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6713D1EAEB9AA00B7D5CE /* pinTest.png */; };
 		C9EC814A1E81E1D30072672A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC81491E81E1D30072672A /* AppDelegate.swift */; };
 		C9EC814C1E81E1D30072672A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC814B1E81E1D30072672A /* ViewController.swift */; };
 		C9EC81511E81E1D30072672A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9EC81501E81E1D30072672A /* Assets.xcassets */; };
@@ -160,6 +161,7 @@
 		C99637081E82B5D80023A9F7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C9A08DE71E9A797900ABFD4A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C9A0B45F1EA4575100E545AD /* productDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDetailsViewController.swift; sourceTree = "<group>"; };
+		C9A6713D1EAEB9AA00B7D5CE /* pinTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinTest.png; sourceTree = "<group>"; };
 		C9EC81461E81E1D30072672A /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EC81491E81E1D30072672A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9EC814B1E81E1D30072672A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C9A6713D1EAEB9AA00B7D5CE /* pinTest.png */,
 				14A863EB1EABF3BA00C15FB5 /* ic_add_new_item.png */,
 				14A863E91EABD74E00C15FB5 /* ic_area_search.png */,
 				14272A1F1EA63E6C00F5C609 /* ic_up_arrow.png */,
@@ -489,6 +492,7 @@
 				14917E561E957547007EA01F /* ic_cam.png in Resources */,
 				14419D741EA3F1F400F219EB /* ic_map_icon.png in Resources */,
 				14419D3F1EA10FA100F219EB /* ic_app_info.png in Resources */,
+				C9A6713E1EAEB9AA00B7D5CE /* pinTest.png in Resources */,
 				14A863EA1EABD74E00C15FB5 /* ic_area_search.png in Resources */,
 				14419D4E1EA1763900F219EB /* Main.storyboard in Resources */,
 				C9EC81541E81E1D30072672A /* LaunchScreen.storyboard in Resources */,

@@ -44,6 +44,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     var selectedIndex : Int = 0
     
+    
     @IBOutlet weak var newAdImageView: UIImageView!
     let recognizer = UITapGestureRecognizer()
     
@@ -68,7 +69,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }()
     
     var searchSource: [String]?
-    
     
     
     
@@ -132,6 +132,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         //güzel yol degil ama simdilik mecbur
         searchBarController.showsCancelButton = true
+        
     }
     
    
@@ -177,19 +178,27 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     @IBAction func notificationButtonPressed(_ sender: Any) {
         
-        
-        notificationView.animation = "slideDown"
-        notificationView.duration = 1
-        notificationView.isHidden = false
-        notificationView.curve = "linear"
-        notificationView.animate()
-        
-        if selectedIndex == 0{
-            notificationView.alpha = 0.7
+        if(notificationView.isHidden == true){
+            notificationView.animation = "slideDown"
+            notificationView.duration = 1
+            notificationView.isHidden = false
+            notificationView.curve = "linear"
+            notificationView.animate()
+            
+            if selectedIndex == 0{
+                notificationView.alpha = 0.7
+            }
+            else {
+                notificationView.alpha = 1
+            }
+        }else{
+            notificationView.animation = "fadeOut"
+            notificationView.duration = 1
+            notificationView.curve = "linear"
+            notificationView.animate()
+            notificationView.isHidden = true
         }
-        else {
-            notificationView.alpha = 1
-        }
+        
         
         
     }
@@ -198,9 +207,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
                 
         notificationView.animation = "fadeOut"
         notificationView.duration = 1
-        notificationView.isHidden = false
         notificationView.curve = "linear"
-        notificationView.animate()        
+        notificationView.animate()
+        notificationView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -242,6 +251,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBar.endEditing(true)
         fadeCounter = 0.0
     }
+
+    
     
     //renew the page
     func reloadSearchKeyword(searchedKeyword: String?, isHashtag: Bool){
@@ -471,7 +482,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if tableView == self.notificationsTableView {
-            return 3
+            return HomeViewController.currentItemsOnScreen.count
         }
         else if tableView == self.searchListTableView {
             if(searchSource != nil){
@@ -486,13 +497,57 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         }
     }
     
-    
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         if tableView == self.notificationsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
             // Configure the cell...
+            cell.date.text = dateToString(date: (HomeViewController.currentItemsOnScreen[indexPath.row]?.date)!)
+            print("Buraya iyi bak \((HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags[0])!)")
+            // Stackview
+            for subview in cell.stackTop.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < (HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags.count)!) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        item.text = " #" + (HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags[item.tag])! + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        cell.stackTop.distribution = .fillEqually
+                    }
+                    
+                }
+            }
+            
+            for subview in cell.stackBottom.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < (HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags.count)!) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        item.text = " #" + (HomeViewController.currentItemsOnScreen[indexPath.row]?.hashtags[item.tag])! + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        cell.stackBottom.distribution = .fillEqually
+                    }
+                    
+                }
+            }
+
             
             return cell
             
@@ -519,15 +574,25 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchBarController.text = searchSource?[indexPath.row]
-        // # yoksa
-        reloadSearchKeyword(searchedKeyword: searchBarController.text, isHashtag: false)
-        searchBarController.endEditing(true)
-        searchListTableView.isHidden = true
+        if tableView == self.searchListTableView{
+            searchBarController.text = searchSource?[indexPath.row]
+            // # yoksa
+            reloadSearchKeyword(searchedKeyword: searchBarController.text, isHashtag: false)
+            searchBarController.endEditing(true)
+            searchListTableView.isHidden = true
+        }
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    
+    func dateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: date)
     }
     
 }
