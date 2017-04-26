@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AFinder/ViewController.swift"
-            timestampString = "514581724.561548"
+            timestampString = "514940990.544786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -107,6 +107,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             }
         }
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         //performSegue(withIdentifier: "homeViewSeque", sender: self)
         
     }

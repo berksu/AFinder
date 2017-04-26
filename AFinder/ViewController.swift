@@ -133,6 +133,15 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         //güzel yol degil ama simdilik mecbur
         searchBarController.showsCancelButton = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+        
+        
+        
+    }
+    
+    func loadList(){
+        //load data here
+        self.notificationsTableView.reloadData()
     }
     
    
