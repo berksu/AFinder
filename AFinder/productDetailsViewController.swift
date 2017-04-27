@@ -48,6 +48,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         productImage.clipsToBounds = true
         
         
+        getWishedData(newItemHashtags:["berksu"], newItemLocation: CLLocationCoordinate2D(latitude: 48.85671999999995, longitude:2.35501000000102))
+        
     }
     
     func initializations(){
@@ -312,6 +314,42 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
             
         }
     
+    }
+    
+    
+    func getWishedData(newItemHashtags:[String], newItemLocation: CLLocationCoordinate2D){
+
+        let query = PFQuery(className: "Wishlist")
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    let locationOfSearchedItem = CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude)
+                    if((object["hashtags"] as! [String]).contains(where: newItemHashtags.contains)){
+                        if(self.isInsideOfRegion(newProductlocation: newItemLocation, searchedLocation: locationOfSearchedItem, searchedDistance: object["distance"] as! Double)){
+                            print("send notification to dayı")
+                        }
+                    }
+                }
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+    }
+    
+    
+    func isInsideOfRegion(newProductlocation: CLLocationCoordinate2D, searchedLocation: CLLocationCoordinate2D,searchedDistance: Double)->Bool{
+        let addedProductLocation:CLLocation = CLLocation(latitude: newProductlocation.latitude, longitude: newProductlocation.longitude)
+        let targetLocation:CLLocation = CLLocation(latitude: searchedLocation.latitude, longitude: searchedLocation.longitude)
+    
+        if(addedProductLocation.distance(from: targetLocation) < searchedDistance){
+            print("item found")
+            return true
+        }else{
+            print("item is not here")
+            return false
+        }
+
     }
     
     
