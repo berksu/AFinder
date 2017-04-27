@@ -307,7 +307,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     func profileImageHasBeenTapped(){
         
-        /*
+        
         
         let previousVC = viewControllers[selectedIndex]
         
@@ -334,9 +334,10 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBarController.isHidden = true
         
         vc.didMove(toParentViewController: self)
-        */
         
         
+        
+        /*
         if (isBottomMenuOpen){
             closeBottomMenu()
             isBottomMenuOpen = false
@@ -345,6 +346,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             openBottomMenu()
             isBottomMenuOpen = true
         }
+        */
         
 
     }

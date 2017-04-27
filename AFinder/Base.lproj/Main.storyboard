@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EsU-ir-X65">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -492,7 +492,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyT-up-BPc">
-                                <rect key="frame" x="0.0" y="39" width="414" height="697"/>
+                                <rect key="frame" x="0.0" y="31" width="414" height="705"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVy-XP-eo7" customClass="SpringView" customModule="Spring">
@@ -661,7 +661,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="You can search places and hashtags" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7M-Sm-TBJ">
-                                <rect key="frame" x="4" y="37" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="29" width="418" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -715,7 +715,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ny-CJ-mLU" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="0.0" y="81" width="414" height="234"/>
+                                <rect key="frame" x="0.0" y="73" width="414" height="234"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-K7-E0y">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
@@ -730,24 +730,24 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-6i-uhR">
-                                                            <rect key="frame" x="8" y="8" width="192" height="20"/>
+                                                            <rect key="frame" x="8" y="8" width="171" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-ge-0D6" userLabel="#computer">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="61.666666666666671" height="20"/>
                                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.34901960780000002" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHW-E4-DE1">
-                                                                    <rect key="frame" x="72.666666666666671" y="0.0" width="38" height="20"/>
+                                                                    <rect key="frame" x="64.666666666666671" y="0.0" width="33.666666666666657" height="20"/>
                                                                     <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsg-ys-Nrc">
-                                                                    <rect key="frame" x="113.66666666666669" y="0.0" width="78.333333333333314" height="20"/>
+                                                                    <rect key="frame" x="101.33333333333331" y="0.0" width="69.666666666666686" height="20"/>
                                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.34901960780000002" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -762,14 +762,14 @@
                                                             <rect key="frame" x="8" y="36" width="111" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A31-dq-9HM">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="20"/>
                                                                     <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-NX-uEW">
-                                                                    <rect key="frame" x="73" y="0.0" width="38" height="20"/>
+                                                                    <rect key="frame" x="72.666666666666686" y="0.0" width="38.333333333333329" height="20"/>
                                                                     <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -823,7 +823,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LgG-4n-Gq2">
-                                <rect key="frame" x="0.0" y="81" width="414" height="189"/>
+                                <rect key="frame" x="0.0" y="73" width="414" height="189"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="7OE-1D-YH2"/>
@@ -1045,9 +1045,9 @@
                             <constraint firstItem="oyT-up-BPc" firstAttribute="top" secondItem="k7M-Sm-TBJ" secondAttribute="bottom" constant="-42" id="dEA-Qg-rwJ"/>
                             <constraint firstItem="orA-A3-mH1" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="ejb-j2-Lw1"/>
                             <constraint firstItem="2Js-GN-i4e" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leadingMargin" constant="118" id="f6h-yg-NqW"/>
-                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="top" secondItem="2Js-GN-i4e" secondAttribute="bottom" constant="8" id="jV3-BG-MGq"/>
+                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="top" secondItem="2Js-GN-i4e" secondAttribute="bottom" id="jV3-BG-MGq"/>
                             <constraint firstItem="551-se-quM" firstAttribute="centerY" secondItem="QwT-jl-Keg" secondAttribute="centerY" constant="-264" id="juL-hg-1XT"/>
-                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" constant="4" id="k3P-K9-Z1Y"/>
+                            <constraint firstItem="k7M-Sm-TBJ" firstAttribute="leading" secondItem="QwT-jl-Keg" secondAttribute="leading" id="k3P-K9-Z1Y"/>
                             <constraint firstItem="551-se-quM" firstAttribute="centerX" secondItem="QwT-jl-Keg" secondAttribute="centerX" id="kMa-ug-nYc"/>
                             <constraint firstItem="gvb-5s-Yo0" firstAttribute="leading" secondItem="Zna-gQ-JKy" secondAttribute="trailing" constant="120" id="mSU-0k-5Lv"/>
                             <constraint firstAttribute="trailing" secondItem="oyT-up-BPc" secondAttribute="trailing" id="n6O-3X-vhH"/>
@@ -1181,306 +1181,150 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnp-WB-iJx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9M-s5-qaV">
+                                <rect key="frame" x="344" y="14" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.024510200780000001" green="0.024510200780000001" blue="0.024510200780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="ydw-JZ-ojx"/>
+                                    <segue destination="EsU-ir-X65" kind="show" id="eRj-TH-jbf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-gJ-NaY">
+                                <rect key="frame" x="20" y="647" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="cqe-VL-SlU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Esyayi suraya buraya oraya biraktim.Ordan birisi almis olabilir.Ama emin degilim." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-7g-xzi" customClass="SpringTextView" customModule="Spring">
+                                <rect key="frame" x="61" y="314" width="303" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdS-bN-TAq">
+                                <rect key="frame" x="130" y="139" width="167" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjW-Q9-6T7" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="20" y="571" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="ilF-NF-oyc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7n-HN-bCg" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="20" y="609" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="oK2-BJ-F8F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latest Update" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwT-cr-EEX">
+                                <rect key="frame" x="159" y="295" width="107" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Esyayi suraya buraya oraya biraktim.Ordan birisi almis olabilir.Ama emin degilim." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAU-em-Nsl" customClass="SpringTextView" customModule="Spring">
+                                <rect key="frame" x="61" y="394" width="303" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ch-8s-3OQ">
+                                <rect key="frame" x="160" y="373" width="107" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-Po-4XX">
+                                <rect key="frame" x="93" y="477" width="203" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-3w-SW8">
-                                        <rect key="frame" x="8" y="20" width="232" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="232" id="DJb-uj-FjB"/>
-                                            <constraint firstAttribute="height" constant="25" id="gnX-51-6ZB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Update" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIX-zU-9D3">
-                                        <rect key="frame" x="8" y="111" width="232" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Xrg-kl-CBZ"/>
-                                            <constraint firstAttribute="width" constant="232" id="vlP-jY-e5V"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpd-1b-eTh" customClass="SpringView" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="46" width="118" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="118" id="9Bu-uJ-Y28"/>
-                                            <constraint firstAttribute="height" constant="1" id="EzF-ra-SHB"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="curve" value="linear"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9M-s5-qaV">
-                                        <rect key="frame" x="332" y="17" width="62" height="30"/>
-                                        <color key="backgroundColor" red="0.024510200780000001" green="0.024510200780000001" blue="0.024510200780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="KID-xJ-Yby"/>
-                                            <constraint firstAttribute="height" constant="30" id="pzK-yE-CDj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <state key="normal" title="Close">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closeButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="ydw-JZ-ojx"/>
-                                            <segue destination="EsU-ir-X65" kind="show" id="eRj-TH-jbf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n18-gJ-NaY">
-                                        <rect key="frame" x="262" y="17" width="62" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text=" #tag1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-Yp-Sq5">
+                                        <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="14"/>
                                         <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="N9p-Wd-9wV"/>
-                                            <constraint firstAttribute="width" constant="62" id="Z8r-GY-W3m"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <state key="normal" title="Delete">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="cqe-VL-SlU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kK-Nf-aij">
-                                        <rect key="frame" x="262" y="108" width="62" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="IrX-DR-Xca"/>
-                                            <constraint firstAttribute="height" constant="30" id="l3b-hL-5Fz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="editButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="Cg2-An-Fw6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjW-Q9-6T7" customClass="SpringButton" customModule="Spring">
-                                        <rect key="frame" x="332" y="108" width="62" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="63M-GA-Yoq"/>
-                                            <constraint firstAttribute="height" constant="30" id="GdH-JS-brN"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveButton:" destination="Oz9-FT-DeA" eventType="touchUpInside" id="ilF-NF-oyc"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-Po-4XX">
-                                        <rect key="frame" x="8" y="65" width="132.66666666666666" height="15"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #tag1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-Yp-Sq5">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="15"/>
-                                                <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tag2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDS-yH-Uza">
-                                                <rect key="frame" x="44.999999999999993" y="0.0" width="39.333333333333321" height="15"/>
-                                                <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #tag3 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-86-cK6">
-                                                <rect key="frame" x="89.333333333333343" y="0.0" width="43.333333333333343" height="15"/>
-                                                <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="hgv-y1-CRz"/>
-                                        </constraints>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p72-ci-JQs" customClass="SpringTextView" customModule="Spring">
-                                        <rect key="frame" x="8" y="144" width="386" height="58"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="7WG-jx-6ZW"/>
-                                            <constraint firstAttribute="width" constant="386" id="Jm5-n9-ccG"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                        <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgZ-qO-fFw" customClass="SpringView" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="135" width="118" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="DZp-cx-Xer"/>
-                                            <constraint firstAttribute="width" constant="118" id="vr7-uf-mBN"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="curve" value="linear"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-TL-8dB">
-                                        <rect key="frame" x="304" y="201" width="90" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="4Pa-46-DmV"/>
-                                            <constraint firstAttribute="height" constant="21" id="iLd-ZH-rfY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <color key="textColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CNN_International_logo_2014" translatesAutoresizingMaskIntoConstraints="NO" id="Xzh-pu-7j0">
-                                        <rect key="frame" x="62" y="398" width="128" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="tQx-eO-AEi"/>
-                                        </constraints>
-                                    </imageView>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xic-hz-fqz">
-                                        <rect key="frame" x="272" y="398" width="128" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="22K-IV-7dw"/>
-                                            <constraint firstAttribute="width" constant="128" id="DJW-6E-NaX"/>
-                                        </constraints>
-                                    </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRr-Kr-euv">
-                                        <rect key="frame" x="8" y="232" width="232" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="232" id="awJ-y8-pDZ"/>
-                                            <constraint firstAttribute="height" constant="25" id="uAo-0N-GlZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" ambiguous="YES" text=" #tag2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDS-yH-Uza">
+                                        <rect key="frame" x="42.333333333333329" y="0.0" width="33.999999999999986" height="14"/>
+                                        <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-lg-b39" customClass="SpringView" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="256" width="118" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="118" id="K8W-Fc-H3j"/>
-                                            <constraint firstAttribute="height" constant="1" id="nPq-Rk-Xg3"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="curve" value="linear"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYS-Az-G30" customClass="SpringTextView" customModule="Spring">
-                                        <rect key="frame" x="8" y="265" width="386" height="58"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="GpG-J8-mjo"/>
-                                            <constraint firstAttribute="width" constant="386" id="K5M-ha-cXc"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                        <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" text=" #tag3 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-86-cK6">
+                                        <rect key="frame" x="81.333333333333329" y="0.0" width="37.333333333333343" height="14"/>
+                                        <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" text=" #tag3 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmM-Ec-mgy">
+                                        <rect key="frame" x="123.66666666666669" y="0.0" width="37.333333333333314" height="14"/>
+                                        <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" text=" #tag3 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-d9-Vea">
+                                        <rect key="frame" x="166" y="0.0" width="37.333333333333343" height="14"/>
+                                        <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="FIX-zU-9D3" firstAttribute="top" secondItem="2zB-Po-4XX" secondAttribute="bottom" constant="31" id="0U8-Fa-7Sk"/>
-                                    <constraint firstItem="2zB-Po-4XX" firstAttribute="top" secondItem="Xpd-1b-eTh" secondAttribute="bottom" constant="18" id="0v3-0V-LPV"/>
-                                    <constraint firstItem="P9M-s5-qaV" firstAttribute="leading" secondItem="1Bq-3w-SW8" secondAttribute="trailing" constant="92" id="1IT-S2-Y87"/>
-                                    <constraint firstItem="3kK-Nf-aij" firstAttribute="top" secondItem="2zB-Po-4XX" secondAttribute="bottom" constant="28" id="2Ez-iS-688"/>
-                                    <constraint firstItem="1Bq-3w-SW8" firstAttribute="top" secondItem="gnp-WB-iJx" secondAttribute="top" constant="20" id="2NV-Bv-erR"/>
-                                    <constraint firstItem="VgZ-qO-fFw" firstAttribute="top" secondItem="FIX-zU-9D3" secondAttribute="bottom" constant="-1" id="3nJ-m3-tMr"/>
-                                    <constraint firstAttribute="trailing" secondItem="P9M-s5-qaV" secondAttribute="trailing" constant="20" id="6oO-VN-Dzh"/>
-                                    <constraint firstItem="Xic-hz-fqz" firstAttribute="leading" secondItem="Xzh-pu-7j0" secondAttribute="trailing" constant="82" id="7C9-rC-a3t"/>
-                                    <constraint firstItem="3kK-Nf-aij" firstAttribute="leading" secondItem="FIX-zU-9D3" secondAttribute="trailing" constant="22" id="7Y3-bD-4rg"/>
-                                    <constraint firstItem="P9M-s5-qaV" firstAttribute="top" secondItem="gnp-WB-iJx" secondAttribute="top" constant="17" id="8f2-K7-lXP"/>
-                                    <constraint firstItem="Xpd-1b-eTh" firstAttribute="leading" secondItem="1Bq-3w-SW8" secondAttribute="trailing" constant="-240" id="8gq-PW-zaH"/>
-                                    <constraint firstItem="mjW-Q9-6T7" firstAttribute="top" secondItem="2zB-Po-4XX" secondAttribute="bottom" constant="28" id="9QP-r9-Yhd"/>
-                                    <constraint firstAttribute="trailing" secondItem="8fH-TL-8dB" secondAttribute="trailing" constant="20" id="AEf-GC-U0h"/>
-                                    <constraint firstItem="p72-ci-JQs" firstAttribute="top" secondItem="VgZ-qO-fFw" secondAttribute="bottom" constant="8" id="B3v-dl-0os"/>
-                                    <constraint firstItem="VgZ-qO-fFw" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" id="HkS-od-cyf"/>
-                                    <constraint firstItem="n18-gJ-NaY" firstAttribute="top" secondItem="gnp-WB-iJx" secondAttribute="top" constant="17" id="L8l-OV-OKL"/>
-                                    <constraint firstItem="2zB-Po-4XX" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="Mzp-yO-dVa"/>
-                                    <constraint firstItem="1Bq-3w-SW8" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="PjH-hk-gip"/>
-                                    <constraint firstItem="n18-gJ-NaY" firstAttribute="leading" secondItem="1Bq-3w-SW8" secondAttribute="trailing" constant="22" id="RiI-Vj-lq7"/>
-                                    <constraint firstItem="Xpd-1b-eTh" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" id="VJe-XE-EGZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="VgZ-qO-fFw" secondAttribute="trailing" constant="296" id="Vb8-JF-nFE"/>
-                                    <constraint firstItem="Xpd-1b-eTh" firstAttribute="bottom" secondItem="P9M-s5-qaV" secondAttribute="bottom" id="VnZ-pO-gJh"/>
-                                    <constraint firstItem="p72-ci-JQs" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="YXL-Fa-FrJ"/>
-                                    <constraint firstAttribute="height" constant="621" id="ZcU-oX-lTq"/>
-                                    <constraint firstItem="PRr-Kr-euv" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="Zv4-Hp-oCJ"/>
-                                    <constraint firstItem="8fH-TL-8dB" firstAttribute="top" secondItem="p72-ci-JQs" secondAttribute="bottom" constant="-1" id="aR0-Pb-aAt"/>
-                                    <constraint firstItem="FIX-zU-9D3" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="afK-i6-pvm"/>
-                                    <constraint firstItem="hsM-lg-b39" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" id="bAn-Tf-sai"/>
-                                    <constraint firstItem="JYS-Az-G30" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="8" id="bOX-fa-K94"/>
-                                    <constraint firstItem="Xzh-pu-7j0" firstAttribute="leading" secondItem="gnp-WB-iJx" secondAttribute="leading" constant="62" id="bji-hs-a08"/>
-                                    <constraint firstItem="P9M-s5-qaV" firstAttribute="leading" secondItem="n18-gJ-NaY" secondAttribute="trailing" constant="8" id="bzs-KW-ygs"/>
-                                    <constraint firstItem="hsM-lg-b39" firstAttribute="top" secondItem="PRr-Kr-euv" secondAttribute="bottom" constant="-1" id="d26-vN-RFy"/>
-                                    <constraint firstAttribute="trailing" secondItem="FIX-zU-9D3" secondAttribute="trailing" constant="174" id="eCz-SB-lKS"/>
-                                    <constraint firstAttribute="trailing" secondItem="p72-ci-JQs" secondAttribute="trailing" constant="20" id="h1s-E5-OBm"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xic-hz-fqz" secondAttribute="trailing" constant="14" id="nMT-MO-weV"/>
-                                    <constraint firstItem="Xzh-pu-7j0" firstAttribute="top" secondItem="JYS-Az-G30" secondAttribute="bottom" constant="75" id="qHh-bu-EQ4"/>
-                                    <constraint firstItem="JYS-Az-G30" firstAttribute="top" secondItem="hsM-lg-b39" secondAttribute="bottom" constant="8" id="rAD-TC-nTe"/>
-                                    <constraint firstAttribute="width" constant="414" id="rtD-ZO-aUc"/>
-                                    <constraint firstItem="Xic-hz-fqz" firstAttribute="top" secondItem="8fH-TL-8dB" secondAttribute="bottom" constant="176" id="sYq-aI-7gN"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xpd-1b-eTh" secondAttribute="trailing" constant="296" id="tru-zD-ZLJ"/>
-                                    <constraint firstItem="mjW-Q9-6T7" firstAttribute="leading" secondItem="3kK-Nf-aij" secondAttribute="trailing" constant="8" id="vGK-00-af1"/>
-                                    <constraint firstAttribute="trailing" secondItem="JYS-Az-G30" secondAttribute="trailing" constant="20" id="vIv-Bz-W9I"/>
-                                    <constraint firstItem="PRr-Kr-euv" firstAttribute="top" secondItem="8fH-TL-8dB" secondAttribute="bottom" constant="10" id="vdd-V1-sXC"/>
-                                </constraints>
-                            </view>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bx-hl-LHM">
+                                <rect key="frame" x="134" y="89" width="157" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20.10.2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-TL-8dB">
+                                <rect key="frame" x="167" y="60" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <color key="textColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gnp-WB-iJx" firstAttribute="top" secondItem="H35-zu-XLK" secondAttribute="bottom" id="b8w-cT-8Dq"/>
-                            <constraint firstAttribute="trailing" secondItem="gnp-WB-iJx" secondAttribute="trailing" id="yPX-BC-t6R"/>
-                            <constraint firstItem="gnp-WB-iJx" firstAttribute="leading" secondItem="wEl-MX-qxf" secondAttribute="leading" id="zZP-sp-gb0"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="8fH-TL-8dB" id="8N4-Ib-ai1"/>
-                        <outlet property="informationTextField" destination="p72-ci-JQs" id="LyZ-l9-CjC"/>
-                        <outlet property="itemNameLabel" destination="1Bq-3w-SW8" id="346-8E-76M"/>
-                        <outlet property="locationTextField" destination="JYS-Az-G30" id="D9v-VZ-t6s"/>
-                        <outlet property="mapView" destination="Xic-hz-fqz" id="28W-tD-UaX"/>
-                        <outlet property="productImage" destination="Xzh-pu-7j0" id="ObU-xR-Seo"/>
                         <outlet property="saveButton" destination="mjW-Q9-6T7" id="Wuq-ED-DGk"/>
                         <outlet property="test" destination="2zB-Po-4XX" id="mZY-Tq-yUq"/>
                     </connections>
@@ -1530,21 +1374,21 @@
                                                     <rect key="frame" x="91" y="31" width="245" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-Sr-LVs" userLabel="#computer">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="88.333333333333343" height="20"/>
                                                             <color key="backgroundColor" red="0.93333333333333335" green="0.34901960784313724" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEz-HA-Wv4">
-                                                            <rect key="frame" x="92" y="0.0" width="48.333333333333343" height="20"/>
+                                                            <rect key="frame" x="91.333333333333343" y="0.0" width="48.333333333333314" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-fe-hRJ">
-                                                            <rect key="frame" x="143.33333333333337" y="0.0" width="101.66666666666666" height="20"/>
+                                                            <rect key="frame" x="142.66666666666663" y="0.0" width="102.33333333333334" height="20"/>
                                                             <color key="backgroundColor" red="0.93333333333333335" green="0.34901960784313724" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1556,17 +1400,17 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jph-DY-mcu">
-                                                    <rect key="frame" x="90.999999999999986" y="54" width="110.66666666666664" height="20"/>
+                                                    <rect key="frame" x="91.000000000000014" y="54" width="98.333333333333357" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-8v-bWJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="69.666666666666657" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="61.666666666666657" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7S-I5-CGg">
-                                                            <rect key="frame" x="72.666666666666657" y="0.0" width="38" height="20"/>
+                                                            <rect key="frame" x="64.666666666666657" y="0.0" width="33.666666666666686" height="20"/>
                                                             <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1740,7 +1584,7 @@
                                         <rect key="frame" x="16" y="14.666666666666657" width="342" height="16.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #book  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zST-Og-Cfi" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="0.0" width="55.333333333333329" height="16.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="51.333333333333329" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1755,7 +1599,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #red " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmw-GR-Blm" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="59.333333333333321" y="0.0" width="41.666666666666679" height="16.333333333333343"/>
+                                                <rect key="frame" x="73" y="0.0" width="36" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1770,7 +1614,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #small " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0T-we-ACo" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="105.00000000000001" y="0.0" width="54.333333333333357" height="16.333333333333343"/>
+                                                <rect key="frame" x="132.33333333333334" y="0.0" width="48.333333333333314" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1785,7 +1629,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-i6-mcf" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="163.33333333333331" y="0.0" width="87.333333333333343" height="16.333333333333343"/>
+                                                <rect key="frame" x="184.66666666666669" y="0.0" width="76.666666666666686" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1800,7 +1644,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #electronic " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-bA-Xco" userLabel="#tag5" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="254.66666666666671" y="0.0" width="87.333333333333286" height="16.333333333333343"/>
+                                                <rect key="frame" x="265.33333333333326" y="0.0" width="76.666666666666686" height="16.333333333333343"/>
                                                 <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2109,7 +1953,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="141" y="34" width="133" height="41"/>
+                                <rect key="frame" x="141.33333333333331" y="34" width="132.99999999999994" height="41"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3355,7 +3199,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eRj-TH-jbf"/>
-        <segue reference="x5E-R1-ir2"/>
-        <segue reference="Bnt-TB-T8H"/>
+        <segue reference="vyY-mb-cM2"/>
+        <segue reference="WBm-de-HHp"/>
     </inferredMetricsTieBreakers>
 </document>
