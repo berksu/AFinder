@@ -599,6 +599,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             if HomeViewController.currentItemsOnScreen != nil{
                 let locationDataDict:[String: items] = ["item": HomeViewController.currentItemsOnScreen[indexPath.row]!]
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "goSpecifiedAnnotation"), object: nil, userInfo: locationDataDict)
+                closeNotification()
             }
         }
         

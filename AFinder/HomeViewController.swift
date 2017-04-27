@@ -28,6 +28,11 @@ class CustomButton: UIButton {
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var zoomSlider: UISlider!
+    @IBOutlet weak var addToWishListButton: UIButton!
+    
     private var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 1500
 
@@ -47,7 +52,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     
     var allCustomAnnotations:[customAnnotation] = []
-    
+    var isFirst = true
     
     
     override func viewDidLoad() {
@@ -67,11 +72,81 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             goSearchedPlace(searchedPlace: searchedKeyword)
         }
         
+        
+        zoomSlider.tintColor = .red
+        zoomSlider.alpha = 0.7
+        zoomSlider.isHidden = true
+        
+        zoomSlider.addTarget(self, action: #selector(HomeViewController.drawCircle) , for: .valueChanged)
+        addToWishListButton.addTarget(self, action: #selector(HomeViewController.addWishList(sender:)) , for: .touchUpInside)
+        
         //getAllDataFromParse()
         
         NotificationCenter.default.addObserver(self, selector: #selector(goSpecifiedAnnotation(_:)), name: NSNotification.Name(rawValue: "goSpecifiedAnnotation"), object: nil)
         
+        indicator.startAnimating()
+        mapView.alpha = 0.4
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            //go to the center
+            let center = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            
+            self.mapView.setRegion(region, animated: true)
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
+            self.mapView.alpha = 1
+        }
+        
+        
     }
+    
+    
+    
+    func addWishList(sender: UIButton){
+        zoomSlider.isHidden = false
+        isDrawCircle = true
+        drawCircle()
+        
+        
+        let alertController = UIAlertController(title: "Enter hastag about your last item", message: "", preferredStyle: .alert)
+        
+        let addToWishList = UIAlertAction(title: "Add To Wishlist", style: .default) { [weak alertController] _ in
+            if let alertController = alertController {
+                let loginTextField = alertController.textFields![0] as UITextField
+                
+                //Buraya Wishliste ekle Metodunu yaz
+            }
+        }
+        addToWishList.isEnabled = false
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter one hashtag"
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { notification in
+                addToWishList.isEnabled = textField.text != ""
+            }
+        }
+    
+        
+        alertController.addAction(addToWishList)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true)
+
+    }
+    
+    
+    func drawCircle(){
+        circleRadius = Double(zoomSlider.value)
+        mapView.removeOverlays(mapView.overlays)
+        let circle = MKCircle(center: mapView.centerCoordinate, radius: circleRadius)
+        mapView.add(circle)
+    }
+    
+
+    
     
     func goSpecifiedAnnotation(_ notification: NSNotification){
         //load data here
@@ -215,7 +290,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 goSearchedPlace(searchedPlace: searchedKeyword)
             }
             
-            
         }else{
             print("yuklecem")
             //remove annotaitons
@@ -223,6 +297,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             allCustomAnnotations.removeAll()
             //ekranı temizle
             getProductsFromDatabase()
+            
         }
 
         
@@ -665,11 +740,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     //self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                 }
                 self.getCurrentItems()
-                //go to the center
-                let center = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
-                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                 
-                self.mapView.setRegion(region, animated: true)
+
+                
             }
             else {
                 print("Error ! Cannot reach database")
