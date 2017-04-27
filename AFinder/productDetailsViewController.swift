@@ -20,11 +20,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var informationTextField: SpringTextView!
-    @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var locationTextField: SpringTextView!
-    
-    @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var test: UIStackView!
     
@@ -38,13 +35,6 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         //informationTextField.text = selectedItem.information
         initializations()
         
-        //setup mapView
-        mapView.delegate = self
-        
-        
-        addAnnotation(location: selectedItem.position, title: selectedItem.nameOfProduct, subtitle: selectedItem.information)
-        searchAddressFromLocation()
-        
         // Initial values
         saveButton.isHidden = true
         
@@ -57,18 +47,11 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         productImage.layer.cornerRadius = productImage.frame.size.width/2
         productImage.clipsToBounds = true
         
-        //Image Test
-        mapView.layer.borderWidth = 1
-        mapView.layer.masksToBounds = false
-        mapView.layer.borderColor = UIColor.gray.cgColor
-        mapView.layer.cornerRadius = mapView.frame.size.width/2
-        mapView.clipsToBounds = true
         
     }
     
     func initializations(){
         
-        itemNameLabel.text = selectedItem.nameOfProduct
         dateLabel.text = dateToString(date: selectedItem.date)
         informationTextField.text = selectedItem.information
         
@@ -140,7 +123,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    @IBAction func editButton(_ sender: Any) {
+    @IBAction func editInfoAction(_ sender: Any) {
         
         informationTextField.isEditable = true
         informationTextField.textColor = UIColor.white
@@ -203,8 +186,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                         // we have a notification (single)
                         // pop it
                         haveNotification = true
-                        directPass = true
-                        initialViewIndex = 1
+                        //directPass = true
+                        initialViewIndex = 0
                         
                         self.present(viewController, animated: false, completion: nil)
                     }else{
@@ -242,17 +225,6 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(point)
         */
         
-        
-        let point = MKPointAnnotation()
-        point.title = title
-        point.subtitle = subtitle
-        point.coordinate = location
-        mapView.addAnnotation(point)
-        
-        
-        //go this location
-        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-        mapView.setRegion(region, animated: true)
         
     }
     
