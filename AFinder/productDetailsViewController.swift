@@ -52,6 +52,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     
     func initializations(){
         
+        searchAddressFromLocation()
+        
         dateLabel.text = dateToString(date: selectedItem.date)
         informationTextField.text = selectedItem.information
         
