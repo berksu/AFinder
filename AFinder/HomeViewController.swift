@@ -105,8 +105,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     
-    
-    func addWishList(sender: UIButton){
+    func openAddWishListButton(){
         zoomSlider.isHidden = false
         isDrawCircle = true
         drawCircle()
@@ -119,44 +118,30 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         applyWishListButton.duration = 1.5
         applyWishListButton.isHidden = false
         applyWishListButton.animate()
-        
-        /*
-        singleNotificationView.animateNext {
-            self.singleNotificationView.delay = 1.5
-            self.singleNotificationView.animation = "fadeOut"
-            self.singleNotificationView.animate()
-        }
- */
-
-        
-        
-        let alertController = UIAlertController(title: "Enter hastag about your last item", message: "", preferredStyle: .alert)
-        
-        let addToWishList = UIAlertAction(title: "Add To Wishlist", style: .default) { [weak alertController] _ in
-            if let alertController = alertController {
-                let loginTextField = alertController.textFields![0] as UITextField
-                
-                //Buraya Wishliste ekle Metodunu yaz
-            }
-        }
-        addToWishList.isEnabled = false
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Enter one hashtag"
-            
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { notification in
-                addToWishList.isEnabled = textField.text != ""
-            }
-        }
+    }
     
+    
+    func closeAddWishListButton(){
+        zoomSlider.isHidden = true
+        isDrawCircle = false
+        mapView.removeOverlays(mapView.overlays)
         
-        alertController.addAction(addToWishList)
-        alertController.addAction(cancelAction)
+        // Animation
+        applyWishListButton.animation = "fadeOut"
+        applyWishListButton.delay = 0.0
+        applyWishListButton.duration = 1.0
+        applyWishListButton.animate()
+    }
+    
+    
+    func addWishList(sender: UIButton){
+        if(zoomSlider.isHidden == true){
+            openAddWishListButton()
+        }else{
+            closeAddWishListButton()
+        }
+   
         
-        self.present(alertController, animated: true)
-
     }
     
     
@@ -174,6 +159,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         product.setObject(hashtags, forKey: "hashtags")
         product.setObject(Date(), forKey: "date")
         product.setObject(PFUser.current(), forKey: "user")
+        product.setObject(circleRadius, forKey: "distance")
         
         product.setObject(PFGeoPoint(latitude: (location.latitude), longitude: (location.longitude)), forKey: "location")
         
@@ -191,13 +177,43 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     @IBAction func applyWishListButtonAction(_ sender: Any) {
         
-        // Animation
-        applyWishListButton.animation = "fadeOut"
-        applyWishListButton.delay = 0.0
-        applyWishListButton.duration = 1.0
-        applyWishListButton.animate()
 
+        let alertController = UIAlertController(title: "Enter hastag about your last item", message: "", preferredStyle: .alert)
         
+        let addToWishList = UIAlertAction(title: "Add To Wishlist", style: .default) { [weak alertController] _ in
+            if let alertController = alertController {
+                let loginTextField = alertController.textFields![0] as UITextField
+                
+                //Buraya Wishliste ekle Metodunu yaz
+                self.saveItemInWishlist(hashtags: self.separateHashtags(tags: loginTextField.text!), location: self.mapView.overlays[0].coordinate)
+                self.closeAddWishListButton()
+            }
+        }
+        addToWishList.isEnabled = false
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.closeAddWishListButton()
+        }
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter one hashtag"
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { notification in
+                addToWishList.isEnabled = textField.text != ""
+            }
+        }
+        
+        
+        alertController.addAction(addToWishList)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true)
+        
+    }
+    
+    func separateHashtags(tags: String)->Array<String>{
+        let tags = tags.components(separatedBy: ",")
+        return tags
     }
     
     func goSpecifiedAnnotation(_ notification: NSNotification){
