@@ -48,6 +48,22 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         // Initial values
         saveButton.isHidden = true
         
+            
+        
+        //Image Test
+        productImage.layer.borderWidth = 1
+        productImage.layer.masksToBounds = false
+        productImage.layer.borderColor = UIColor.black.cgColor
+        productImage.layer.cornerRadius = productImage.frame.size.width/2
+        productImage.clipsToBounds = true
+        
+        //Image Test
+        mapView.layer.borderWidth = 1
+        mapView.layer.masksToBounds = false
+        mapView.layer.borderColor = UIColor.gray.cgColor
+        mapView.layer.cornerRadius = mapView.frame.size.width/2
+        mapView.clipsToBounds = true
+        
     }
     
     func initializations(){

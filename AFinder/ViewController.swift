@@ -519,7 +519,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewNotifications", for: indexPath) as! NotificationTableViewCell
             // Configure the cell...
             cell.date.text = dateToString(date: (HomeViewController.currentItemsOnScreen[indexPath.row]?.date)!)
-
+            cell.location = HomeViewController.currentItemsOnScreen[indexPath.row]?.position
             // Stackview
             for subview in cell.stackTop.subviews
             {
@@ -595,6 +595,12 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             reloadSearchKeyword(searchedKeyword: searchBarController.text, isHashtag: false)
             searchBarController.endEditing(true)
             searchListTableView.isHidden = true
+        }else if tableView == self.notificationsTableView{
+            if HomeViewController.currentItemsOnScreen != nil{
+                let locationDataDict:[String: items] = ["item": HomeViewController.currentItemsOnScreen[indexPath.row]!]
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "goSpecifiedAnnotation"), object: nil, userInfo: locationDataDict)
+                closeNotification()
+            }
         }
         
     }

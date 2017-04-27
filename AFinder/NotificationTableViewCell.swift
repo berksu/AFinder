@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NotificationTableViewCell: UITableViewCell {
 
@@ -15,6 +16,7 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var stackBottom: UIStackView!
     @IBOutlet weak var date: UILabel!
     
+    var location: CLLocationCoordinate2D!
     
     override func awakeFromNib() {
         super.awakeFromNib()
