@@ -146,6 +146,26 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
 
+    func saveItemInWishlist(hashtags:[String], location: CLLocationCoordinate2D){
+        let product = PFObject(className: "Wishlist")
+        
+        product.setObject(hashtags, forKey: "hashtags")
+        product.setObject(Date(), forKey: "date")
+        product.setObject(PFUser.current(), forKey: "user")
+        
+        product.setObject(PFGeoPoint(latitude: (location.latitude), longitude: (location.longitude)), forKey: "location")
+        
+        
+        product.saveInBackground(block: { (success, error) in
+            if (success) {
+                print("saving")
+            }else{
+                print("cannot saving")
+                print(error)
+            }
+        })
+
+    }
     
     
     func goSpecifiedAnnotation(_ notification: NSNotification){
