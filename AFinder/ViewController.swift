@@ -476,6 +476,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         if selectedIndex == 0{
             searchBarController.isHidden = false
+
         }
         else{
             searchBarController.isHidden = true
