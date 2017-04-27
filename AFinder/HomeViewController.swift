@@ -32,6 +32,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     @IBOutlet weak var zoomSlider: UISlider!
     @IBOutlet weak var addToWishListButton: UIButton!
+    @IBOutlet weak var applyWishListButton: SpringButton!
+    
     
     private var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 1500
@@ -77,6 +79,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         zoomSlider.alpha = 0.7
         zoomSlider.isHidden = true
         
+        applyWishListButton.isHidden = true;
+        
         zoomSlider.addTarget(self, action: #selector(HomeViewController.drawCircle) , for: .valueChanged)
         addToWishListButton.addTarget(self, action: #selector(HomeViewController.addWishList(sender:)) , for: .touchUpInside)
         
@@ -106,6 +110,24 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         zoomSlider.isHidden = false
         isDrawCircle = true
         drawCircle()
+        
+        applyWishListButton.isHidden = false
+        
+        // Animation
+        applyWishListButton.animation = "slideUp"
+        applyWishListButton.delay = 0.0
+        applyWishListButton.duration = 1.5
+        applyWishListButton.isHidden = false
+        applyWishListButton.animate()
+        
+        /*
+        singleNotificationView.animateNext {
+            self.singleNotificationView.delay = 1.5
+            self.singleNotificationView.animation = "fadeOut"
+            self.singleNotificationView.animate()
+        }
+ */
+
         
         
         let alertController = UIAlertController(title: "Enter hastag about your last item", message: "", preferredStyle: .alert)
@@ -167,6 +189,16 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     }
     
+    @IBAction func applyWishListButtonAction(_ sender: Any) {
+        
+        // Animation
+        applyWishListButton.animation = "fadeOut"
+        applyWishListButton.delay = 0.0
+        applyWishListButton.duration = 1.0
+        applyWishListButton.animate()
+
+        
+    }
     
     func goSpecifiedAnnotation(_ notification: NSNotification){
         //load data here
