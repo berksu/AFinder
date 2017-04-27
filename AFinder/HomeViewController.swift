@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         //setup mapView
         
         locationFinderInitialization()
-        getProductsFromDatabase()
+        //getProductsFromDatabase()
         
         print("asdasd")
         
@@ -90,7 +90,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         indicator.startAnimating()
         mapView.alpha = 0.4
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             //go to the center
             let center = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -348,6 +348,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                                 self.addAnnotationFromDatabase(location: location, title: object["Product"] as! String, date: self.dateToString(date: object["date"] as! Date) , addingDate: object["date"] as! Date, tags: object["hashtags"] as! [String], information: "", id: object.objectId!)
                             }
                         }
+                        print("allllll1 \(self.allItems.count)")
                         self.getCurrentItems()
                     }
                     else {
@@ -807,6 +808,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     //print(object["Product"])
                     //self.addAnnotationFromDatabase2(location: location, title: object["Product"] as! String, subtitle: object["information"] as! String, addingDate: object["date"] as! Date)
                 }
+                print("allllll2 \(self.allItems.count)")
                 self.getCurrentItems()
                 
 
