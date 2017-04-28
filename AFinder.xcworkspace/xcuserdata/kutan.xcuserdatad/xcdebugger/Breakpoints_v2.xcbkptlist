@@ -97,38 +97,6 @@
             endingLineNumber = "39"
             landmarkName = "imageForUrl(urlString:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Spring.ImageLoader.imageForUrl (urlString : Swift.String, completionHandler : (Swift.Optional&lt;__ObjC.UIImage&gt;, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Spring"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "515009325.759336"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Spring.ImageLoader.(imageForUrl (urlString : Swift.String, completionHandler : (Swift.Optional&lt;__ObjC.UIImage&gt;, Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Spring"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/Pods/Spring/Spring/ImageLoader.swift"
-                  timestampString = "515009325.761191"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,54 +111,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "294"
             endingLineNumber = "294">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AFinder/TableViewController.swift"
-            timestampString = "514241818.062036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AFinder.TableViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "AFinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/AFinder/TableViewController.swift"
-                  timestampString = "514241840.173905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "3544">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AFinder.TableViewController.tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "AFinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kutan/Documents/AFinder_new/AFinder/TableViewController.swift"
-                  timestampString = "514241840.175498"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "3716">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

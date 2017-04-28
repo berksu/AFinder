@@ -32,6 +32,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var itemsTableView: UITableView!
+    @IBOutlet weak var wishListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,9 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
         
+        wishListTableView.dataSource = self
+        wishListTableView.delegate = self
+        
         //var attr = NSDictionary(object: UIFont(name: "Quicksand-Bold", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
         //self.segmentControl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
                 
@@ -61,6 +65,19 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     // MARK: - Table view data source
     
+    @IBAction func segmentOnChange(_ sender: Any) {
+        
+        if(segmentControl.selectedSegmentIndex == 0){
+            itemsTableView.isHidden = false
+            wishListTableView.isHidden = true
+        }
+        else{
+            itemsTableView.isHidden = true
+            wishListTableView.isHidden = false
+        }
+        
+        
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -69,79 +86,154 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.allData.count
+        if(tableView == itemsTableView){
+            return self.allData.count
+        }
+        else {
+            return 1
+        }
+        
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewItem", for: indexPath) as! TableViewCell
         
-        cell.itemTitleLabel.text = allData[indexPath.row].nameOfProduct
+        var cellNew : UITableViewCell!
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        let dateString = dateFormatter.string(from: allData[indexPath.row].date)
-        
-        //cell.itemDateLabel.text = dateString
-        
-        if(allData[indexPath.row].urlImage != ""){
-            let url = URL(string: allData[indexPath.row].urlImage)
-            cell.itemThumbImageView.kf.setImage(with: url)
-        }else{
-            //change name for non imaged items
-            cell.itemThumbImageView.image = UIImage(named: "ic_acc.png")
-        }
-        
-        //print("hastags count \(allData[indexPath.row].hashtags.count)")
-        // Stackview
-        for subview in cell.itemTagsStackView.subviews
-        {
-            if let item = subview as? UILabel
-            {
-                let tInt = (item.tag as? Int)!
-                
-                if (tInt < allData[indexPath.row].hashtags.count) {
-                    item.alpha = 1
-                    item.isHidden = false
-                    item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
-                }
-                else{
-                    //item.isHidden = true
-                    item.alpha = 0
-                    item.text = ""
-                    cell.itemTagsStackView.distribution = .fillEqually
-                }
-                
+        if(tableView == itemsTableView){
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewItem", for: indexPath) as! TableViewCell
+            
+            cell.itemTitleLabel.text = allData[indexPath.row].nameOfProduct
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            let dateString = dateFormatter.string(from: allData[indexPath.row].date)
+            
+            //cell.itemDateLabel.text = dateString
+            
+            if(allData[indexPath.row].urlImage != ""){
+                let url = URL(string: allData[indexPath.row].urlImage)
+                cell.itemThumbImageView.kf.setImage(with: url)
+            }else{
+                //change name for non imaged items
+                cell.itemThumbImageView.image = UIImage(named: "ic_acc.png")
             }
-        }
-        
-        for subview in cell.itemTagsStackView_Bottom.subviews
-        {
-            if let item = subview as? UILabel
+            
+            //print("hastags count \(allData[indexPath.row].hashtags.count)")
+            // Stackview
+            for subview in cell.itemTagsStackView.subviews
             {
-                let tInt = (item.tag as? Int)!
-                
-                if (tInt < allData[indexPath.row].hashtags.count) {
-                    item.alpha = 1
-                    item.isHidden = false
-                    item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < allData[indexPath.row].hashtags.count) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        cell.itemTagsStackView.distribution = .fillEqually
+                    }
+                    
                 }
-                else{
-                    //item.isHidden = true
-                    item.alpha = 0
-                    item.text = ""
-                    cell.itemTagsStackView.distribution = .fillEqually
-                }
-                
             }
-        }
+            
+            for subview in cell.itemTagsStackView_Bottom.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < allData[indexPath.row].hashtags.count) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        cell.itemTagsStackView.distribution = .fillEqually
+                    }
+                    
+                }
+            }
 
+            return cell
+            
+        }
+        else{
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "wishListViewItem", for: indexPath) as! WishListViewCell
+            
+            cell.itemLabel.text = "test"
+            
+            /*
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            let dateString = dateFormatter.string(from: allData[indexPath.row].date)
+ */
+            
+            //cell.itemDateLabel.text = dateString
+            
+            //print("hastags count \(allData[indexPath.row].hashtags.count)")
+            // Stackview
+            /*
+            for subview in cell.stackViewTop.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < allData[indexPath.row].hashtags.count) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        //item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        //cell.itemTagsStackView.distribution = .fillEqually
+                    }
+                    
+                }
+            }
+            
+            for subview in cell.stackViewBottom.subviews
+            {
+                if let item = subview as? UILabel
+                {
+                    let tInt = (item.tag as? Int)!
+                    
+                    if (tInt < allData[indexPath.row].hashtags.count) {
+                        item.alpha = 1
+                        item.isHidden = false
+                        //item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                    }
+                    else{
+                        //item.isHidden = true
+                        item.alpha = 0
+                        item.text = ""
+                        //cell.itemTagsStackView.distribution = .fillEqually
+                    }
+                    
+                }
+            }
+ */
+            
+            return cell
+            
+        }
         
         
-        
-        // Configure the cell...
-        
-        return cell
+    
     }
     
     func dateToString(date: Date) -> String{

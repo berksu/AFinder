@@ -683,7 +683,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         //If user pressed yes
         let yesButton = UIAlertAction(title:"Yes",style: UIAlertActionStyle.default){ACTION in
-            self.removeItemFromParse(objectId: sender.product.objectID)
+            self.removeItemFromParse(objectId: sender.product.objectID,isRemoveFromHome: true)
         }
         
         let cancelButton = UIAlertAction(title:"Cancel",style: UIAlertActionStyle.default){ACTION in
@@ -724,7 +724,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
  
     
     
-    func removeItemFromParse(objectId: String){
+    func removeItemFromParse(objectId: String,isRemoveFromHome : Bool){
         let query = PFQuery(className: "Product")
         
         query.getObjectInBackground(withId: objectId) { (object, error) in
@@ -733,15 +733,20 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 object?.deleteInBackground(block: { (deleted, error) in
                     if(deleted){
                         print("Data Successfully removed")
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
                         
-                        // we have a notification (single)
-                        // pop it
-                        haveNotification = true
-                        directPass = true
-                        initialViewIndex = 1
+                        if(!isRemoveFromHome){
+                            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                            
+                            // we have a notification (single)
+                            // pop it
+                            haveNotification = true
+                            directPass = true
+                            initialViewIndex = 1
+                            
+                            self.present(viewController, animated: false, completion: nil)
+                        }
                         
-                        self.present(viewController, animated: false, completion: nil)
+                        
                     }else{
                         print("Error!! Data cannot be removed from database")
                     }

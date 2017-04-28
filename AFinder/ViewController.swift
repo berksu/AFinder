@@ -47,13 +47,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     @IBOutlet weak var newAdImageView: UIImageView!
     let recognizer = UITapGestureRecognizer()
-    
-    @IBOutlet weak var bottomView: SpringView!
-    @IBOutlet weak var bottomViewBottomPart: UIView!
-    @IBOutlet weak var popularTagsStackView: UIStackView!
-    var isBottomFirstOpening = false
-    var isBottomMenuOpen : Bool = false
-    var previousIndex : Int = 0
+     var previousIndex : Int = 0
     
     @IBOutlet weak var dividerSpring: SpringImageView!
     @IBOutlet weak var dividerSpringFirst: SpringImageView!
@@ -118,17 +112,15 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBarController.isHidden = false
         pageTitleLabel.isHidden = false;
         notificationView.isHidden = true
-        bottomViewBottomPart.isHidden = true
         
         UIApplication.shared.isStatusBarHidden = true
         
-        bottomView.layer.borderWidth = 1
-        bottomView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
-        
-        
+    
         searchListTableView.isHidden = true
         
         searchBarController.tintColor = .red
+        //searchBarController.backgroundColor = UIColor.clear
+        //searchBarController.backgroundImage = nil
         
         //güzel yol degil ama simdilik mecbur
         searchBarController.showsCancelButton = true
@@ -220,13 +212,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         notificationView.isHidden = true
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        bottomView.isHidden = false
-        bottomView.animate()
-        
-    }
-    
     // Search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
@@ -307,7 +292,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     func profileImageHasBeenTapped(){
         
-        
+        notificationIcon.isHidden = true
         
         let previousVC = viewControllers[selectedIndex]
         
@@ -351,86 +336,12 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
 
     }
     
-    func openBottomMenu(){
-        
-        bottomViewBottomPart.isHidden = false
-        
-        if(!isBottomFirstOpening) {
-            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y + bottomViewBottomPart.frame.size.height
-        
-            isBottomFirstOpening = true
-        }
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            
-            self.bottomView.frame.origin.y = self.bottomView.frame.origin.y - self.bottomViewBottomPart.frame.size.height
-            self.newAdImageView.frame.origin.y = self.newAdImageView.frame.origin.y -
-                self.bottomViewBottomPart.frame.size.height
-            
-        }, completion: { finished in
-            
-        })
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            
-            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y -
-                self.bottomViewBottomPart.frame.size.height
-            
-        }, completion: { finished in
-            
-        })
-        
-        popularTagsStackView.frame.origin.x = popularTagsStackView.frame.origin.x - popularTagsStackView.frame.size.width - 50
-        
-        popularTagsStackView.isHidden = false
-        
-        let firstPos = popularTagsStackView.frame.origin.x
-        
-        UIView.animate(withDuration: 9.0, delay: 1.0, options: [.curveEaseOut,.repeat], animations: {
-            
-            for subview in self.popularTagsStackView.subviews
-            {
-                if let item = subview as? UILabel
-                {
-                    item.frame.origin.x = item.frame.origin.x + 830
-                }
-            }
-            
-        }, completion: { finished in
-            self.popularTagsStackView.isHidden = true
-            self.popularTagsStackView.frame.origin.x = firstPos
-        })
-        
-    }
-    
-    func closeBottomMenu(){
-        
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-            
-            self.bottomViewBottomPart.frame.origin.y = self.bottomViewBottomPart.frame.origin.y +
-                self.bottomViewBottomPart.frame.size.height
-            
-            
-        }, completion: { finished in
-            self.bottomViewBottomPart.isHidden = true
-            
-        })
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-            
-            self.bottomView.frame.origin.y = self.bottomView.frame.origin.y + self.bottomViewBottomPart.frame.size.height
-            self.newAdImageView.frame.origin.y = self.newAdImageView.frame.origin.y +
-                self.bottomViewBottomPart.frame.size.height
-            
-        }, completion: { finished in
-            
-        })
-
-    }
-
+   
     
     @IBAction func didPressTab(_ sender: UIButton) {
+        
+        notificationIcon.isHidden = false
+        
         previousIndex = selectedIndex
         selectedIndex = sender.tag
         buttons[selectedIndex].isSelected = false
@@ -445,13 +356,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         let vc = viewControllers[selectedIndex]
         
         if (selectedIndex == 1)  && (previousIndex != selectedIndex){
-            
-            
-            if(directPass) {
-                dividerSpringFirst.isHidden = true
-                dividerSpring.isHidden = false
-                return
-            }
             
             notificationView.alpha = 1
             dividerSpringFirst.isHidden = true

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -81,11 +81,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jln-I2-jbA">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jln-I2-jbA">
                     <rect key="frame" x="230" y="3" width="30" height="30"/>
                     <state key="normal" title="Info"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soO-VA-0Gd">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soO-VA-0Gd">
                     <rect key="frame" x="150" y="3" width="30" height="30"/>
                     <state key="normal" title="Find"/>
                 </button>
@@ -118,6 +118,107 @@
                 <outlet property="stackViewTop" destination="ZlS-Wn-3ML" id="Rtq-8L-ato"/>
             </connections>
             <point key="canvasLocation" x="80" y="88.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="Zab-Ro-dMZ" customClass="CustomCalloutView" customModule="AFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8H7-BO-Cf1">
+                    <rect key="frame" x="10" y="39" width="292" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsP-aJ-Gcp" userLabel="#computer">
+                            <rect key="frame" x="0.0" y="0.0" width="106" height="20"/>
+                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-5L-iLR">
+                            <rect key="frame" x="109" y="0.0" width="57.5" height="20"/>
+                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4D-WU-QvU">
+                            <rect key="frame" x="169.5" y="0.0" width="122" height="20"/>
+                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="4ke-2d-tUy"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zvc-WO-VpW">
+                    <rect key="frame" x="10" y="67" width="210" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-kM-4hi">
+                            <rect key="frame" x="0.0" y="0.0" width="132.5" height="20"/>
+                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhm-hd-esd">
+                            <rect key="frame" x="135.5" y="0.0" width="74.5" height="20"/>
+                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="l46-eW-nyG"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoN-sl-bvL">
+                    <rect key="frame" x="10" y="8" width="132" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Uxr-tZ-qAW"/>
+                        <constraint firstAttribute="width" constant="111" id="xWA-cv-Q6E" userLabel="width = 120"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-xT-TX2">
+                    <rect key="frame" x="230" y="3" width="30" height="30"/>
+                    <state key="normal" title="Info"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEh-oO-ztd">
+                    <rect key="frame" x="150" y="3" width="30" height="30"/>
+                    <state key="normal" title="Find"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zvc-WO-VpW" secondAttribute="trailing" constant="155" id="0bh-n2-neY"/>
+                <constraint firstItem="zvc-WO-VpW" firstAttribute="leading" secondItem="Zab-Ro-dMZ" secondAttribute="leading" constant="10" id="531-P0-Oyu"/>
+                <constraint firstAttribute="trailing" secondItem="8H7-BO-Cf1" secondAttribute="trailing" constant="73.5" id="Fyf-g7-cqw"/>
+                <constraint firstItem="PEh-oO-ztd" firstAttribute="top" secondItem="Zab-Ro-dMZ" secondAttribute="top" constant="3" id="Gg0-gD-iOk"/>
+                <constraint firstItem="PEh-oO-ztd" firstAttribute="leading" secondItem="DoN-sl-bvL" secondAttribute="trailing" constant="22" id="Lhl-xn-q1S"/>
+                <constraint firstAttribute="trailing" secondItem="Qn2-xT-TX2" secondAttribute="trailing" constant="16" id="Ryo-3c-OdV"/>
+                <constraint firstItem="DoN-sl-bvL" firstAttribute="top" secondItem="Zab-Ro-dMZ" secondAttribute="top" constant="8" id="SQz-sv-lL2"/>
+                <constraint firstItem="8H7-BO-Cf1" firstAttribute="leading" secondItem="Zab-Ro-dMZ" secondAttribute="leading" constant="10" id="VsW-DQ-w2Q"/>
+                <constraint firstItem="zvc-WO-VpW" firstAttribute="top" secondItem="8H7-BO-Cf1" secondAttribute="bottom" constant="8" id="biJ-a5-ih0"/>
+                <constraint firstItem="Qn2-xT-TX2" firstAttribute="leading" secondItem="PEh-oO-ztd" secondAttribute="trailing" constant="36" id="dYU-m2-Q71"/>
+                <constraint firstItem="Qn2-xT-TX2" firstAttribute="top" secondItem="Zab-Ro-dMZ" secondAttribute="top" constant="3" id="mxz-mU-b09"/>
+                <constraint firstItem="zvc-WO-VpW" firstAttribute="top" secondItem="8H7-BO-Cf1" secondAttribute="bottom" constant="8" id="pNt-TB-ZnX"/>
+                <constraint firstItem="8H7-BO-Cf1" firstAttribute="top" secondItem="DoN-sl-bvL" secondAttribute="bottom" constant="10" id="pz1-hc-b2Z"/>
+                <constraint firstItem="DoN-sl-bvL" firstAttribute="leading" secondItem="Zab-Ro-dMZ" secondAttribute="leading" constant="10" id="qgH-Kw-j0b"/>
+                <constraint firstAttribute="bottom" secondItem="zvc-WO-VpW" secondAttribute="bottom" constant="8" id="tfb-88-eql"/>
+            </constraints>
+            <connections>
+                <outlet property="date" destination="DoN-sl-bvL" id="tUb-fS-SQp"/>
+                <outlet property="findButton" destination="PEh-oO-ztd" id="jwv-Rs-iCa"/>
+                <outlet property="infoButton" destination="Qn2-xT-TX2" id="n28-s8-R7k"/>
+                <outlet property="stackViewBottom" destination="zvc-WO-VpW" id="SCn-IN-3jr"/>
+                <outlet property="stackViewTop" destination="8H7-BO-Cf1" id="LUo-MK-8be"/>
+            </connections>
+            <point key="canvasLocation" x="462" y="53"/>
         </view>
     </objects>
 </document>
