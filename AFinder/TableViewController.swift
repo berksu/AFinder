@@ -21,9 +21,18 @@ struct ownerData{
     var urlImage: String
 }
 
+struct wishlistItems{
+    var objectId: String
+    var position:CLLocationCoordinate2D
+    var date: Date
+    var hashtags: [String]!
+}
+
+
 class TableViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
 
-    
+    var wishlist = [wishlistItems!]()
+
     var allData = [ownerData!]()
     var selectedData : ownerData!
     
@@ -44,7 +53,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         getUsersOwnItem()
-        
+        getUserWishlist()
         
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
@@ -89,10 +98,11 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
         if(tableView == itemsTableView){
             return self.allData.count
         }
-        else {
+        else if(tableView == wishListTableView){
+            return self.wishlist.count
+        }else{
             return 1
         }
-        
     }
     
     
@@ -134,7 +144,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                         item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
                     }
                     else{
-                        //item.isHidden = true
+                        item.isHidden = true
                         item.alpha = 0
                         item.text = ""
                         cell.itemTagsStackView.distribution = .fillEqually
@@ -155,10 +165,10 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                         item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
                     }
                     else{
-                        //item.isHidden = true
+                        item.isHidden = true
                         item.alpha = 0
                         item.text = ""
-                        cell.itemTagsStackView.distribution = .fillEqually
+                        cell.itemTagsStackView_Bottom.distribution = .fillEqually
                     }
                     
                 }
@@ -172,35 +182,32 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "wishListViewItem", for: indexPath) as! WishListViewCell
             
-            cell.itemLabel.text = "test"
-            
-            /*
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM yyyy"
-            let dateString = dateFormatter.string(from: allData[indexPath.row].date)
- */
+            let dateString = dateFormatter.string(from: wishlist[indexPath.row].date)
+ 
             
-            //cell.itemDateLabel.text = dateString
+            cell.itemLabel.text = dateString
             
             //print("hastags count \(allData[indexPath.row].hashtags.count)")
             // Stackview
-            /*
+            
             for subview in cell.stackViewTop.subviews
             {
                 if let item = subview as? UILabel
                 {
                     let tInt = (item.tag as? Int)!
                     
-                    if (tInt < allData[indexPath.row].hashtags.count) {
+                    if (tInt < wishlist[indexPath.row].hashtags.count) {
                         item.alpha = 1
                         item.isHidden = false
-                        //item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                        item.text = " #"+wishlist[indexPath.row].hashtags[item.tag] + " "
                     }
                     else{
-                        //item.isHidden = true
+                        item.isHidden = true
                         item.alpha = 0
                         item.text = ""
-                        //cell.itemTagsStackView.distribution = .fillEqually
+                        cell.stackViewTop.distribution = .fillEqually
                     }
                     
                 }
@@ -212,27 +219,25 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                 {
                     let tInt = (item.tag as? Int)!
                     
-                    if (tInt < allData[indexPath.row].hashtags.count) {
+                    if (tInt < wishlist[indexPath.row].hashtags.count) {
                         item.alpha = 1
                         item.isHidden = false
-                        //item.text = " #"+allData[indexPath.row].hashtags[item.tag] + " "
+                        item.text = " #"+wishlist[indexPath.row].hashtags[item.tag] + " "
                     }
                     else{
-                        //item.isHidden = true
+                        item.isHidden = true
                         item.alpha = 0
                         item.text = ""
-                        //cell.itemTagsStackView.distribution = .fillEqually
+                        cell.stackViewBottom.distribution = .fillEqually
                     }
                     
                 }
             }
- */
+ 
             
             return cell
             
         }
-        
-        
     
     }
     
@@ -276,6 +281,30 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             }
         }
         
+    }
+    
+    
+    
+    func getUserWishlist(){
+        let query = PFQuery(className: "Wishlist")
+        query.whereKey("user", equalTo: PFUser.current()!)
+        
+        
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object in objects!{
+                    
+                    let wishlistItem = wishlistItems(objectId: object.objectId!, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude) ,date:object["date"] as! Date, hashtags:object["hashtags"] as! [String])
+                    self.wishlist.append(wishlistItem)
+                    
+                }
+                self.wishListTableView.reloadData()
+            }
+            else {
+                print("Error ! Cannot reach database")
+            }
+        }
+
     }
     
     // Whenever the user selects a row , open a new viewcontroller

@@ -591,6 +591,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         return annotationView
     }
     
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
         // 1
@@ -605,6 +606,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let calloutView = views?[0] as! CustomCalloutView
         //calloutView.productName.text = customAnnotation.name
         calloutView.date.text = customAnnotation.date
+        
         
         // Stackview
         for subview in calloutView.stackViewTop.subviews
@@ -663,7 +665,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         findbutton.product = customAnnotation
         findbutton.addTarget(self, action: #selector(HomeViewController.find(sender:)), for: .touchUpInside)
         calloutView.addSubview(findbutton)
-
+        
         //calloutView.image.image = customAnnotation.image
         // 3
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
@@ -673,6 +675,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.bringSubview(toFront: view)
         
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+    
     }
     
     
@@ -720,6 +723,39 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 subview.removeFromSuperview()
             }
         }
+        
+        //change coor of selected annootation
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotations(allCustomAnnotations)
+    }
+    
+    
+    
+    func removedProductsAnnotationProcess(objectId: String){
+        for i in 0..<allCustomAnnotations.count{
+            if(allCustomAnnotations[i].objectID == objectId){
+                mapView.deselectAnnotation(allCustomAnnotations[i], animated: true)
+                allCustomAnnotations.remove(at: i)
+                mapView.removeAnnotations(mapView.annotations)
+                mapView.addAnnotations(allCustomAnnotations)
+                break
+            }
+        }
+        
+        for i in 0..<allItems.count{
+            if(allItems[i].objectId == objectId){
+                allItems.remove(at: i)
+                break
+            }
+        }
+        
+        for i in 0..<HomeViewController.currentItemsOnScreen.count{
+            if(HomeViewController.currentItemsOnScreen[i]?.objectId == objectId){
+                HomeViewController.currentItemsOnScreen.remove(at: i)
+                break
+            }
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
  
     
@@ -729,6 +765,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         query.getObjectInBackground(withId: objectId) { (object, error) in
             if error == nil {
+                
+                self.removedProductsAnnotationProcess(objectId: (object?.objectId)!)
                 
                 object?.deleteInBackground(block: { (deleted, error) in
                     if(deleted){
@@ -745,6 +783,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                             
                             self.present(viewController, animated: false, completion: nil)
                         }
+                        
                         
                         
                     }else{
