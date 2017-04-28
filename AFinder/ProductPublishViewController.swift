@@ -173,6 +173,13 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
         UIGraphicsEndImageContext()
         return resizedImage!
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueHome" {
+            // Create a new variable to store the instance of PlayerTableViewController
+            initialViewIndex = 0
+        }
+    }
 
     /*
     // MARK: - Navigation

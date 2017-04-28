@@ -174,6 +174,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
     @IBAction func closeButton(_ sender: UIButton) {
         //initialViewIndex = 1
         //directPass = true
+        performSegue(withIdentifier: "sequeBack", sender: self)
     }
     
     
@@ -207,8 +208,6 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 print("Error ! Cannot reach database")
             }
         }
-        
-        
         
     }
     
@@ -276,7 +275,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
                 self.locationTextField.text = address
                 
             }else{
-                self.informationTextField.text = "Address cannot be found !"
+                self.locationTextField.text = "Address cannot be found !"
                 print("address cannot be found")
                 
             }
@@ -359,6 +358,14 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if segue.identifier == "sequeBack" {
+            // Create a new variable to store the instance of PlayerTableViewController
+            initialViewIndex = 1
+            
+            itemsTableViewShown = false
+            wishlistTableViewShown = true
+        }
+
      }
     
     

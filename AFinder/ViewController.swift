@@ -16,15 +16,14 @@ import MapKit
 // Adding item , removing item
 // Other ops.
 var haveNotification : Bool = false
-var initialViewIndex : Int = 0
 var directPass : Bool = false
+var initialViewIndex : Int = 0
 
 class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var searchListTableView: UITableView!
-    
     
     @IBOutlet weak var notificationIcon: SpringButton!
     @IBOutlet weak var singleNotificationView: SpringView!
@@ -126,7 +125,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         searchBarController.showsCancelButton = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-        
         
         
     }
@@ -373,7 +371,11 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
             dividerSpringFirst.delay = 0
             dividerSpringFirst.animation = "slideLeft"
             dividerSpringFirst.animate()
+            
+            itemsTableViewShown = false
+            wishlistTableViewShown = true
         }
+
         
         //buttonDividers[selectedIndex].image = buttonDivierImages[0]
         //buttonDividers[previousIndex].image = buttonDivierImages[1]
@@ -390,7 +392,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
-        
         
         //pageTitleLabel.text = pageTitles[selectedIndex]
         vc.didMove(toParentViewController: self)

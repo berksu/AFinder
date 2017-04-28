@@ -26,8 +26,11 @@ struct wishlistItems{
     var position:CLLocationCoordinate2D
     var date: Date
     var hashtags: [String]!
+    var searchedAreaRadius: Double
 }
 
+var itemsTableViewShown = false
+var wishlistTableViewShown = true
 
 class TableViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
 
@@ -35,6 +38,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
     var allData = [ownerData!]()
     var selectedData : ownerData!
+    var selectedWishlistData: wishlistItems!
     
     // Spinner before tableview load
     var indicator = UIActivityIndicatorView()
@@ -51,9 +55,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        getUsersOwnItem()
-        getUserWishlist()
+
         
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
@@ -66,7 +68,20 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
                 
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        itemsTableView.isHidden = itemsTableViewShown
+        wishListTableView.isHidden = wishlistTableViewShown
+        
+        if(itemsTableViewShown){
+            segmentControl.selectedSegmentIndex = 1
+        }else{
+            segmentControl.selectedSegmentIndex = 0
+        }
+        
+        getUsersOwnItem()
+        getUserWishlist()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,12 +92,18 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     @IBAction func segmentOnChange(_ sender: Any) {
         
         if(segmentControl.selectedSegmentIndex == 0){
-            itemsTableView.isHidden = false
-            wishListTableView.isHidden = true
+            itemsTableViewShown = false
+            wishlistTableViewShown = true
+            
+            itemsTableView.isHidden = itemsTableViewShown
+            wishListTableView.isHidden = wishlistTableViewShown
         }
         else{
-            itemsTableView.isHidden = true
-            wishListTableView.isHidden = false
+            itemsTableViewShown = true
+            wishlistTableViewShown = false
+            
+            itemsTableView.isHidden = itemsTableViewShown
+            wishListTableView.isHidden = wishlistTableViewShown
         }
         
         
@@ -249,6 +270,8 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     func getUsersOwnItem(){
         
+        allData.removeAll()
+        
         let query = PFQuery(className: "Product")
         query.whereKey("user", equalTo: PFUser.current()!)
         
@@ -286,6 +309,8 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     
     
     func getUserWishlist(){
+        wishlist.removeAll()
+        
         let query = PFQuery(className: "Wishlist")
         query.whereKey("user", equalTo: PFUser.current()!)
         
@@ -294,7 +319,7 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             if error == nil {
                 for object in objects!{
                     
-                    let wishlistItem = wishlistItems(objectId: object.objectId!, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude) ,date:object["date"] as! Date, hashtags:object["hashtags"] as! [String])
+                    let wishlistItem = wishlistItems(objectId: object.objectId!, position: CLLocationCoordinate2D(latitude: (object["location"] as AnyObject).latitude, longitude: (object["location"] as AnyObject).longitude) ,date:object["date"] as! Date, hashtags:object["hashtags"] as! [String], searchedAreaRadius: object["distance"] as! Double)
                     self.wishlist.append(wishlistItem)
                     
                 }
@@ -310,8 +335,14 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
     // Whenever the user selects a row , open a new viewcontroller
     // Display item details
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedData = allData[indexPath.row]
-        performSegue(withIdentifier: "segueItemDetails", sender: self)
+        if(tableView == itemsTableView){
+            selectedData = allData[indexPath.row]
+            performSegue(withIdentifier: "segueItemDetails", sender: self)
+        }else{
+            selectedWishlistData = wishlist[indexPath.row]
+            performSegue(withIdentifier: "sequeWishlistDetails", sender: self)
+        }
+        
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -320,6 +351,10 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             // Create a new variable to store the instance of PlayerTableViewController
             let destinationVC = segue.destination as! productDetailsViewController
             destinationVC.selectedItem = selectedData
+        }else if segue.identifier == "sequeWishlistDetails"{
+            // Create a new variable to store the instance of PlayerTableViewController
+            let destinationVC = segue.destination as! WishlistDetailViewController
+            destinationVC.selectedWishlistItem = selectedWishlistData
         }
     }
     
