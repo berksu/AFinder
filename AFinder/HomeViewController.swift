@@ -11,6 +11,9 @@ import MapKit
 import CoreLocation
 import Parse
 import Spring
+import UserNotifications
+import UserNotificationsUI //framework to customize the notification
+
 
 
 struct items{
@@ -56,6 +59,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var allCustomAnnotations:[customAnnotation] = []
     var isFirst = true
     
+    let requestIdentifier = "SampleRequest" //identifier is to cancel the notification request
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +107,17 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
         
         
+        /*UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (didAllow, error) in
+            if(didAllow){
+                print("notification oldu")
+            }else{
+                print("notification olmadı")
+            }
+        }*/
+        
+        notificaitonTemp()
     }
+    
     
     
     func openAddWishListButton(){
@@ -118,6 +133,45 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         applyWishListButton.duration = 1.5
         applyWishListButton.isHidden = false
         applyWishListButton.animate()
+    
+    }
+    
+    
+    
+    //Notification
+    func notificaitonTemp(){
+        //Notification Temp
+        let content = UNMutableNotificationContent()
+        content.title = "Item Found"
+        content.subtitle = "Your wished item is found"
+        content.body = "You are so lucky :)"
+        content.sound = UNNotificationSound.default()
+        
+        //To Present image in notification
+        if let path = Bundle.main.path(forResource: "CNN_International_logo_2014", ofType: "png") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "sampleImage", url: url, options: nil)
+                content.attachments = [attachment]
+            } catch {
+                print("attachment not found.")
+            }
+        }
+        
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5.0, repeats: false)
+        let request = UNNotificationRequest(identifier:requestIdentifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().delegate = self as! UNUserNotificationCenterDelegate
+        UNUserNotificationCenter.current().add(request){(error) in
+            
+            if (error != nil){
+                
+                print(error?.localizedDescription)
+            }
+        }
+
     }
     
     
@@ -1036,3 +1090,24 @@ extension MKMapView {
 }
 
 
+extension HomeViewController:UNUserNotificationCenterDelegate{
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        print("Tapped in notification")
+    }
+    
+    //This is key callback to present notification while the app is in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("Notification being triggered")
+        //You can either present alert ,sound or increase badge while the app is in foreground too with ios 10
+        //to distinguish between notifications
+        if notification.request.identifier == requestIdentifier{
+            
+            completionHandler( [.alert,.sound,.badge])
+            
+        }
+    }
+}
