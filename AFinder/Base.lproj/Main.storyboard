@@ -730,7 +730,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRW-BV-Pwv" id="HPU-kP-taZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-6i-uhR">
@@ -842,7 +842,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEs-fH-CmV" id="JN6-bE-6sf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0g-fe-foq" customClass="SpringLabel" customModule="Spring">
@@ -1315,7 +1315,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0C-L9-P7w" id="Np7-6P-qNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbi-PH-eom">
@@ -1414,6 +1414,106 @@
                                     <outlet property="delegate" destination="N9i-1g-gQh" id="3Ac-fM-4G3"/>
                                 </connections>
                             </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="wishListViewItems" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YmB-8d-B4M" userLabel="wishListTableView">
+                                <rect key="frame" x="20" y="83" width="374" height="570"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="btJ-8p-lsW"/>
+                                    <constraint firstAttribute="height" constant="570" id="g0Z-Fw-cTg"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="wishListViewItem" rowHeight="83" id="GoB-nS-12W" customClass="WishListViewCell" customModule="AFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GoB-nS-12W" id="3eR-mN-SAj">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="82.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w2-rV-VlJ">
+                                                    <rect key="frame" x="8" y="8" width="203" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="1fp-1l-FvG"/>
+                                                        <constraint firstAttribute="width" constant="203" id="REm-zz-ZlR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7fE-JA-Be8">
+                                                    <rect key="frame" x="8" y="31" width="192" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xm-nQ-5xm" userLabel="#computer">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="20"/>
+                                                            <color key="backgroundColor" red="0.93333333330000001" green="0.34901960780000002" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgs-pk-tj4">
+                                                            <rect key="frame" x="72.666666666666671" y="0.0" width="38" height="20"/>
+                                                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text=" #technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-N4-a9i">
+                                                            <rect key="frame" x="113.66666666666669" y="0.0" width="78.333333333333314" height="20"/>
+                                                            <color key="backgroundColor" red="0.93333333330000001" green="0.34901960780000002" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="o0v-M6-eo2"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sS3-tR-BIM">
+                                                    <rect key="frame" x="8" y="54" width="110.66666666666667" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text=" #computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvo-8k-ofp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="20"/>
+                                                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text=" #tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNy-Nr-mJg">
+                                                            <rect key="frame" x="72.666666666666671" y="0.0" width="38" height="20"/>
+                                                            <color key="backgroundColor" red="0.93498021360000005" green="0.35012739900000001" blue="0.16352269050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="FKl-J9-8bk"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7fE-JA-Be8" secondAttribute="trailing" constant="166" id="8sC-aG-zux"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6w2-rV-VlJ" secondAttribute="trailing" constant="155" id="IsX-RY-hug"/>
+                                                <constraint firstItem="sS3-tR-BIM" firstAttribute="top" secondItem="7fE-JA-Be8" secondAttribute="bottom" constant="3" id="KNy-qF-3b7"/>
+                                                <constraint firstItem="7fE-JA-Be8" firstAttribute="top" secondItem="6w2-rV-VlJ" secondAttribute="bottom" constant="2" id="OOG-tX-ag4"/>
+                                                <constraint firstItem="6w2-rV-VlJ" firstAttribute="top" secondItem="3eR-mN-SAj" secondAttribute="topMargin" id="bxC-OS-fFw"/>
+                                                <constraint firstItem="sS3-tR-BIM" firstAttribute="leading" secondItem="7fE-JA-Be8" secondAttribute="leading" id="h8Q-bT-f4r"/>
+                                                <constraint firstItem="sS3-tR-BIM" firstAttribute="leading" secondItem="6w2-rV-VlJ" secondAttribute="leading" id="tTG-mV-OZv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemLabel" destination="6w2-rV-VlJ" id="Trb-4L-qIH"/>
+                                            <outlet property="stackViewBottom" destination="sS3-tR-BIM" id="To2-1l-b1V"/>
+                                            <outlet property="stackViewTop" destination="7fE-JA-Be8" id="X9J-Pg-4mi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="N9i-1g-gQh" id="iUI-Pc-cmq"/>
+                                    <outlet property="delegate" destination="N9i-1g-gQh" id="aXm-VZ-vIO"/>
+                                </connections>
+                            </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Gs-tq-U1C">
                                 <rect key="frame" x="20" y="10" width="374" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -1425,13 +1525,19 @@
                                     <segment title="Wishlist"/>
                                 </segments>
                                 <color key="tintColor" red="0.027264435279187871" green="0.0015297441479668961" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentOnChange:" destination="N9i-1g-gQh" eventType="valueChanged" id="jPV-wC-IMG"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YmB-8d-B4M" firstAttribute="top" secondItem="9Gs-tq-U1C" secondAttribute="bottom" constant="45" id="2f6-1K-bS4"/>
+                            <constraint firstItem="YmB-8d-B4M" firstAttribute="leading" secondItem="fkH-Tb-GEb" secondAttribute="leadingMargin" id="G6A-KD-VjW"/>
                             <constraint firstItem="wgt-cC-RIk" firstAttribute="top" secondItem="9Gs-tq-U1C" secondAttribute="bottom" constant="17" id="HU0-2d-8Hs"/>
                             <constraint firstItem="wgt-cC-RIk" firstAttribute="trailing" secondItem="fkH-Tb-GEb" secondAttribute="trailingMargin" id="HwZ-od-hcH"/>
                             <constraint firstItem="9Gs-tq-U1C" firstAttribute="top" secondItem="HJj-Rj-QsC" secondAttribute="bottom" constant="10" id="SJS-TF-nlW"/>
+                            <constraint firstItem="YmB-8d-B4M" firstAttribute="trailing" secondItem="fkH-Tb-GEb" secondAttribute="trailingMargin" id="cLz-fC-Lf6"/>
                             <constraint firstItem="9Gs-tq-U1C" firstAttribute="trailing" secondItem="fkH-Tb-GEb" secondAttribute="trailingMargin" id="eb6-eV-tCa"/>
                             <constraint firstItem="9Gs-tq-U1C" firstAttribute="leading" secondItem="fkH-Tb-GEb" secondAttribute="leadingMargin" id="emE-x6-lTa"/>
                             <constraint firstItem="wgt-cC-RIk" firstAttribute="leading" secondItem="fkH-Tb-GEb" secondAttribute="leadingMargin" id="naI-MH-waH"/>
@@ -1441,6 +1547,7 @@
                     <connections>
                         <outlet property="itemsTableView" destination="wgt-cC-RIk" id="5tC-5S-WwV"/>
                         <outlet property="segmentControl" destination="9Gs-tq-U1C" id="3I7-u7-hJD"/>
+                        <outlet property="wishListTableView" destination="YmB-8d-B4M" id="nL7-WH-neu"/>
                         <segue destination="Oz9-FT-DeA" kind="show" identifier="segueItemDetails" id="kaA-w1-BuJ"/>
                     </connections>
                 </viewController>
@@ -1911,7 +2018,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="140.66666666666669" y="34" width="133.00000000000006" height="41"/>
+                                <rect key="frame" x="141" y="34" width="133" height="41"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

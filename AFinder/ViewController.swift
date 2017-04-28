@@ -292,7 +292,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     func profileImageHasBeenTapped(){
         
-        
+        notificationIcon.isHidden = true
         
         let previousVC = viewControllers[selectedIndex]
         
@@ -339,6 +339,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
    
     
     @IBAction func didPressTab(_ sender: UIButton) {
+        
+        notificationIcon.isHidden = false
+        
         previousIndex = selectedIndex
         selectedIndex = sender.tag
         buttons[selectedIndex].isSelected = false

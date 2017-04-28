@@ -56,6 +56,7 @@
 		14B0B6821E979D3A00CE5C30 /* ic_item_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6811E979D3A00CE5C30 /* ic_item_header.png */; };
 		14B0B6841E97DFD300CE5C30 /* ic_acc.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6831E97DFD300CE5C30 /* ic_acc.png */; };
 		14B0B6861E97E06700CE5C30 /* 1491595053_icons_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */; };
+		14C94A121EB38EB500F10532 /* WishListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C94A111EB38EB500F10532 /* WishListViewCell.swift */; };
 		14CF83031EB25E4400E621FC /* ic_add_new_item_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CF83021EB25E4400E621FC /* ic_add_new_item_add.png */; };
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E8B291E957D4B00F67286 /* AddProductViewController.swift */; };
@@ -136,6 +137,7 @@
 		14B0B6811E979D3A00CE5C30 /* ic_item_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_item_header.png; sourceTree = "<group>"; };
 		14B0B6831E97DFD300CE5C30 /* ic_acc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_acc.png; sourceTree = "<group>"; };
 		14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1491595053_icons_password.png; sourceTree = "<group>"; };
+		14C94A111EB38EB500F10532 /* WishListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewCell.swift; sourceTree = "<group>"; };
 		14CF83021EB25E4400E621FC /* ic_add_new_item_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_add_new_item_add.png; sourceTree = "<group>"; };
 		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				14419D2E1E9E401000F219EB /* TableViewController.swift */,
 				14419D301E9E43AC00F219EB /* TableViewCell.swift */,
+				14C94A111EB38EB500F10532 /* WishListViewCell.swift */,
 			);
 			name = FindView;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				14419D7A1EA443FF00F219EB /* ProductPublishViewController.swift in Sources */,
 				C9767BE41EA13EC3008A10BF /* customAnnotation.swift in Sources */,
 				14419D2F1E9E401000F219EB /* TableViewController.swift in Sources */,
+				14C94A121EB38EB500F10532 /* WishListViewCell.swift in Sources */,
 				C9A08DE81E9A797900ABFD4A /* SignUpViewController.swift in Sources */,
 				140984CF1EAAD94A001FF054 /* testUIViewController.swift in Sources */,
 				140984D51EAB9C72001FF054 /* CNNMenuStyleViewController.swift in Sources */,
