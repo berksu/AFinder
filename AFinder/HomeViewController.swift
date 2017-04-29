@@ -658,6 +658,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let customAnnotation = view.annotation as! customAnnotation
         let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
         let calloutView = views?[0] as! CustomCalloutView
+        calloutView.layer.borderWidth = 1.0
+        calloutView.layer.borderColor = UIColor.gray.cgColor
         //calloutView.productName.text = customAnnotation.name
         calloutView.date.text = customAnnotation.date
         

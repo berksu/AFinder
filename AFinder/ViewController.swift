@@ -114,15 +114,15 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         UIApplication.shared.isStatusBarHidden = true
         
-    
+        
+        
         searchListTableView.isHidden = true
         
-        searchBarController.tintColor = .red
+        searchBarController.tintColor = .black
         //searchBarController.backgroundColor = UIColor.clear
         //searchBarController.backgroundImage = nil
         
         //güzel yol degil ama simdilik mecbur
-        searchBarController.showsCancelButton = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         
@@ -148,18 +148,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     
     public func displayNotification(){
-        singleNotificationView.animation = "slideRight"
-        singleNotificationView.delay = 0.5
-        singleNotificationView.duration = 1.5
-        singleNotificationView.isHidden = false
-        singleNotificationView.animate()
-        
-        singleNotificationView.animateNext {
-            self.singleNotificationView.delay = 1.5
-            self.singleNotificationView.animation = "fadeOut"
-            self.singleNotificationView.animate()
-        }
-    }
+           }
     
     func onNotificationReceived(){
         
@@ -241,11 +230,13 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchListTableView.isHidden = true
+        searchBarController.showsCancelButton = false        
         searchBar.endEditing(true)
         fadeCounter = 0.0
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBarController.showsCancelButton = true
         closeNotification()
         return true
     }
@@ -338,8 +329,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     
     @IBAction func didPressTab(_ sender: UIButton) {
         
-        notificationIcon.isHidden = false
-        
         previousIndex = selectedIndex
         selectedIndex = sender.tag
         buttons[selectedIndex].isSelected = false
@@ -355,6 +344,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         
         if (selectedIndex == 1)  && (previousIndex != selectedIndex){
             
+            notificationIcon.isHidden = true
+
+            
             notificationView.alpha = 1
             dividerSpringFirst.isHidden = true
             dividerSpring.animation = "slideRight"
@@ -365,6 +357,10 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         }
         
         if (selectedIndex == 0)  && (previousIndex != selectedIndex){
+            notificationIcon.isHidden = false
+
+            
+            
             dividerSpring.isHidden = true
             notificationView.alpha = 0.75
             dividerSpringFirst.isHidden = false
@@ -385,7 +381,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
 
         }
         else{
-            searchBarController.isHidden = true
+            searchBarController.isHidden = false
         }
         
         addChildViewController(vc)
