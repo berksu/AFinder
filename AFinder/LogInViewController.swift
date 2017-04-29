@@ -59,6 +59,7 @@ class LogInViewController: UIViewController {
     //log in
     @IBAction func logInButton(_ sender: UIButton) {
         view.endEditing(true)
+        self.view.backgroundColor = .red
         SwiftSpinner.show("Connecting to Afinder :)")
         PFUser.logInWithUsername(inBackground: username.text! , password: password.text!) { (user, error) in
             if(user != nil){
@@ -66,10 +67,12 @@ class LogInViewController: UIViewController {
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as UIViewController
                 // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
                 SwiftSpinner.hide()
+               // self.view.backgroundColor = .white
                 self.present(viewController, animated: false, completion: nil)
             }else{
                 SwiftSpinner.show("Failed connection...", animated: false).addTapHandler({
                     SwiftSpinner.hide()
+                    self.view.backgroundColor = .white
                 }, subtitle: "Tap to screen for reentering your username and password")
                 // Invalid login fields
                 self.wrongInputFields()

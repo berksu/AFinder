@@ -377,11 +377,43 @@ extension AddProductViewController {
                         }
                     }
                     print(labelResultsText)
-                    self.tagInputField.text = labelResultsText
+                    var labels = ""
+                    var temp = self.separateHashtags(tags: labelResultsText)
+                    for i in temp{
+                        if(i.contains(" ")){
+                            var tags = i.components(separatedBy: " ")
+                            tags.removeFirst()
+                            for k in tags{
+                                if(!self.hashtags.contains(k)){
+                                    self.hashtags.append(k)
+                                    
+                                    if(labels == "" ){
+                                        labels = labels + k
+                                    }else{
+                                        labels = labels + "," + k
+                                    }
+                                }
+                            }
+                        }else{
+                            if(!self.hashtags.contains(i)){
+                                self.hashtags.append(i)
+                                if(labels == ""){
+                                    labels = labels + i
+                                }else{
+                                    labels = labels + "," + i
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                    
+                    self.tagInputField.text = labels
+                    //self.tagInputField.text = labelResultsText
                     
                     // Put hastangs to the tagStackView
                     self.tagStackView.isHidden = false
-                    self.hashtags = self.separateHashtags(tags: labelResultsText)
+                    //self.hashtags = self.separateHashtags(tags: labelResultsText)
                     
                     for subview in self.tagStackView.subviews
                     {

@@ -50,8 +50,8 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         productImage.layer.cornerRadius = productImage.frame.size.width/2
         productImage.clipsToBounds = true
         
-        
-        getWishedData(newItemHashtags:["berksu"], newItemLocation: CLLocationCoordinate2D(latitude: 48.85671999999995, longitude:2.35501000000102))
+        self.hideKeyboardWhenTappedAround()
+        //getWishedData(newItemHashtags:["berksu"], newItemLocation: CLLocationCoordinate2D(latitude: 48.85671999999995, longitude:2.35501000000102))
         
     }
     
@@ -60,7 +60,12 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
         searchAddressFromLocation()
         
         dateLabel.text = dateToString(date: selectedItem.date)
-        informationTextField.text = selectedItem.information
+        if(selectedItem.information == ""){
+            informationTextField.text = "There is no additional information about this product."
+        }else{
+            informationTextField.text = selectedItem.information
+        }
+        
         
         if(selectedItem.urlImage != ""){
             let url = URL(string: selectedItem.urlImage)
