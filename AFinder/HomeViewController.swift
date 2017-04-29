@@ -115,7 +115,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             }
         }*/
         
-        notificaitonTemp()
+        //notificaitonTemp()
     }
     
     
@@ -232,7 +232,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBAction func applyWishListButtonAction(_ sender: Any) {
         
 
-        let alertController = UIAlertController(title: "Enter hastag about your last item", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enter hastag about your lost item", message: "", preferredStyle: .alert)
         
         let addToWishList = UIAlertAction(title: "Add To Wishlist", style: .default) { [weak alertController] _ in
             if let alertController = alertController {

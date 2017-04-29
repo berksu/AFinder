@@ -280,7 +280,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
     }
     
     func profileImageHasBeenTapped(){
-        
+        closeNotification()
         notificationIcon.isHidden = true
         
         let previousVC = viewControllers[selectedIndex]
@@ -377,10 +377,12 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDataSource
         //buttonDividers[previousIndex].image = buttonDivierImages[1]
         
         if selectedIndex == 0{
+            notificationIcon.isHidden = false
             searchBarController.isHidden = false
 
         }
         else{
+            closeNotification()
             searchBarController.isHidden = false
         }
         
