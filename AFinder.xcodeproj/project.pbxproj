@@ -57,6 +57,7 @@
 		14B0B6841E97DFD300CE5C30 /* ic_acc.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6831E97DFD300CE5C30 /* ic_acc.png */; };
 		14B0B6861E97E06700CE5C30 /* 1491595053_icons_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */; };
 		14C94A121EB38EB500F10532 /* WishListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C94A111EB38EB500F10532 /* WishListViewCell.swift */; };
+		14C94A141EB4270900F10532 /* afinder_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C94A131EB4270900F10532 /* afinder_logo.png */; };
 		14CF83031EB25E4400E621FC /* ic_add_new_item_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CF83021EB25E4400E621FC /* ic_add_new_item_add.png */; };
 		4E490A7A4D00C565BDE91958 /* Pods_AFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD81B89D4D2FB4558D92F9AF /* Pods_AFinder.framework */; };
 		C91E8B2A1E957D4B00F67286 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E8B291E957D4B00F67286 /* AddProductViewController.swift */; };
@@ -139,6 +140,7 @@
 		14B0B6831E97DFD300CE5C30 /* ic_acc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_acc.png; sourceTree = "<group>"; };
 		14B0B6851E97E06700CE5C30 /* 1491595053_icons_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1491595053_icons_password.png; sourceTree = "<group>"; };
 		14C94A111EB38EB500F10532 /* WishListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewCell.swift; sourceTree = "<group>"; };
+		14C94A131EB4270900F10532 /* afinder_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afinder_logo.png; sourceTree = "<group>"; };
 		14CF83021EB25E4400E621FC /* ic_add_new_item_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_add_new_item_add.png; sourceTree = "<group>"; };
 		46A5CB69A761C20AFF221B5A /* Pods-AFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		48CDAF98D2A380CB4ED73B7D /* Pods-AFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFinder/Pods-AFinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		14018D8C1E82A89B009FCE8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				14C94A131EB4270900F10532 /* afinder_logo.png */,
 				14CF83021EB25E4400E621FC /* ic_add_new_item_add.png */,
 				C9A6713D1EAEB9AA00B7D5CE /* pinTest.png */,
 				14A863EB1EABF3BA00C15FB5 /* ic_add_new_item.png */,
@@ -492,6 +495,7 @@
 				14419D5C1EA2DFFA00F219EB /* ic_tweaks.png in Resources */,
 				14419D631EA2E42300F219EB /* BebasNeue Book.otf in Resources */,
 				14B0B67E1E9799F300CE5C30 /* ic_signin.png in Resources */,
+				14C94A141EB4270900F10532 /* afinder_logo.png in Resources */,
 				14419D681EA2EB0400F219EB /* 1492318655_properties.png in Resources */,
 				14419D2D1E9E321100F219EB /* ic_location.png in Resources */,
 				14419D701EA39B1B00F219EB /* ic_keyboard.png in Resources */,
