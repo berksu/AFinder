@@ -142,6 +142,14 @@ class TableViewController: UIViewController , UITableViewDataSource,UITableViewD
             let dateString = dateFormatter.string(from: allData[indexPath.row].date)
             
             //cell.itemDateLabel.text = dateString
+            //Image Test
+            cell.itemThumbImageView.contentMode = .scaleAspectFill
+            cell.itemThumbImageView.layer.borderWidth = 1
+            cell.itemThumbImageView.layer.masksToBounds = false
+            cell.itemThumbImageView.layer.borderColor = UIColor.black.cgColor
+            cell.itemThumbImageView.backgroundColor = UIColor.clear
+            cell.itemThumbImageView.layer.cornerRadius = cell.itemThumbImageView.frame.size.width/2
+            cell.itemThumbImageView.clipsToBounds = true
             
             if(allData[indexPath.row].urlImage != ""){
                 let url = URL(string: allData[indexPath.row].urlImage)
