@@ -119,13 +119,14 @@ class AddProductViewController: UIViewController,UITextViewDelegate, UIImagePick
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-            
+
             imagePicker.allowsEditing = false
             imagePicker.modalPresentationStyle = .overCurrentContext
             
             
-            //let screenSize = UIScreen.main.bounds.size
-            //let aspectRatio:CGFloat = 4.0/3.0
+            //let screenSize = imagePicker.view.bounds.size
+            //print("height \(imagePicker.view.bounds.size.height) and the width \(imagePicker.view.bounds.size.width)")
+            //let aspectRatio:CGFloat = 736.0/414.0
             //let scale = screenSize.height/screenSize.width * aspectRatio
             //imagePicker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale);
             
