@@ -41,6 +41,7 @@ class productDetailsViewController: UIViewController, MKMapViewDelegate {
             
         
         //Image Test
+        productImage.contentMode = .scaleAspectFill
         productImage.layer.borderWidth = 1
         productImage.layer.masksToBounds = false
         //productImage.layer.borderColor = UIColor(white: 1.0, alpha: 0.4).cgColor

@@ -24,6 +24,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var informationAboutProduct: UITextView!
     
     @IBOutlet weak var pItemThumbImage: UIImageView!
+    @IBOutlet weak var imageOfProduct: UIImageView!
     
     @IBOutlet weak var tagStackView: UIStackView!
     
@@ -47,7 +48,17 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
         informationAboutProduct.text = "Give additional information about item. For example : I gave this phone to starbucks :)"
         informationAboutProduct.textColor = UIColor.lightGray
         
-        pItemThumbImage.image = productImage
+        imageOfProduct.image = productImage
+        //Image Test
+        imageOfProduct.layer.borderWidth = 1
+        imageOfProduct.layer.masksToBounds = false
+        //productImage.layer.borderColor = UIColor(white: 1.0, alpha: 0.4).cgColor
+        imageOfProduct.layer.borderColor = UIColor.black.cgColor
+        imageOfProduct.backgroundColor = UIColor.clear
+        imageOfProduct.layer.cornerRadius = imageOfProduct.frame.size.width/2
+        imageOfProduct.clipsToBounds = true
+
+        
         
         // Stackview
         for subview in tagStackView.subviews
@@ -113,14 +124,14 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
         product.setObject(PFGeoPoint(latitude: (location.latitude), longitude: (location.longitude)), forKey: "location")
         
         
-        if(pItemThumbImage.image != nil){
-            var imagedata = UIImagePNGRepresentation(pItemThumbImage.image!)
+        if(imageOfProduct.image != nil){
+            var imagedata = UIImagePNGRepresentation(imageOfProduct.image!)
             
             // Resize the image if it exceeds the 2MB API limit
             if ((imagedata?.count)! > 2097152) {
-                let oldSize: CGSize = pItemThumbImage.image!.size
+                let oldSize: CGSize = imageOfProduct.image!.size
                 let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-                imagedata = resizeImage(newSize, image: pItemThumbImage.image!)
+                imagedata = resizeImage(newSize, image: imageOfProduct.image!)
             }
             
             
@@ -129,7 +140,7 @@ class ProductPublishViewController: UIViewController,UITextViewDelegate {
             
             product.setObject(imageFile, forKey: "image")
         }
-        pItemThumbImage.image = nil
+        imageOfProduct.image = nil
         
         product.saveInBackground(block: { (success, error) in
             if (success) {
