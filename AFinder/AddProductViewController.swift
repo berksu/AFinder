@@ -410,7 +410,7 @@ extension AddProductViewController {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
             imageView.image = pickedImage
             //spinner.startAnimating()
