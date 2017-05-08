@@ -1980,7 +1980,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEx-Mh-BHB">
-                                <rect key="frame" x="140.66666666666669" y="33.666666666666671" width="133.00000000000006" height="41.000000000000014"/>
+                                <rect key="frame" x="140.66666666666669" y="33.666666666666686" width="133.00000000000006" height="41.000000000000014"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="35"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2672,7 +2672,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in if you have an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-75-MJV">
-                                <rect key="frame" x="41.333333333333343" y="38" width="331.33333333333337" height="19"/>
+                                <rect key="frame" x="41.666666666666657" y="38" width="331" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="5ti-gQ-eE1"/>
                                 </constraints>
@@ -2765,7 +2765,7 @@
                                 <rect key="frame" x="0.0" y="367" width="414" height="218"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jJg-Vl-iG2">
-                                        <rect key="frame" x="26.333333333333343" y="28" width="362.33333333333337" height="30"/>
+                                        <rect key="frame" x="26.666666666666657" y="28" width="362" height="30"/>
                                         <color key="backgroundColor" red="0.024510200780000001" green="0.024510200780000001" blue="0.024510200780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fdd-Ap-Wpn"/>
@@ -3323,8 +3323,8 @@
         <image name="ic_not.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xBh-qc-sqJ"/>
+        <segue reference="yJX-rb-wJO"/>
+        <segue reference="3xG-si-ieI"/>
         <segue reference="vyY-mb-cM2"/>
-        <segue reference="WBm-de-HHp"/>
     </inferredMetricsTieBreakers>
 </document>
